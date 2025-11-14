@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.crawler.theirstack.TheirStackApiClientTest" tests="8" skipped="8" failures="0" errors="0" timestamp="2025-11-11T06:11:58" hostname="dankim0124ui-MacBookPro.local" time="0.001">
+  <properties/>
+  <testcase name="testSearchJobs_KoreanCompanies()" classname="dev.devrunner.crawler.theirstack.TheirStackApiClientTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testSearchJobs_Netflix()" classname="dev.devrunner.crawler.theirstack.TheirStackApiClientTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testSearchJobs_Toss()" classname="dev.devrunner.crawler.theirstack.TheirStackApiClientTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testSearchJobs_CheckDetailedFields()" classname="dev.devrunner.crawler.theirstack.TheirStackApiClientTest" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase name="testSearchJobs_WithPagination()" classname="dev.devrunner.crawler.theirstack.TheirStackApiClientTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testSearchJobs_Google()" classname="dev.devrunner.crawler.theirstack.TheirStackApiClientTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testSearchJobs_MultipleCompanies()" classname="dev.devrunner.crawler.theirstack.TheirStackApiClientTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testSearchRecentJobs_Convenience()" classname="dev.devrunner.crawler.theirstack.TheirStackApiClientTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

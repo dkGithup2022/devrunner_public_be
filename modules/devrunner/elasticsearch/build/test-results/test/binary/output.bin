@@ -1,0 +1,1202 @@
+
+G======================================================================
+Test: build_metricsOnly
+G======================================================================
+{
+  "global_metrics" : {
+    "global" : { },
+    "aggs" : {
+      "min_experience" : {
+        "min" : {
+           "field" : "min_years"
+
+        }
+	      },
+      "total" : {
+        "value_count" : {
+          "field" : "_index"
+
+        }
+	      },
+      "avg_views" : {
+        "avg" : {
+,          "field" : "popularity_view_count"
+
+        }
+	      },
+      "total_views" : {
+        "sum" : {
+,          "field" : "popularity_view_count"
+
+        }
+	      },
+      "max_experience" : {
+        "max" : {
+           "field" : "max_years"
+
+        }
+      }
+    }
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+�{"global_metrics":{"global":{},"aggs":{"min_experience":{"min":{"field":"min_years"}},"total":{"value_count":{"field":"_index"}},"avg_views":{"avg":{"field":"popularity_view_count"}},"total_views":{"sum":{"field":"popularity_view_count"}},"max_experience":{"max":{"field":"max_years"}}}}}
+G======================================================================
+
+
+G======================================================================
+2Test: build_termsAggregation_withFilterConditions
+G======================================================================
+{
+  "meta_by_position" : {
+    "filter" : {
+      "bool" : {
+        "filter" : [ {
+          "term" : {
+            "company" : {
+              "value" : "META"
+            }
+          }
+        } ],
+        "must" : [ {
+          "term" : {
+            "deleted" : {
+               "value" : "false"
+            }
+          }
+        } ]
+      }
+    },
+    "aggs" : {
+      "position_bucket" : {
+        "terms" : {
+)          "field" : "position_category",
+          "size" : 5
+        },
+        "aggs" : {
+          "count" : {
+            "value_count" : {
+!              "field" : "_index"
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+�{"meta_by_position":{"filter":{"bool":{"filter":[{"term":{"company":{"value":"META"}}}],"must":[{"term":{"deleted":{"value":"false"}}}]}},"aggs":{"position_bucket":{"terms":{"field":"position_category","size":5},"aggs":{"count":{"value_count":{"field":"_index"}}}}}}}
+G======================================================================
+
+
+G======================================================================
+/Test: build_termsAggregation_withoutConditions
+G======================================================================
+{
+  "company_stats" : {
+    "terms" : {
+      "field" : "company",
+      "size" : 10
+    },
+    "aggs" : {
+      "job_count" : {
+        "value_count" : {
+          "field" : "_index"
+
+        }
+	      },
+      "avg_views" : {
+        "avg" : {
+,          "field" : "popularity_view_count"
+
+        }
+      }
+    }
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+�{"company_stats":{"terms":{"field":"company","size":10},"aggs":{"job_count":{"value_count":{"field":"_index"}},"avg_views":{"avg":{"field":"popularity_view_count"}}}}}
+G======================================================================
+
+
+G======================================================================
++Test: build_complexFilterWithDateHistogram
+G======================================================================
+{
+  "meta_backend_trend" : {
+    "filter" : {
+      "bool" : {
+        "filter" : [ {
+          "term" : {
+            "company" : {
+              "value" : "META"
+            }
+          }
+        }, {
+          "term" : {
+$            "position_category" : {
+"              "value" : "Backend"
+            }
+          }
+        }, {
+          "range" : {
+            "created_at" : {
+'              "gte" : "1726930800000",
+&              "lte" : "1729522800000"
+            }
+          }
+        } ],
+        "must" : [ {
+          "term" : {
+            "deleted" : {
+               "value" : "false"
+            }
+          }
+        } ]
+      }
+    },
+    "aggs" : {
+      "daily" : {
+        "date_histogram" : {
+"          "field" : "created_at",
+%          "calendar_interval" : "1d"
+        },
+        "aggs" : {
+          "avg_views" : {
+            "avg" : {
+0              "field" : "popularity_view_count"
+            }
+          },
+          "jobs_count" : {
+            "value_count" : {
+!              "field" : "_index"
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+�{"meta_backend_trend":{"filter":{"bool":{"filter":[{"term":{"company":{"value":"META"}}},{"term":{"position_category":{"value":"Backend"}}},{"range":{"created_at":{"gte":"1726930800000","lte":"1729522800000"}}}],"must":[{"term":{"deleted":{"value":"false"}}}]}},"aggs":{"daily":{"date_histogram":{"field":"created_at","calendar_interval":"1d"},"aggs":{"avg_views":{"avg":{"field":"popularity_view_count"}},"jobs_count":{"value_count":{"field":"_index"}}}}}}}
+G======================================================================
+
+
+G======================================================================
+!Test: build_multipleAggregations
+G======================================================================
+{
+  "overall_stats" : {
+    "global" : { },
+    "aggs" : {
+      "total_jobs" : {
+        "value_count" : {
+          "field" : "_index"
+
+        }
+	      },
+      "avg_views" : {
+        "avg" : {
+,          "field" : "popularity_view_count"
+
+        }
+      }
+    }
+  },
+  "recent_stats" : {
+    "filter" : {
+      "bool" : {
+        "filter" : [ {
+          "range" : {
+            "created_at" : {
+'              "gte" : "1728918000000",
+&              "lte" : "1729522800000"
+            }
+          }
+        } ]
+      }
+    },
+    "aggs" : {
+      "recent_jobs" : {
+        "value_count" : {
+          "field" : "_index"
+
+        }
+      }
+    }
+  },
+  "top_companies" : {
+    "terms" : {
+      "field" : "company",
+      "size" : 5
+    },
+    "aggs" : {
+      "count" : {
+        "value_count" : {
+          "field" : "_index"
+
+        }
+      }
+    }
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+�{"overall_stats":{"global":{},"aggs":{"total_jobs":{"value_count":{"field":"_index"}},"avg_views":{"avg":{"field":"popularity_view_count"}}}},"recent_stats":{"filter":{"bool":{"filter":[{"range":{"created_at":{"gte":"1728918000000","lte":"1729522800000"}}}]}},"aggs":{"recent_jobs":{"value_count":{"field":"_index"}}}},"top_companies":{"terms":{"field":"company","size":5},"aggs":{"count":{"value_count":{"field":"_index"}}}}}
+G======================================================================
+
+
+G======================================================================
+%Test: build_dateHistogramAggregation
+G======================================================================
+{
+  "daily_trend" : {
+    "date_histogram" : {
+      "field" : "created_at",
+!      "calendar_interval" : "1d"
+    },
+    "aggs" : {
+      "daily_count" : {
+        "value_count" : {
+          "field" : "_index"
+
+        }
+      }
+    }
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+�{"daily_trend":{"date_histogram":{"field":"created_at","calendar_interval":"1d"},"aggs":{"daily_count":{"value_count":{"field":"_index"}}}}}
+G======================================================================
+
+	
+	G======================================================================
+	$Test: aggregateTrendAndOverallStats
+	G======================================================================
+	{
+	  "top_companies_recent" : {
+	    "filter" : {
+	      "bool" : {
+	        "filter" : [ {
+	          "range" : {
+	            "created_at" : {
+	'              "gte" : "1726930800000",
+	&              "lte" : "1729522800000"
+	            }
+	          }
+	        } ],
+	        "must" : [ {
+	          "term" : {
+	            "deleted" : {
+	               "value" : "false"
+	            }
+	          }
+	        } ]
+	      }
+	    },
+	    "aggs" : {
+	      "companies" : {
+	        "terms" : {
+	          "field" : "company",
+	          "size" : 10
+	        },
+	        "aggs" : {
+	          "job_count" : {
+	            "value_count" : {
+	!              "field" : "_index"
+	            }
+	          }
+	
+        }
+	      }
+	    }
+	  },
+	  "overall_stats" : {
+	    "filter" : {
+	      "bool" : {
+	        "must" : [ {
+	          "term" : {
+	            "deleted" : {
+	               "value" : "false"
+	            }
+	          }
+	        } ]
+	      }
+	    },
+	    "aggs" : {
+	      "total_jobs" : {
+	        "value_count" : {
+	          "field" : "_index"
+	
+        }
+		      },
+	      "avg_views" : {
+	        "avg" : {
+	,          "field" : "popularity_view_count"
+	
+        }
+		      },
+	      "avg_max_salary" : {
+	        "avg" : {
+	0          "field" : "compensation_max_base_pay"
+	
+        }
+	      }
+	    }
+	  },
+	  "recent_trend" : {
+	    "filter" : {
+	      "bool" : {
+	        "filter" : [ {
+	          "range" : {
+	            "created_at" : {
+	'              "gte" : "1726930800000",
+	&              "lte" : "1729522800000"
+	            }
+	          }
+	        } ],
+	        "must" : [ {
+	          "term" : {
+	            "deleted" : {
+	               "value" : "false"
+	            }
+	          }
+	        } ]
+	      }
+	    },
+	    "aggs" : {
+	      "daily" : {
+	        "date_histogram" : {
+	"          "field" : "created_at",
+	%          "calendar_interval" : "1d"
+	        },
+	        "aggs" : {
+	          "daily_count" : {
+	            "value_count" : {
+	!              "field" : "_index"
+	            }
+	          },
+	          "avg_views" : {
+	            "avg" : {
+	0              "field" : "popularity_view_count"
+	            }
+	          }
+	
+        }
+	      }
+	    }
+	  }
+	}
+	G======================================================================
+	Compact (for copy-paste):
+	�{"top_companies_recent":{"filter":{"bool":{"filter":[{"range":{"created_at":{"gte":"1726930800000","lte":"1729522800000"}}}],"must":[{"term":{"deleted":{"value":"false"}}}]}},"aggs":{"companies":{"terms":{"field":"company","size":10},"aggs":{"job_count":{"value_count":{"field":"_index"}}}}}},"overall_stats":{"filter":{"bool":{"must":[{"term":{"deleted":{"value":"false"}}}]}},"aggs":{"total_jobs":{"value_count":{"field":"_index"}},"avg_views":{"avg":{"field":"popularity_view_count"}},"avg_max_salary":{"avg":{"field":"compensation_max_base_pay"}}}},"recent_trend":{"filter":{"bool":{"filter":[{"range":{"created_at":{"gte":"1726930800000","lte":"1729522800000"}}}],"must":[{"term":{"deleted":{"value":"false"}}}]}},"aggs":{"daily":{"date_histogram":{"field":"created_at","calendar_interval":"1d"},"aggs":{"daily_count":{"value_count":{"field":"_index"}},"avg_views":{"avg":{"field":"popularity_view_count"}}}}}}}
+	G======================================================================
+	
+	
+
+	
+G======================================================================
+	
+*Test: aggregateMultiple_realWorldScenario
+	
+G======================================================================
+	
+{
+	
+  "recent_week" : {
+	
+    "filter" : {
+	
+      "bool" : {
+	
+        "filter" : [ {
+	
+          "range" : {
+	
+            "created_at" : {
+	
+'              "gte" : "1762236624149",
+	
+&              "lte" : "1762841424149"
+	
+            }
+	
+          }
+	
+        } ],
+	
+        "must" : [ {
+	
+          "term" : {
+	
+            "deleted" : {
+	
+               "value" : "false"
+	
+            }
+	
+          }
+	
+        } ]
+	
+      }
+	
+    },
+	
+    "aggs" : {
+	
+      "daily" : {
+	
+        "date_histogram" : {
+	
+"          "field" : "created_at",
+	
+%          "calendar_interval" : "1d"
+	
+        },
+	
+        "aggs" : {
+	
+          "daily_count" : {
+	
+            "value_count" : {
+	
+!              "field" : "_index"
+	
+            }
+	
+          }
+	
+
+        }
+	
+      }
+	
+    }
+	
+  },
+	
+  "by_company" : {
+	
+    "terms" : {
+	
+      "field" : "company",
+	
+      "size" : 10
+	
+    },
+	
+    "aggs" : {
+	
+      "job_count" : {
+	
+        "value_count" : {
+	
+          "field" : "_index"
+	
+
+        }
+	
+      }
+	
+    }
+	
+  },
+	
+  "senior_positions" : {
+	
+    "filter" : {
+	
+      "bool" : {
+	
+        "filter" : [ {
+	
+          "range" : {
+	
+            "min_years" : {
+	
+              "gte" : "5"
+	
+            }
+	
+          }
+	
+        } ],
+	
+        "must" : [ {
+	
+          "term" : {
+	
+            "deleted" : {
+	
+               "value" : "false"
+	
+            }
+	
+          }
+	
+        } ]
+	
+      }
+	
+    },
+	
+    "aggs" : {
+	
+      "position_bucket" : {
+	
+        "terms" : {
+	
+)          "field" : "position_category",
+	
+          "size" : 5
+	
+        },
+	
+        "aggs" : {
+	
+          "count" : {
+	
+            "value_count" : {
+	
+!              "field" : "_index"
+	
+            }
+	
+          }
+	
+
+        }
+	
+      }
+	
+    }
+	
+  },
+	
+"  "junior_positions_by_years" : {
+	
+    "filter" : {
+	
+      "bool" : {
+	
+        "filter" : [ {
+	
+          "term" : {
+	
+&            "experience_required" : {
+	
+              "value" : "true"
+	
+            }
+	
+          }
+	
+        }, {
+	
+          "range" : {
+	
+            "min_years" : {
+	
+              "lte" : "2"
+	
+            }
+	
+          }
+	
+        } ],
+	
+        "must" : [ {
+	
+          "term" : {
+	
+            "deleted" : {
+	
+               "value" : "false"
+	
+            }
+	
+          }
+	
+        } ]
+	
+      }
+	
+    },
+	
+    "aggs" : {
+	
+      "avg_views" : {
+	
+        "avg" : {
+	
+,          "field" : "popularity_view_count"
+	
+
+        }
+	
+	      },
+	
+      "count" : {
+	
+        "value_count" : {
+	
+          "field" : "_index"
+	
+
+        }
+	
+      }
+	
+    }
+	
+  },
+	
+'  "junior_positions_by_experience" : {
+	
+    "filter" : {
+	
+      "bool" : {
+	
+        "filter" : [ {
+	
+          "term" : {
+	
+&            "experience_required" : {
+	
+               "value" : "false"
+	
+            }
+	
+          }
+	
+        } ],
+	
+        "must" : [ {
+	
+          "term" : {
+	
+            "deleted" : {
+	
+               "value" : "false"
+	
+            }
+	
+          }
+	
+        } ]
+	
+      }
+	
+    },
+	
+    "aggs" : {
+	
+      "count" : {
+	
+        "value_count" : {
+	
+          "field" : "_index"
+	
+
+        }
+	
+      }
+	
+    }
+	
+  }
+	
+}
+	
+G======================================================================
+	
+Compact (for copy-paste):
+	
+�	{"recent_week":{"filter":{"bool":{"filter":[{"range":{"created_at":{"gte":"1762236624149","lte":"1762841424149"}}}],"must":[{"term":{"deleted":{"value":"false"}}}]}},"aggs":{"daily":{"date_histogram":{"field":"created_at","calendar_interval":"1d"},"aggs":{"daily_count":{"value_count":{"field":"_index"}}}}}},"by_company":{"terms":{"field":"company","size":10},"aggs":{"job_count":{"value_count":{"field":"_index"}}}},"senior_positions":{"filter":{"bool":{"filter":[{"range":{"min_years":{"gte":"5"}}}],"must":[{"term":{"deleted":{"value":"false"}}}]}},"aggs":{"position_bucket":{"terms":{"field":"position_category","size":5},"aggs":{"count":{"value_count":{"field":"_index"}}}}}},"junior_positions_by_years":{"filter":{"bool":{"filter":[{"term":{"experience_required":{"value":"true"}}},{"range":{"min_years":{"lte":"2"}}}],"must":[{"term":{"deleted":{"value":"false"}}}]}},"aggs":{"avg_views":{"avg":{"field":"popularity_view_count"}},"count":{"value_count":{"field":"_index"}}}},"junior_positions_by_experience":{"filter":{"bool":{"filter":[{"term":{"experience_required":{"value":"false"}}}],"must":[{"term":{"deleted":{"value":"false"}}}]}},"aggs":{"count":{"value_count":{"field":"_index"}}}}}
+	
+G======================================================================
+	
+
+	
+	G======================================================================
+	"Test: aggregateByExperienceRanges
+	G======================================================================
+	{
+	  "junior_level" : {
+	    "filter" : {
+	      "bool" : {
+	        "filter" : [ {
+	          "range" : {
+	            "min_years" : {
+	              "gte" : "2",
+	              "lte" : "5"
+	            }
+	          }
+	        } ],
+	        "must" : [ {
+	          "term" : {
+	            "deleted" : {
+	               "value" : "false"
+	            }
+	          }
+	        } ]
+	      }
+	    },
+	    "aggs" : {
+	      "count" : {
+	        "value_count" : {
+	          "field" : "_index"
+	
+        }
+		      },
+	      "avg_salary" : {
+	        "avg" : {
+	0          "field" : "compensation_max_base_pay"
+	
+        }
+	      }
+	    }
+	  },
+	  "entry_level" : {
+	    "filter" : {
+	      "bool" : {
+	        "filter" : [ {
+	          "range" : {
+	            "min_years" : {
+	              "lte" : "2"
+	            }
+	          }
+	        } ],
+	        "must" : [ {
+	          "term" : {
+	            "deleted" : {
+	               "value" : "false"
+	            }
+	          }
+	        } ]
+	      }
+	    },
+	    "aggs" : {
+	      "count" : {
+	        "value_count" : {
+	          "field" : "_index"
+	
+        }
+		      },
+	      "avg_salary" : {
+	        "avg" : {
+	0          "field" : "compensation_max_base_pay"
+	
+        }
+	      }
+	    }
+	  },
+	  "senior_level" : {
+	    "filter" : {
+	      "bool" : {
+	        "filter" : [ {
+	          "range" : {
+	            "min_years" : {
+	              "gte" : "5"
+	            }
+	          }
+	        } ],
+	        "must" : [ {
+	          "term" : {
+	            "deleted" : {
+	               "value" : "false"
+	            }
+	          }
+	        } ]
+	      }
+	    },
+	    "aggs" : {
+	      "max_salary" : {
+	        "max" : {
+	0          "field" : "compensation_max_base_pay"
+	
+        }
+		      },
+	      "count" : {
+	        "value_count" : {
+	          "field" : "_index"
+	
+        }
+		      },
+	      "avg_salary" : {
+	        "avg" : {
+	0          "field" : "compensation_max_base_pay"
+	
+        }
+	      }
+	    }
+	  }
+	}
+	G======================================================================
+	Compact (for copy-paste):
+	�{"junior_level":{"filter":{"bool":{"filter":[{"range":{"min_years":{"gte":"2","lte":"5"}}}],"must":[{"term":{"deleted":{"value":"false"}}}]}},"aggs":{"count":{"value_count":{"field":"_index"}},"avg_salary":{"avg":{"field":"compensation_max_base_pay"}}}},"entry_level":{"filter":{"bool":{"filter":[{"range":{"min_years":{"lte":"2"}}}],"must":[{"term":{"deleted":{"value":"false"}}}]}},"aggs":{"count":{"value_count":{"field":"_index"}},"avg_salary":{"avg":{"field":"compensation_max_base_pay"}}}},"senior_level":{"filter":{"bool":{"filter":[{"range":{"min_years":{"gte":"5"}}}],"must":[{"term":{"deleted":{"value":"false"}}}]}},"aggs":{"max_salary":{"max":{"field":"compensation_max_base_pay"}},"count":{"value_count":{"field":"_index"}},"avg_salary":{"avg":{"field":"compensation_max_base_pay"}}}}}
+	G======================================================================
+	
+	
+	G======================================================================
+	,Test: aggregateByPosition_withCompanyFilter
+	G======================================================================
+	{
+	  "google_positions" : {
+	    "filter" : {
+	      "bool" : {
+	        "filter" : [ {
+	          "term" : {
+	            "company" : {
+	!              "value" : "Google"
+	            }
+	          }
+	        } ],
+	        "must" : [ {
+	          "term" : {
+	            "deleted" : {
+	               "value" : "false"
+	            }
+	          }
+	        } ]
+	      }
+	    },
+	    "aggs" : {
+	      "positions" : {
+	        "terms" : {
+	)          "field" : "position_category",
+	          "size" : 10
+	        },
+	        "aggs" : {
+	          "avg_views" : {
+	            "avg" : {
+	0              "field" : "popularity_view_count"
+	            }
+	          },
+	          "count" : {
+	            "value_count" : {
+	!              "field" : "_index"
+	            }
+	          }
+	
+        }
+	      }
+	    }
+	  },
+	  "meta_positions" : {
+	    "filter" : {
+	      "bool" : {
+	        "filter" : [ {
+	          "term" : {
+	            "company" : {
+	              "value" : "META"
+	            }
+	          }
+	        } ],
+	        "must" : [ {
+	          "term" : {
+	            "deleted" : {
+	               "value" : "false"
+	            }
+	          }
+	        } ]
+	      }
+	    },
+	    "aggs" : {
+	      "positions" : {
+	        "terms" : {
+	)          "field" : "position_category",
+	          "size" : 10
+	        },
+	        "aggs" : {
+	          "avg_views" : {
+	            "avg" : {
+	0              "field" : "popularity_view_count"
+	            }
+	          },
+	          "count" : {
+	            "value_count" : {
+	!              "field" : "_index"
+	            }
+	          }
+	
+        }
+	      }
+	    }
+	  }
+	}
+	G======================================================================
+	Compact (for copy-paste):
+	�{"google_positions":{"filter":{"bool":{"filter":[{"term":{"company":{"value":"Google"}}}],"must":[{"term":{"deleted":{"value":"false"}}}]}},"aggs":{"positions":{"terms":{"field":"position_category","size":10},"aggs":{"avg_views":{"avg":{"field":"popularity_view_count"}},"count":{"value_count":{"field":"_index"}}}}}},"meta_positions":{"filter":{"bool":{"filter":[{"term":{"company":{"value":"META"}}}],"must":[{"term":{"deleted":{"value":"false"}}}]}},"aggs":{"positions":{"terms":{"field":"position_category","size":10},"aggs":{"avg_views":{"avg":{"field":"popularity_view_count"}},"count":{"value_count":{"field":"_index"}}}}}}}
+	G======================================================================
+	
+
+G======================================================================
+1Test: build_withMixedConditions_createsBoolQuery
+G======================================================================
+{
+  "bool" : {
+    "filter" : [ {
+      "term" : {
+        "company" : {
+          "value" : "META"
+
+        }
+      }
+	    }, {
+      "range" : {
+        "min_years" : {
+          "gte" : "0",
+          "lte" : "3"
+
+        }
+      }
+	    } ],
+"    "minimum_should_match" : "1",
+    "must" : [ {
+      "term" : {
+        "deleted" : {
+          "value" : "false"
+
+        }
+      }
+	    } ],
+    "should" : [ {
+      "match" : {
+        "title" : {
+           "query" : "백엔드"
+
+        }
+      }
+    } ]
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+�{"bool":{"filter":[{"term":{"company":{"value":"META"}}},{"range":{"min_years":{"gte":"0","lte":"3"}}}],"minimum_should_match":"1","must":[{"term":{"deleted":{"value":"false"}}}],"should":[{"match":{"title":{"query":"백엔드"}}}]}}
+G======================================================================
+
+
+G======================================================================
+,Test: build_withMixedText_createsMatchQuery
+G======================================================================
+{
+  "match" : {
+    "title" : {
+5      "query" : "Senior Backend Developer 시니어"
+    }
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+C{"match":{"title":{"query":"Senior Backend Developer 시니어"}}}
+G======================================================================
+
+
+G======================================================================
+4Test: build_withSpecialCharacters_createsMatchQuery
+G======================================================================
+{
+  "match" : {
+    "full_description" : {
+(      "query" : "C++ / Python (Django)"
+    }
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+A{"match":{"full_description":{"query":"C++ / Python (Django)"}}}
+G======================================================================
+
+
+G======================================================================
+.Test: build_withEnglishText_createsMatchQuery
+G======================================================================
+{
+  "match" : {
+    "full_description" : {
+#      "query" : "Spring Boot Java"
+    }
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+<{"match":{"full_description":{"query":"Spring Boot Java"}}}
+G======================================================================
+
+
+G======================================================================
+-Test: build_withKoreanText_createsMatchQuery
+G======================================================================
+{
+  "match" : {
+    "title" : {
+&      "query" : "백엔드 개발자"
+    }
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+4{"match":{"title":{"query":"백엔드 개발자"}}}
+G======================================================================
+
+
+G======================================================================
+2Test: build_withNegativeNumbers_createsRangeQuery
+G======================================================================
+{
+  "range" : {
+    "some_field" : {
+      "gte" : "-10",
+      "lte" : "10"
+    }
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+2{"range":{"some_field":{"gte":"-10","lte":"10"}}}
+G======================================================================
+
+
+G======================================================================
+1Test: build_withOnlyGte_createsRangeQueryWithGte
+G======================================================================
+{
+  "range" : {
+$    "compensation_min_base_pay" : {
+      "gte" : "80000000"
+    }
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+;{"range":{"compensation_min_base_pay":{"gte":"80000000"}}}
+G======================================================================
+
+
+G======================================================================
+/Test: build_withLargeNumbers_createsRangeQuery
+G======================================================================
+{
+  "range" : {
+$    "compensation_max_base_pay" : {
+      "gte" : "100000000",
+      "lte" : "200000000"
+    }
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+N{"range":{"compensation_max_base_pay":{"gte":"100000000","lte":"200000000"}}}
+G======================================================================
+
+
+G======================================================================
+0Test: build_withBothGteAndLte_createsRangeQuery
+G======================================================================
+{
+  "range" : {
+    "min_years" : {
+      "gte" : "0",
+      "lte" : "3"
+    }
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+.{"range":{"min_years":{"gte":"0","lte":"3"}}}
+G======================================================================
+
+
+G======================================================================
+1Test: build_withOnlyLte_createsRangeQueryWithLte
+G======================================================================
+{
+  "range" : {
+    "max_years" : {
+      "lte" : "5"
+    }
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+${"range":{"max_years":{"lte":"5"}}}
+G======================================================================
+
+
+G======================================================================
+,Test: build_withTimestamp_createsRangeQuery
+G======================================================================
+{
+  "range" : {
+    "started_at" : {
+      "gte" : "1696118400000",
+      "lte" : "1698796800000"
+    }
+  }
+}
+G======================================================================
+Compact (for copy-paste):
+G{"range":{"started_at":{"gte":"1696118400000","lte":"1698796800000"}}}
+G======================================================================
+
+!#
+!#G======================================================================
+!#-Test: build_withStringValue_createsTermQuery
+!#G======================================================================
+!#{
+!#  "term" : {
+!#    "company" : {
+!#      "value" : "META"
+!#    }
+!#  }
+!#}
+!#G======================================================================
+!#Compact (for copy-paste):
+!#&{"term":{"company":{"value":"META"}}}
+!#G======================================================================
+!#
+!$
+!$G======================================================================
+!$+Test: build_withEnumValue_createsTermQuery
+!$G======================================================================
+!${
+!$  "term" : {
+!$    "career_level" : {
+!$      "value" : "ENTRY"
+!$    }
+!$  }
+!$}
+!$G======================================================================
+!$Compact (for copy-paste):
+!$,{"term":{"career_level":{"value":"ENTRY"}}}
+!$G======================================================================
+!$
+!%
+!%G======================================================================
+!%.Test: build_withBooleanField_createsTermQuery
+!%G======================================================================
+!%{
+!%  "term" : {
+!%    "deleted" : {
+!%      "value" : "false"
+!%    }
+!%  }
+!%}
+!%G======================================================================
+!%Compact (for copy-paste):
+!%'{"term":{"deleted":{"value":"false"}}}
+!%G======================================================================
+!%
+ :9�WARNING: A Java agent has been loaded dynamically (/Users/dankim0124/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.10/90ed94ac044ea8953b224304c762316e91fd6b31/byte-buddy-agent-1.14.10.jar)
+ :9qWARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+ :9rWARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+ :9UWARNING: Dynamic loading of agents will be disallowed by default in a future release

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.service.reaction.impl.DefaultReactionReaderTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:36" hostname="dankim0124ui-MacBookPro.local" time="0.032">
+  <properties/>
+  <testcase name="findByUserIdAndTargetTypeAndTargetId_nonExistingReaction_returnsEmptyOptional()" classname="dev.devrunner.service.reaction.impl.DefaultReactionReaderTest" time="0.022"/>
+  <testcase name="getByTargetTypeAndTargetId_existingData_returnsList()" classname="dev.devrunner.service.reaction.impl.DefaultReactionReaderTest" time="0.0"/>
+  <testcase name="getById_nonExistingId_throwsReactionNotFoundException()" classname="dev.devrunner.service.reaction.impl.DefaultReactionReaderTest" time="0.001"/>
+  <testcase name="getByUserId_existingUser_returnsList()" classname="dev.devrunner.service.reaction.impl.DefaultReactionReaderTest" time="0.001"/>
+  <testcase name="findByUserIdAndTargetTypeAndTargetId_existingReaction_returnsOptionalWithReaction()" classname="dev.devrunner.service.reaction.impl.DefaultReactionReaderTest" time="0.001"/>
+  <testcase name="getById_existingId_returnsReaction()" classname="dev.devrunner.service.reaction.impl.DefaultReactionReaderTest" time="0.001"/>
+  <testcase name="getByUserIdAndType_existingData_returnsList()" classname="dev.devrunner.service.reaction.impl.DefaultReactionReaderTest" time="0.001"/>
+  <testcase name="getByUserIdAndType_nonExistingData_returnsEmptyList()" classname="dev.devrunner.service.reaction.impl.DefaultReactionReaderTest" time="0.001"/>
+  <testcase name="getByUserId_nonExistingUser_returnsEmptyList()" classname="dev.devrunner.service.reaction.impl.DefaultReactionReaderTest" time="0.001"/>
+  <testcase name="getAll_existingReactions_returnsList()" classname="dev.devrunner.service.reaction.impl.DefaultReactionReaderTest" time="0.001"/>
+  <testcase name="getByTargetTypeAndTargetId_nonExistingData_returnsEmptyList()" classname="dev.devrunner.service.reaction.impl.DefaultReactionReaderTest" time="0.001"/>
+  <testcase name="getAll_noReactions_returnsEmptyList()" classname="dev.devrunner.service.reaction.impl.DefaultReactionReaderTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

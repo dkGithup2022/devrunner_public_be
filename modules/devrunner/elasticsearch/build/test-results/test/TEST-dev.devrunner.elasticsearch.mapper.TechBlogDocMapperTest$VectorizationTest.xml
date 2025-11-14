@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="벡터화 테스트" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:24" hostname="dankim0124ui-MacBookPro.local" time="0.627">
+  <properties/>
+  <testcase name="summary를 기반으로 벡터 생성" classname="dev.devrunner.elasticsearch.mapper.TechBlogDocMapperTest$VectorizationTest" time="0.627"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/Users/dankim0124/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.10/90ed94ac044ea8953b224304c762316e91fd6b31/byte-buddy-agent-1.14.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>

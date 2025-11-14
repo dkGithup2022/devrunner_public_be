@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.service.communitypost.impl.DefaultCommunityPostWriterTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:35" hostname="dankim0124ui-MacBookPro.local" time="0.064">
+  <properties/>
+  <testcase name="upsert_postFromJobComment_callsRepositorySaveAndIncrementsUserPostCount()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostWriterTest" time="0.026"/>
+  <testcase name="upsert_linkedContentFromJobComment_createsLinkedContent()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostWriterTest" time="0.002"/>
+  <testcase name="upsert_newPost_recordsCreatedEvent()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostWriterTest" time="0.002"/>
+  <testcase name="upsert_existingPost_recordsUpdatedEvent()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostWriterTest" time="0.001"/>
+  <testcase name="delete_recordsUpdatedEvent()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostWriterTest" time="0.002"/>
+  <testcase name="upsert_newPost_callsRepositorySaveAndIncrementsUserPostCount()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostWriterTest" time="0.002"/>
+  <testcase name="delete_unauthorizedUser_throwsUnauthorizedException()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostWriterTest" time="0.004"/>
+  <testcase name="delete_existingPost_callsRepositoryDelete()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostWriterTest" time="0.001"/>
+  <testcase name="upsert_existingPost_callsRepositorySaveWithoutIncrementingPostCount()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostWriterTest" time="0.001"/>
+  <testcase name="upsert_linkedContentFromJob_createsLinkedContent()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostWriterTest" time="0.001"/>
+  <testcase name="delete_callsRepositoryDeleteWithCorrectIdentity()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostWriterTest" time="0.002"/>
+  <testcase name="delete_postNotFound_throwsCommunityPostNotFoundException()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostWriterTest" time="0.003"/>
+  <testcase name="upsert_userNotFound_throwsRuntimeException()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostWriterTest" time="0.004"/>
+  <testcase name="upsert_noLinkedContent_createsNoneLinkedContent()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostWriterTest" time="0.005"/>
+  <system-out><![CDATA[2025-11-11T15:10:35.668+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: null
+2025-11-11T15:10:35.669+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : User 1 postCount incremented
+2025-11-11T15:10:35.670+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost upserted successfully: 1
+2025-11-11T15:10:35.671+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: null
+2025-11-11T15:10:35.672+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : User 1 postCount incremented
+2025-11-11T15:10:35.672+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost upserted successfully: 1
+2025-11-11T15:10:35.674+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: null
+2025-11-11T15:10:35.674+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : User 1 postCount incremented
+2025-11-11T15:10:35.674+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost upserted successfully: 1
+2025-11-11T15:10:35.676+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: 1
+2025-11-11T15:10:35.676+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost upserted successfully: 1
+2025-11-11T15:10:35.678+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Deleting CommunityPost by id: 1 / requestUserId: 1
+2025-11-11T15:10:35.678+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost deleted successfully: 1
+2025-11-11T15:10:35.681+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: null
+2025-11-11T15:10:35.681+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : User 1 postCount incremented
+2025-11-11T15:10:35.681+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost upserted successfully: 1
+2025-11-11T15:10:35.684+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Deleting CommunityPost by id: 1 / requestUserId: 2
+2025-11-11T15:10:35.687+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Deleting CommunityPost by id: 1 / requestUserId: 1
+2025-11-11T15:10:35.687+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost deleted successfully: 1
+2025-11-11T15:10:35.690+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: 1
+2025-11-11T15:10:35.690+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost upserted successfully: 1
+2025-11-11T15:10:35.691+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: null
+2025-11-11T15:10:35.691+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : User 1 postCount incremented
+2025-11-11T15:10:35.691+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost upserted successfully: 1
+2025-11-11T15:10:35.693+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Deleting CommunityPost by id: 999 / requestUserId: 1
+2025-11-11T15:10:35.694+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost deleted successfully: 999
+2025-11-11T15:10:35.695+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Deleting CommunityPost by id: 1 / requestUserId: 1
+2025-11-11T15:10:35.701+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: null
+2025-11-11T15:10:35.707+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: null
+2025-11-11T15:10:35.707+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : User 1 postCount incremented
+2025-11-11T15:10:35.707+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost upserted successfully: 1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

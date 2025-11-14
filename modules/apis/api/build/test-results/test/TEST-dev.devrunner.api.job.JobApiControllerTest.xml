@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.api.job.JobApiControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:05" hostname="dankim0124ui-MacBookPro.local" time="0.051">
+  <properties/>
+  <testcase name="getJob_nonExistingId_throwsException()" classname="dev.devrunner.api.job.JobApiControllerTest" time="0.043"/>
+  <testcase name="getJob_existingId_returnsOkWithJob()" classname="dev.devrunner.api.job.JobApiControllerTest" time="0.007"/>
+  <system-out><![CDATA[15:10:05.082 [Test worker] INFO dev.devrunner.api.job.JobApiController -- GET /api/jobs/999
+15:10:05.090 [Test worker] INFO dev.devrunner.api.job.JobApiController -- GET /api/jobs/1
+15:10:05.091 [Test worker] INFO dev.devrunner.api.job.JobApiController -- Retrieved job - jobId: 1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

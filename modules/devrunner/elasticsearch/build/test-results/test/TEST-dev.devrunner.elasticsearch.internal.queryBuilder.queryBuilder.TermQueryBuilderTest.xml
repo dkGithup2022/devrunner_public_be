@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TermQueryBuilder 테스트" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:24" hostname="dankim0124ui-MacBookPro.local" time="0.009">
+  <properties/>
+  <testcase name="SHOULD BoolType 반환 확인" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.TermQueryBuilderTest" time="0.001"/>
+  <testcase name="FILTER BoolType 반환 확인" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.TermQueryBuilderTest" time="0.001"/>
+  <testcase name="문자열 값으로 term 쿼리 생성" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.TermQueryBuilderTest" time="0.001"/>
+  <testcase name="Enum 값으로 term 쿼리 생성" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.TermQueryBuilderTest" time="0.0"/>
+  <testcase name="Boolean 필드로 term 쿼리 생성" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.TermQueryBuilderTest" time="0.002"/>
+  <testcase name="MUST BoolType 반환 확인" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.TermQueryBuilderTest" time="0.002"/>
+  <system-out><![CDATA[
+======================================================================
+Test: build_withStringValue_createsTermQuery
+======================================================================
+{
+  "term" : {
+    "company" : {
+      "value" : "META"
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"term":{"company":{"value":"META"}}}
+======================================================================
+
+
+======================================================================
+Test: build_withEnumValue_createsTermQuery
+======================================================================
+{
+  "term" : {
+    "career_level" : {
+      "value" : "ENTRY"
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"term":{"career_level":{"value":"ENTRY"}}}
+======================================================================
+
+
+======================================================================
+Test: build_withBooleanField_createsTermQuery
+======================================================================
+{
+  "term" : {
+    "deleted" : {
+      "value" : "false"
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"term":{"deleted":{"value":"false"}}}
+======================================================================
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

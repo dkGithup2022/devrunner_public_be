@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - LogContextTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>LogContextTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/dev.devrunner.logging.html">dev.devrunner.logging</a> &gt; LogContextTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.504s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testApiContext()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testBatchContext()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testMixedContext()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testNoContext()</td>
+<td class="success">0.496s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>{&quot;timestamp&quot;:&quot;2025-11-11T15:10:20.71013+09:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;logger&quot;:&quot;org.springframework.test.context.support.AnnotationConfigContextLoaderUtils&quot;,&quot;message&quot;:&quot;Could not detect default configuration classes for test class [dev.devrunner.logging.LogContextTest]: LogContextTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.&quot;}
+{&quot;timestamp&quot;:&quot;2025-11-11T15:10:20.79167+09:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;logger&quot;:&quot;org.springframework.boot.test.context.SpringBootTestContextBootstrapper&quot;,&quot;message&quot;:&quot;Found @SpringBootConfiguration dev.devrunner.logging.TestApp for test class dev.devrunner.logging.LogContextTest&quot;}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.1)
+
+{&quot;timestamp&quot;:&quot;2025-11-11T15:10:21.073454+09:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;logger&quot;:&quot;dev.devrunner.logging.LogContextTest&quot;,&quot;message&quot;:&quot;Starting LogContextTest using Java 21.0.7 with PID 56208 (started by dankim0124 in /Users/dankim0124/IdeaProjects/breakin-be/breakin-be/modules/common/logging)&quot;}
+{&quot;timestamp&quot;:&quot;2025-11-11T15:10:21.074414+09:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;logger&quot;:&quot;dev.devrunner.logging.LogContextTest&quot;,&quot;message&quot;:&quot;No active profile set, falling back to 1 default profile: \&quot;default\&quot;&quot;}
+{&quot;timestamp&quot;:&quot;2025-11-11T15:10:21.858753+09:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;logger&quot;:&quot;dev.devrunner.logging.LogContextTest&quot;,&quot;message&quot;:&quot;Started LogContextTest in 0.944 seconds (process running for 1.921)&quot;}
+{&quot;timestamp&quot;:&quot;2025-11-11T15:10:22.358189+09:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;logger&quot;:&quot;dev.devrunner.logging.LogContextTest&quot;,&quot;message&quot;:&quot;Log without any context&quot;}
+{&quot;timestamp&quot;:&quot;2025-11-11T15:10:22.364908+09:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;logger&quot;:&quot;dev.devrunner.logging.LogContextTest&quot;,&quot;traceId&quot;:&quot;79c4603d-6de8-4581-815d-4848a9ffff1a&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;endpoint&quot;:&quot;/api/jobs/1&quot;,&quot;message&quot;:&quot;Fetching job details&quot;}
+{&quot;timestamp&quot;:&quot;2025-11-11T15:10:22.365221+09:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;logger&quot;:&quot;dev.devrunner.logging.LogContextTest&quot;,&quot;jobName&quot;:&quot;EsSyncTask&quot;,&quot;startedAt&quot;:&quot;2025-11-11T06:10:22.365064Z&quot;,&quot;message&quot;:&quot;Indexing job to Elasticsearch&quot;}
+{&quot;timestamp&quot;:&quot;2025-11-11T15:10:22.368391+09:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;logger&quot;:&quot;dev.devrunner.logging.LogContextTest&quot;,&quot;jobName&quot;:&quot;ResourceCrawlTask&quot;,&quot;startedAt&quot;:&quot;2025-11-11T06:10:22.368364Z&quot;,&quot;message&quot;:&quot;Testing batch context logging&quot;}
+{&quot;timestamp&quot;:&quot;2025-11-11T15:10:22.368647+09:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;logger&quot;:&quot;dev.devrunner.logging.LogContextTest&quot;,&quot;jobName&quot;:&quot;ResourceCrawlTask&quot;,&quot;startedAt&quot;:&quot;2025-11-11T06:10:22.368364Z&quot;,&quot;message&quot;:&quot;Crawling started for Google jobs&quot;}
+{&quot;timestamp&quot;:&quot;2025-11-11T15:10:22.368751+09:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;logger&quot;:&quot;dev.devrunner.logging.LogContextTest&quot;,&quot;jobName&quot;:&quot;ResourceCrawlTask&quot;,&quot;startedAt&quot;:&quot;2025-11-11T06:10:22.368364Z&quot;,&quot;message&quot;:&quot;Crawling completed: 50 jobs processed&quot;}
+{&quot;timestamp&quot;:&quot;2025-11-11T15:10:22.373006+09:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;logger&quot;:&quot;dev.devrunner.logging.LogContextTest&quot;,&quot;traceId&quot;:&quot;63a835b0-3c9f-4083-a83d-98c49103f8aa&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;endpoint&quot;:&quot;/api/jobs/search&quot;,&quot;message&quot;:&quot;Testing API context logging&quot;}
+{&quot;timestamp&quot;:&quot;2025-11-11T15:10:22.373347+09:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;logger&quot;:&quot;dev.devrunner.logging.LogContextTest&quot;,&quot;traceId&quot;:&quot;63a835b0-3c9f-4083-a83d-98c49103f8aa&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;endpoint&quot;:&quot;/api/jobs/search&quot;,&quot;message&quot;:&quot;Search results found: 10 items&quot;}
+{&quot;timestamp&quot;:&quot;2025-11-11T15:10:22.373487+09:00&quot;,&quot;level&quot;:&quot;WARN&quot;,&quot;logger&quot;:&quot;dev.devrunner.logging.LogContextTest&quot;,&quot;traceId&quot;:&quot;63a835b0-3c9f-4083-a83d-98c49103f8aa&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;endpoint&quot;:&quot;/api/jobs/search&quot;,&quot;message&quot;:&quot;Some warning message&quot;}
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>WARNING: A Java agent has been loaded dynamically (/Users/dankim0124/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.10/90ed94ac044ea8953b224304c762316e91fd6b31/byte-buddy-agent-1.14.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.12</a> at 2025. 11. 11. 오후 3:10:22</p>
+</div>
+</div>
+</body>
+</html>

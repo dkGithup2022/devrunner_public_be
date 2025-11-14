@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="예외 상황 테스트" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:24" hostname="dankim0124ui-MacBookPro.local" time="0.005">
+  <properties/>
+  <testcase name="TechBlog이 null이면 null 반환" classname="dev.devrunner.elasticsearch.mapper.TechBlogDocMapperTest$ExceptionTest" time="0.001"/>
+  <testcase name="vectorizer가 실패하여 null 반환하면 VectorizeException 발생" classname="dev.devrunner.elasticsearch.mapper.TechBlogDocMapperTest$ExceptionTest" time="0.001"/>
+  <testcase name="summary가 null이면 VectorizeException 발생" classname="dev.devrunner.elasticsearch.mapper.TechBlogDocMapperTest$ExceptionTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

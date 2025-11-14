@@ -1,0 +1,64 @@
+# Auth 모듈 설정 예시
+# 실제 application.yml에 이 설정을 추가하세요
+
+devrunner:
+  security:
+    # 인증을 적용할 경로 패턴 (기본값: /api/**)
+    secured-path-pattern: /api/**
+
+    # 인증 없이 접근 가능한 경로 목록
+    permit-all-paths:
+      - /api/auth/login
+      - /api/auth/signup
+      - /health
+      - /actuator/**
+
+    # 전체 경로에 인증 적용 여부 (기본값: false)
+    # true: 모든 경로에 인증 필요 (permit-all-paths 제외)
+    # false: secured-path-pattern 경로만 인증 필요
+    secure-all-paths: false
+
+---
+# 예시 1: /api/** 하위만 인증 적용 (기본)
+devrunner:
+  security:
+    secured-path-pattern: /api/**
+    permit-all-paths:
+      - /api/auth/login
+      - /api/auth/signup
+    secure-all-paths: false
+
+# 결과:
+# - /api/comments (인증 필요)
+# - /api/auth/login (인증 불필요)
+# - /public/info (인증 불필요 - /api/** 밖이므로)
+
+---
+# 예시 2: 전체 경로 인증 적용
+devrunner:
+  security:
+    permit-all-paths:
+      - /api/auth/login
+      - /api/auth/signup
+      - /health
+    secure-all-paths: true
+
+# 결과:
+# - /api/comments (인증 필요)
+# - /api/auth/login (인증 불필요)
+# - /public/info (인증 필요 - 모든 경로에 적용)
+# - /health (인증 불필요)
+
+---
+# 예시 3: 특정 경로만 인증 적용
+devrunner:
+  security:
+    secured-path-pattern: /api/admin/**
+    permit-all-paths:
+      - /api/admin/login
+    secure-all-paths: false
+
+# 결과:
+# - /api/admin/users (인증 필요)
+# - /api/admin/login (인증 불필요)
+# - /api/comments (인증 불필요 - /api/admin/** 밖이므로)

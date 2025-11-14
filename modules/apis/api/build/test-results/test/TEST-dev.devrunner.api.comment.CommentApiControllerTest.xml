@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.api.comment.CommentApiControllerTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:04" hostname="dankim0124ui-MacBookPro.local" time="0.04">
+  <properties/>
+  <testcase name="getCommentsByTarget_success()" classname="dev.devrunner.api.comment.CommentApiControllerTest" time="0.029"/>
+  <testcase name="writeComment_success()" classname="dev.devrunner.api.comment.CommentApiControllerTest" time="0.003"/>
+  <testcase name="updateComment_success()" classname="dev.devrunner.api.comment.CommentApiControllerTest" time="0.001"/>
+  <testcase name="hideComment_success()" classname="dev.devrunner.api.comment.CommentApiControllerTest" time="0.002"/>
+  <testcase name="showComment_success()" classname="dev.devrunner.api.comment.CommentApiControllerTest" time="0.002"/>
+  <system-out><![CDATA[15:10:04.624 [Test worker] INFO dev.devrunner.api.comment.CommentApiController -- GET /api/comments - targetType: JOB, targetId: 100
+15:10:04.625 [Test worker] INFO dev.devrunner.api.comment.CommentApiController -- Retrieved 2 comments for JOB 100
+15:10:04.627 [Test worker] INFO dev.devrunner.api.comment.CommentApiController -- POST /api/comments - userId: 1, targetType: JOB, targetId: 100
+15:10:04.628 [Test worker] INFO dev.devrunner.api.comment.CommentApiController -- Comment created - commentId: 1
+15:10:04.631 [Test worker] INFO dev.devrunner.api.comment.CommentApiController -- PUT /api/comments/1 - userId :1 - newContent length: 15
+15:10:04.631 [Test worker] INFO dev.devrunner.api.comment.CommentApiController -- Comment updated - commentId: 1
+15:10:04.633 [Test worker] INFO dev.devrunner.api.comment.CommentApiController -- POST /api/comments/1/hide - userId:1
+15:10:04.633 [Test worker] INFO dev.devrunner.api.comment.CommentApiController -- Comment hidden - commentId: 1
+15:10:04.635 [Test worker] INFO dev.devrunner.api.comment.CommentApiController -- POST /api/comments/1/show - userId: 1
+15:10:04.635 [Test worker] INFO dev.devrunner.api.comment.CommentApiController -- Comment shown - commentId: 1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: external-resource-crawl-test
+
+  ai:
+    openai:
+      api-key: ${OPENAI_KEY}
+
+# Firecrawl API 설정
+firecrawl:
+  api-key: ${FIRECRAWL_API_KEY}
+
+# TheirStack API 설정
+theirstack:
+  api:
+    key: ${THEIRSTACK_API_KEY}
+    url: https://api.theirstack.com/v1/jobs/search
+
+# Playwright 설정
+playwright:
+  wait-after-load-ms: 5000
+
+
+google:
+    cse:
+      cx: ${GOOGLE_JSON_API_CX}
+      key: ${GOOGLE_JSON_API_KEY}
+
+crawler:
+  job:
+    listurl:
+      google: https://www.google.com/about/careers/applications/jobs/results?sort_by=date&q=%22Software%20Engineer%22
+      meta: https://www.metacareers.com/jobs?q=software%20engineer&sort_by_new=true
+      netflix: https://www.google.com/search?q=site:explore.jobs.netflix.net+Engineer+(inurl:/careers/job/)+&tbs=qdr:w
+      tiktok: https://lifeattiktok.com/search?recruitment_id_list=&job_category_id_list=6704215862603155720&subject_id_list=&location_code_list=&keyword=&limit=12&offset=0
+      spotify: https://engineering.atspotify.com/jobs
+      naver: https://recruit.navercorp.com/rcrt/list.do?srchClassCd=1000000
+      line: https://careers.linecorp.com/ko/jobs?ca=Engineering&ci=Gwacheon,Bundang&co=East%20Asia
+      woowahan: https://career.woowahan.com/?jobCodes=&employmentTypeCodes=&serviceSectionCodes=&careerPeriod=&keyword=&category=jobGroupCodes%3ABA005001#recruit-list
+
+logging:
+  level:
+    dev.devrunner.crawler: DEBUG
+# Email Encryption 설정 (테스트용)
+encryption:
+  email:
+    secret-key: 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+
+# 모듈별 auto-scan 활성화 (테스트용)
+devrunner:
+  module:
+    jdbc:
+      auto-scan: false
+    auth:
+      auto-scan: false
+    outbox:
+      auto-scan: false

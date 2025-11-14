@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.api.communitypost.CommunityPostApiControllerTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:04" hostname="dankim0124ui-MacBookPro.local" time="0.394">
+  <properties/>
+  <testcase name="deleteCommunityPost_nonExistingId_throwsException()" classname="dev.devrunner.api.communitypost.CommunityPostApiControllerTest" time="0.34"/>
+  <testcase name="getCommunityPost_asGuest_returnsOkWithAnonymous()" classname="dev.devrunner.api.communitypost.CommunityPostApiControllerTest" time="0.011"/>
+  <testcase name="upsertCommunityPost_newPost_returnsCreatedWithPost()" classname="dev.devrunner.api.communitypost.CommunityPostApiControllerTest" time="0.006"/>
+  <testcase name="getCommunityPost_asOwner_returnsOkWithRealNickname()" classname="dev.devrunner.api.communitypost.CommunityPostApiControllerTest" time="0.005"/>
+  <testcase name="deleteCommunityPost_existingId_returnsNoContent()" classname="dev.devrunner.api.communitypost.CommunityPostApiControllerTest" time="0.006"/>
+  <testcase name="getCommunityPost_asNonOwner_returnsOkWithAnonymous()" classname="dev.devrunner.api.communitypost.CommunityPostApiControllerTest" time="0.007"/>
+  <testcase name="getCommunityPost_nonExistingId_throwsException()" classname="dev.devrunner.api.communitypost.CommunityPostApiControllerTest" time="0.004"/>
+  <testcase name="upsertCommunityPost_existingPost_returnsCreatedWithUpdatedPost()" classname="dev.devrunner.api.communitypost.CommunityPostApiControllerTest" time="0.006"/>
+  <system-out><![CDATA[15:10:04.976 [Test worker] INFO dev.devrunner.api.communitypost.CommunityPostApiController -- DELETE /api/community-posts/999 - userId : 1 
+15:10:04.993 [Test worker] INFO dev.devrunner.api.communitypost.CommunityPostApiController -- GET /api/community-posts/1
+15:10:04.995 [Test worker] INFO dev.devrunner.api.communitypost.CommunityPostApiController -- Retrieved community post - communityPostId: 1
+15:10:05.003 [Test worker] INFO dev.devrunner.api.communitypost.CommunityPostApiController -- POST /api/community-posts - userId: 1, category: INTERVIEW_SHARE
+15:10:05.004 [Test worker] INFO dev.devrunner.api.communitypost.CommunityPostApiController -- Community post upserted - communityPostId: 1
+15:10:05.009 [Test worker] INFO dev.devrunner.api.communitypost.CommunityPostApiController -- GET /api/community-posts/1
+15:10:05.010 [Test worker] INFO dev.devrunner.api.communitypost.CommunityPostApiController -- Retrieved community post - communityPostId: 1
+15:10:05.015 [Test worker] INFO dev.devrunner.api.communitypost.CommunityPostApiController -- DELETE /api/community-posts/1 - userId : 1 
+15:10:05.016 [Test worker] INFO dev.devrunner.api.communitypost.CommunityPostApiController -- Community post deleted - communityPostId: 1
+15:10:05.020 [Test worker] INFO dev.devrunner.api.communitypost.CommunityPostApiController -- GET /api/community-posts/1
+15:10:05.021 [Test worker] INFO dev.devrunner.api.communitypost.CommunityPostApiController -- Retrieved community post - communityPostId: 1
+15:10:05.028 [Test worker] INFO dev.devrunner.api.communitypost.CommunityPostApiController -- GET /api/community-posts/999
+15:10:05.034 [Test worker] INFO dev.devrunner.api.communitypost.CommunityPostApiController -- POST /api/community-posts - userId: 1, category: INTERVIEW_SHARE
+15:10:05.034 [Test worker] INFO dev.devrunner.api.communitypost.CommunityPostApiController -- Community post upserted - communityPostId: 1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

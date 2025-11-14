@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.encryption.EmailEncryptorTest" tests="52" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:18" hostname="dankim0124ui-MacBookPro.local" time="0.453">
+  <properties/>
+  <testcase name="encrypt_deterministic_같은_이메일은_같은_암호문()" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.098"/>
+  <testcase name="decrypt_잘못된_암호문_예외발생()" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.009"/>
+  <testcase name="constructor_잘못된_키_길이_예외발생()" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.003"/>
+  <testcase name="encrypt_한글_포함_이메일()" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.002"/>
+  <testcase name="encrypt_null_처리()" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.003"/>
+  <testcase name="encrypt_decrypt_성공()" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.004"/>
+  <testcase name="[1] user@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.016"/>
+  <testcase name="[2] admin@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.003"/>
+  <testcase name="[3] user@gmail.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.007"/>
+  <testcase name="[4] user@yahoo.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.002"/>
+  <testcase name="[5] user@outlook.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.003"/>
+  <testcase name="[6] user@naver.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.004"/>
+  <testcase name="[7] user@kakao.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.006"/>
+  <testcase name="[8] user+tag@gmail.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.01"/>
+  <testcase name="[9] user+test+123@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.01"/>
+  <testcase name="[10] user123@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.003"/>
+  <testcase name="[11] 123user@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.003"/>
+  <testcase name="[12] user123test456@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.002"/>
+  <testcase name="[13] user_name@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.001"/>
+  <testcase name="[14] user-name@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.002"/>
+  <testcase name="[15] user_name-test@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.003"/>
+  <testcase name="[16] first.last@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.016"/>
+  <testcase name="[17] first.middle.last@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.006"/>
+  <testcase name="[18] user.name.with.dots@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.002"/>
+  <testcase name="[19] user@mail.example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.001"/>
+  <testcase name="[20] user@subdomain.company.example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.001"/>
+  <testcase name="[21] user@deep.sub.domain.example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.002"/>
+  <testcase name="[22] User@Example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.002"/>
+  <testcase name="[23] USER@EXAMPLE.COM" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.001"/>
+  <testcase name="[24] UsEr@ExAmPlE.CoM" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.001"/>
+  <testcase name="[25] a@b.co" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.003"/>
+  <testcase name="[26] x@y.z" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.012"/>
+  <testcase name="[27] very.long.local.part.with.many.segments@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.015"/>
+  <testcase name="[28] user.with.very.long.name.for.testing@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.003"/>
+  <testcase name="[29] user@very-long-domain-name-for-testing-purposes.example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.008"/>
+  <testcase name="[30] user@subdomain.with.long.name.example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.005"/>
+  <testcase name="[31] user+tag-name@sub-domain.example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.001"/>
+  <testcase name="[32] first.last+tag@mail.example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.001"/>
+  <testcase name="[33] 사용자@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.002"/>
+  <testcase name="[34] 테스트@도메인.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.002"/>
+  <testcase name="[35] 관리자@회사.한국" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.002"/>
+  <testcase name="[36] ユーザー@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.002"/>
+  <testcase name="[37] テスト@example.jp" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.002"/>
+  <testcase name="[38] 用户@example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.004"/>
+  <testcase name="[39] 测试@example.cn" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.002"/>
+  <testcase name="[40] very.long.email.address.with.many.dots.and.segments.for.testing.maximum.length@subdomain.company.example.com" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.002"/>
+  <testcase name="decrypt_empty_처리()" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.002"/>
+  <testcase name="encrypt_empty_처리()" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.001"/>
+  <testcase name="encrypt_다른_이메일은_다른_암호문()" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.004"/>
+  <testcase name="encrypt_특수문자_포함_이메일()" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.004"/>
+  <testcase name="decrypt_null_처리()" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.002"/>
+  <testcase name="encrypt_긴_이메일_처리()" classname="dev.devrunner.encryption.EmailEncryptorTest" time="0.006"/>
+  <system-out><![CDATA[15:10:18.454 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.462 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.547 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.547 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.550 [Test worker] ERROR dev.devrunner.encryption.EmailEncryptor -- Failed to decrypt email
+java.lang.IllegalArgumentException: Illegal base64 character 2d
+	at java.base/java.util.Base64$Decoder.decode0(Base64.java:852)
+	at java.base/java.util.Base64$Decoder.decode(Base64.java:570)
+	at java.base/java.util.Base64$Decoder.decode(Base64.java:593)
+	at dev.devrunner.encryption.EmailEncryptor.decrypt(EmailEncryptor.java:101)
+	at dev.devrunner.encryption.EmailEncryptorTest.lambda$decrypt_잘못된_암호문_예외발생$0(EmailEncryptorTest.java:154)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at dev.devrunner.encryption.EmailEncryptorTest.decrypt_잘못된_암호문_예외발생(EmailEncryptorTest.java:153)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:121)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+15:10:18.556 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.557 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.557 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef
+15:10:18.562 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.562 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.567 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.567 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.576 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.576 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.607 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.608 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.621 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : NtDG4hj7rzF3vML+3RDogYBRLuun4EsuQA/9RvpRV1i7iX8gnWT/RFsBJ4U= -> user@example.com -> user@example.com
+15:10:18.627 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.628 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.629 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : RMrXiqd7c8knMjisDp2M3LfDuYhOSjD6EGP+E0XxOG81FNB3cMaUB7Pnv2qP -> admin@example.com -> admin@example.com
+15:10:18.636 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.636 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.638 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : NzpvSgXl8vSOZxRGTCa1lO4APM8ON6Dk3XYtIQHF1/IscWculnulaTRd -> user@gmail.com -> user@gmail.com
+15:10:18.642 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.643 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.644 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : BJcEHEZ6cWPiCj4OlEHzaFFEknpkr+244NCWjwi34xqHU9fP5OxisuS7 -> user@yahoo.com -> user@yahoo.com
+15:10:18.649 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.649 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.651 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : 5UW/u0kEDEjO9fqN46GqLz5Eifb3hiZuxYWf1aifRYM/RrFCNu3iwE3vT74= -> user@outlook.com -> user@outlook.com
+15:10:18.654 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.655 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.657 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : Oc++taXLI6d9e7YfaLf2pyP2slZn0z2smMQBIUQ067peSkSEeJR6606L -> user@naver.com -> user@naver.com
+15:10:18.660 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.660 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.663 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : 82euu7rhxZfkzrZz29DWP5xLlIRY8ijHxmOKzM83+5vpe+NbPjzX7R/Q -> user@kakao.com -> user@kakao.com
+15:10:18.673 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.674 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.677 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : rETDNS9letcwD0BTyJMm82emzxOH3YzRZEkAVbgZ7V71Q+zxS2YxwR+6u5m7MA== -> user+tag@gmail.com -> user+tag@gmail.com
+15:10:18.685 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.686 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.693 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : 8DZlt4e5prlmfvQjlWSCN3v0gAOov5IkoeYY/HtEeEQKPR+fKe5LRu+hwajlatB6VpPphD0= -> user+test+123@example.com -> user+test+123@example.com
+15:10:18.697 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.697 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.698 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : oYt1BWzilQ/XGSPXYW8fzZq5HL0oLhR9MqSTl+hD6SPje6OxibnFcmSMqYu9CFo= -> user123@example.com -> user123@example.com
+15:10:18.701 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.702 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.703 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : 8sRd9f6nu6GJt2J/ybiLm2jrkDVCz+5sgWJy7ESBsmoO2WdFF+ihLhvrJv444ik= -> 123user@example.com -> 123user@example.com
+15:10:18.704 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.704 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.705 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : FfhCrl0kka0p2T7ja++DPY4JAdoLGHT+XWldXU3QdxzO8Y09Ksnbsp3pFIZaqgoZzmIvK/1o -> user123test456@example.com -> user123test456@example.com
+15:10:18.706 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.706 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.707 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : REYZCcuFNMyKPcUtNbsc/nqjEQVBAXDhR9h93btGlIrqet53ORFwEID8ArbtrTBTiw== -> user_name@example.com -> user_name@example.com
+15:10:18.708 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.708 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.710 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : KgTwQQTOvvf8F3n7B/SskGM2T6VgHOylQy6V1GthHggjz2M1cMoOU1LWemt7aGBBrA== -> user-name@example.com -> user-name@example.com
+15:10:18.712 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.713 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.713 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : ebQh+ZSixxxLdABR5HFZzail7Sx8S+sGOEV7suAPuIl4HDhqJk8iOgN9jhY4nHcozp8DPRKK -> user_name-test@example.com -> user_name-test@example.com
+15:10:18.726 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.727 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.731 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : 3a+OT9iFB9Px/P+T6vP41zmCYqApXm2vTZ7Vs3MhNsqywx03xElFZryTEwcxjDG9uLU= -> first.last@example.com -> first.last@example.com
+15:10:18.739 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.740 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.742 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : tLhkrUyYM790lXomQoMK2M3Se+ZA6q1fOvJmvpJLJDM4N3UDhOSnkY9SRW3T4G4LQL03giGEOfB5 -> first.middle.last@example.com -> first.middle.last@example.com
+15:10:18.754 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.754 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.755 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : rQ4N/yRmm3AhPBVA6P4KkQSNwxNHFMxWjfIedyO7Y3erlLvAGRO9zxcLoKiWg8YtXt8X56eOi0aGdaI= -> user.name.with.dots@example.com -> user.name.with.dots@example.com
+15:10:18.756 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.756 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.757 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : 1xVCiQ+quAc9aTQL7VHO130g/YoD24aLUddqxEoU4dW8NO9COGDskBwW1INugmiNKw== -> user@mail.example.com -> user@mail.example.com
+15:10:18.758 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.758 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.758 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : TUaKE07f3HEvwF7/JkwvRs34czXSU9ZI2eKEVuhbPao9e7PTBmpNIC7ghfOt2ToMAUJz6Z0LlMqaKnxIv2s= -> user@subdomain.company.example.com -> user@subdomain.company.example.com
+15:10:18.761 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.761 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.762 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : AumwTYnlvnWe/juzb9M09jNmbzthStAjjk8hPeMakwvh+VQG3dxWLQGX7pNSR2noflJuR42mpDeTWTnS -> user@deep.sub.domain.example.com -> user@deep.sub.domain.example.com
+15:10:18.765 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.765 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.766 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : yTYWehPX5ypX0HQVptbZep23seV8pPFyeKON3sESD+qogImlWufaSvlS4VQ= -> User@Example.com -> User@Example.com
+15:10:18.768 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.768 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.768 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : Z5/bHKDAZqJ0/qNxcJU3dQzWCAFTuw5ldX+f+Oq3BxKWoI6Wbw9FJfXgYt4= -> USER@EXAMPLE.COM -> USER@EXAMPLE.COM
+15:10:18.769 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.769 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.770 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : uqE3XZtRlrzCc82nn3SPPxNyocf7LAobm1+cWdnmJMYfID9wTdSrCoowxJU= -> UsEr@ExAmPlE.CoM -> UsEr@ExAmPlE.CoM
+15:10:18.773 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.773 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.774 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : M/wdy6xLUknFV3HUkTMM0sVi9krxiBddfZ5THXY0hDBBJQ== -> a@b.co -> a@b.co
+15:10:18.776 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.777 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.779 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : kZcYChYkvxLf2YnjoL6T1pn/j2qsFC5ocwkFJP81rxo9 -> x@y.z -> x@y.z
+15:10:18.799 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.800 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.812 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : 1y9wBBrjcU+s3eCVOBfDhgieWppJOAu4rm3+jV7TL8dXbgN+CtXEz/ohigY1tmvlqPQGcTACHp+QovC2+sP24i9w4DgnYfy5NAQhWrS4Gw== -> very.long.local.part.with.many.segments@example.com -> very.long.local.part.with.many.segments@example.com
+15:10:18.817 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.818 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.819 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : ckLl2n8j5WDKgdS805jgd7GswUPYYbRei+zPGIA8IguKc2kccuhsjj8tS9hywV1AXMWgw7uNn3GhQ1nrAcp4NdVDlZQPFWJ1FOMC/g== -> user.with.very.long.name.for.testing@example.com -> user.with.very.long.name.for.testing@example.com
+15:10:18.827 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.828 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.831 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : Z/4anuL64mqr2yLa9Cd1vJN666BM6nPmUghGOUdkIas6dFM97z9J7D3klQK151Fl/oM/g3xLxcw3bx8UAbMpA8owf6q84NxVlNbOypqVKKQ/ZkNhpoip -> user@very-long-domain-name-for-testing-purposes.example.com -> user@very-long-domain-name-for-testing-purposes.example.com
+15:10:18.838 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.838 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.841 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : 2HFIrLN1JbCSfWwGZ0Llgi2AERcNHUIB0dhpqlASBBmfV1HcrCe4mezYevtGXMBxnh00lV7AhcsfOOdMh9O8E8p3/BI0 -> user@subdomain.with.long.name.example.com -> user@subdomain.with.long.name.example.com
+15:10:18.843 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.843 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.843 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : WjhySwEVKUL7f/eacDJkIQ5DJaqtCPBWPZknyAHyivnlMrnnqBdli+eRRGayD+jiynrN3sXpwZAxtK0FNs4pEQ== -> user+tag-name@sub-domain.example.com -> user+tag-name@sub-domain.example.com
+15:10:18.844 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.844 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.845 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : OZYdW3Nb5Q3EhDxCj5d4jWBXdNiW7BiVYK4ex1od6M+PgZtXveTj58c1m0NbYca1LfEzaMrTgLPrDEM= -> first.last+tag@mail.example.com -> first.last+tag@mail.example.com
+15:10:18.846 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.846 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.847 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : SiAdC1AxW8sLBw2vqWgG7g+Hse6ZBtHiOL+p8cqDBFYMpAXuIY+WHfjQ2iLkuIrUAA== -> 사용자@example.com -> 사용자@example.com
+15:10:18.850 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.850 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.851 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : zKPT/5oRp7J0ffj7p+vGIZhNLeuAWyQbxRFQdVS4OEmY022sYzDDRQVRIdPFRCqmFWsE -> 테스트@도메인.com -> 테스트@도메인.com
+15:10:18.853 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.853 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.853 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : L84B7HiXfAUA0R/9zolXeVSiw3NnxblqSWMJlOsRLGEiQa1K2gzBH9IKEk5GY5BPLkuY -> 관리자@회사.한국 -> 관리자@회사.한국
+15:10:18.855 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.856 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.856 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : Ln0yono1JDptCNyfEKmgibaNfJA7an59I2ydDX85D8d5sNip8G2ZM1/eTGfnc14D70Dw9Q== -> ユーザー@example.com -> ユーザー@example.com
+15:10:18.859 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.859 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.860 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : 1mQuka2Ov9B/hrLZvyaWRYEsrWByC7mbfM3UmaG9v5WI5l/+uNchTdB66t+y9N4+ -> テスト@example.jp -> テスト@example.jp
+15:10:18.862 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.862 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.864 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : dqcXb95KaRkZ0sGFIcsbGQxEKYAw6qgo4A7qxG0HwiHXCKFipUJGT54XeHxCbQ== -> 用户@example.com -> 用户@example.com
+15:10:18.866 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.867 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.868 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : I58LKXHFnSmock6ABE7hWnl+m8HefzYbqwlzq92VtGu+Ixh14SY0/JbCCbWw -> 测试@example.cn -> 测试@example.cn
+15:10:18.872 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.873 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.873 [Test worker] INFO dev.devrunner.encryption.EmailEncryptorTest -- encrypted -> decrypted -> original : Uoknaoyav1MCxz/v4qUVqpv6Gk1TupnzNAO9JcBDUq1iWtVy8mgkZtYhjBn6L/5PXj6IFHHwuauAf18NecZR2+qntgfnjzX99IEppGWHP/WBWnwcatrJel2Pnw4RTOTj8d2yS1XTEB317tvXIXlgm6Iy26WhguPITYs6SBMDqcQDyAaywpRuAg== -> very.long.email.address.with.many.dots.and.segments.for.testing.maximum.length@subdomain.company.example.com -> very.long.email.address.with.many.dots.and.segments.for.testing.maximum.length@subdomain.company.example.com
+15:10:18.876 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.877 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.879 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.879 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.883 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.883 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.889 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.889 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.893 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.893 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+15:10:18.895 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+15:10:18.895 [Test worker] INFO dev.devrunner.encryption.EmailEncryptor -- EmailEncryptor initialized with AES-256-GCM
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

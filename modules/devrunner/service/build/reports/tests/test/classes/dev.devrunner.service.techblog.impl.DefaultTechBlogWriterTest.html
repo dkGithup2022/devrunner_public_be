@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - DefaultTechBlogWriterTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>DefaultTechBlogWriterTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/dev.devrunner.service.techblog.impl.html">dev.devrunner.service.techblog.impl</a> &gt; DefaultTechBlogWriterTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">8</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.013s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">delete_callsRepositoryDeleteWithCorrectIdentity()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">delete_existingBlog_callsRepositoryDelete()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">upsert_blogWithCategories_callsRepositorySave()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">upsert_existingBlog_callsRepositorySave()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">upsert_existingBlog_recordsUpdatedEvent()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">upsert_externalBlog_callsRepositorySave()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">upsert_newBlog_callsRepositorySave()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">upsert_newBlog_recordsCreatedEvent()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2025-11-11T15:10:36.455+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : Upserting TechBlog: null
+2025-11-11T15:10:36.455+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : TechBlog upserted successfully: 1
+2025-11-11T15:10:36.457+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : Deleting TechBlog by id: 1
+2025-11-11T15:10:36.457+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : TechBlog deleted successfully: 1
+2025-11-11T15:10:36.462+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : Upserting TechBlog: null
+2025-11-11T15:10:36.462+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : TechBlog upserted successfully: null
+2025-11-11T15:10:36.464+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : Upserting TechBlog: null
+2025-11-11T15:10:36.464+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : TechBlog upserted successfully: null
+2025-11-11T15:10:36.466+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : Deleting TechBlog by id: 999
+2025-11-11T15:10:36.466+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : TechBlog deleted successfully: 999
+2025-11-11T15:10:36.467+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : Upserting TechBlog: 1
+2025-11-11T15:10:36.467+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : TechBlog upserted successfully: 1
+2025-11-11T15:10:36.468+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : Upserting TechBlog: null
+2025-11-11T15:10:36.468+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : TechBlog upserted successfully: 100
+2025-11-11T15:10:36.469+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : Upserting TechBlog: 1
+2025-11-11T15:10:36.469+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : TechBlog upserted successfully: 1
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.12</a> at 2025. 11. 11. 오후 3:10:36</p>
+</div>
+</div>
+</body>
+</html>

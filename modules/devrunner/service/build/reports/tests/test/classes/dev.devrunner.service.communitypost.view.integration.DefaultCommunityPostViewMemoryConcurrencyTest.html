@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - DefaultCommunityPostViewMemoryConcurrencyTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>DefaultCommunityPostViewMemoryConcurrencyTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/dev.devrunner.service.communitypost.view.integration.html">dev.devrunner.service.communitypost.view.integration</a> &gt; DefaultCommunityPostViewMemoryConcurrencyTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.107s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">flush 후 다시 countUp하면 새로운 조회수가 누적됨</td>
+<td class="success">countUp_after_flush_newCountsAccumulated()</td>
+<td class="success">0.019s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">동시에 countUp + flush가 호출되어도 데이터 손실 없이 처리됨</td>
+<td class="success">countUp_and_flush_concurrently_noDataLoss()</td>
+<td class="success">0.047s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">100명이 같은 CommunityPost를 동시에 조회하면 viewCounts에 100이 정확히 누적됨</td>
+<td class="success">countUp_concurrently_viewCountsAccurate()</td>
+<td class="success">0.032s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">같은 Post에 여러 번 countUp 후 flush하면 누적된 값이 DB에 정확히 반영됨</td>
+<td class="success">countUp_multiple_then_flush_countsAccurate()</td>
+<td class="success">0.009s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2025-11-11T15:10:35.812+09:00  INFO 56265 --- [ool-4-thread-51] d.d.s.c.v.DefaultCommunityPostViewMemory : Starting to flush 1 CommunityPost view counts
+2025-11-11T15:10:35.819+09:00  INFO 56265 --- [ool-4-thread-51] d.d.outbox.impl.OutboxEventJdbcRecorder  : Recording outbox event: targetType=COMMUNITY_POST, targetId=1, updateType=POPULARITY_ONLY
+2025-11-11T15:10:35.826+09:00  INFO 56265 --- [ool-4-thread-51] d.d.outbox.impl.OutboxEventJdbcRecorder  : Outbox event recorded: id=1
+2025-11-11T15:10:35.826+09:00  INFO 56265 --- [ool-4-thread-51] d.d.s.c.v.DefaultCommunityPostViewMemory : Flush completed - Success: 1, Failed: 0
+2025-11-11T15:10:35.826+09:00  INFO 56265 --- [    Test worker] d.d.s.c.v.DefaultCommunityPostViewMemory : Starting to flush 1 CommunityPost view counts
+2025-11-11T15:10:35.827+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Recording outbox event: targetType=COMMUNITY_POST, targetId=1, updateType=POPULARITY_ONLY
+2025-11-11T15:10:35.828+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Outbox event recorded: id=2
+2025-11-11T15:10:35.828+09:00  INFO 56265 --- [    Test worker] d.d.s.c.v.DefaultCommunityPostViewMemory : Flush completed - Success: 1, Failed: 0
+2025-11-11T15:10:35.833+09:00  INFO 56265 --- [    Test worker] ltCommunityPostViewMemoryConcurrencyTest : View count after concurrent countUp+flush: 50 (expected &lt;= 50)
+2025-11-11T15:10:35.841+09:00  INFO 56265 --- [    Test worker] d.d.s.c.v.DefaultCommunityPostViewMemory : Starting to flush 1 CommunityPost view counts
+2025-11-11T15:10:35.842+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Recording outbox event: targetType=COMMUNITY_POST, targetId=2, updateType=POPULARITY_ONLY
+2025-11-11T15:10:35.843+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Outbox event recorded: id=3
+2025-11-11T15:10:35.843+09:00  INFO 56265 --- [    Test worker] d.d.s.c.v.DefaultCommunityPostViewMemory : Flush completed - Success: 1, Failed: 0
+2025-11-11T15:10:35.871+09:00  INFO 56265 --- [    Test worker] d.d.s.c.v.DefaultCommunityPostViewMemory : Starting to flush 1 CommunityPost view counts
+2025-11-11T15:10:35.873+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Recording outbox event: targetType=COMMUNITY_POST, targetId=3, updateType=POPULARITY_ONLY
+2025-11-11T15:10:35.874+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Outbox event recorded: id=4
+2025-11-11T15:10:35.874+09:00  INFO 56265 --- [    Test worker] d.d.s.c.v.DefaultCommunityPostViewMemory : Flush completed - Success: 1, Failed: 0
+2025-11-11T15:10:35.875+09:00  INFO 56265 --- [    Test worker] ltCommunityPostViewMemoryConcurrencyTest : View count after 100 concurrent views: 100
+2025-11-11T15:10:35.892+09:00  INFO 56265 --- [    Test worker] d.d.s.c.v.DefaultCommunityPostViewMemory : Starting to flush 1 CommunityPost view counts
+2025-11-11T15:10:35.893+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Recording outbox event: targetType=COMMUNITY_POST, targetId=4, updateType=POPULARITY_ONLY
+2025-11-11T15:10:35.894+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Outbox event recorded: id=5
+2025-11-11T15:10:35.894+09:00  INFO 56265 --- [    Test worker] d.d.s.c.v.DefaultCommunityPostViewMemory : Flush completed - Success: 1, Failed: 0
+2025-11-11T15:10:35.894+09:00  INFO 56265 --- [    Test worker] d.d.s.c.v.DefaultCommunityPostViewMemory : Starting to flush 1 CommunityPost view counts
+2025-11-11T15:10:35.894+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Recording outbox event: targetType=COMMUNITY_POST, targetId=4, updateType=POPULARITY_ONLY
+2025-11-11T15:10:35.895+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Outbox event recorded: id=6
+2025-11-11T15:10:35.895+09:00  INFO 56265 --- [    Test worker] d.d.s.c.v.DefaultCommunityPostViewMemory : Flush completed - Success: 1, Failed: 0
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.12</a> at 2025. 11. 11. 오후 3:10:36</p>
+</div>
+</div>
+</body>
+</html>

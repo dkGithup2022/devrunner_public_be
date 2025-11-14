@@ -1,0 +1,73 @@
+
+# workflow 명
+
+name: prod environment for "api-application" | devrunner
+
+run-name: ${{github.actor}} is publish deploy on "api-application" & devrunner prod env
+on:
+  push:
+    branches:
+      - devrunner/api/prod
+jobs:
+  Explore-Github-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      # print ubuntu & repo info
+      - run: echo "initial job echo this sentence ~ "
+      - run: echo "event :${{github.event_name}} "
+      - run: echo "os = ${{runner.os}} "
+      - run: echo "branch = ${{ github.ref }} ."
+      - run: echo "repo = ${{ github.repository }}."
+
+      # checkout source s:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+
+      # java config -> 21 versin  & temurin
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'  # JDK 버전을 21로 설정
+          distribution: 'temurin'  # Eclipse Temurin을 사용하는 경우
+
+      # gradle build 하기
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.5
+
+
+      - name: Build with Gradle
+        uses: gradle/gradle-build-action@v3
+        with:
+          arguments: ':modules:applications:api-application:bootJar'
+
+      # 패키징 된 jar 파일 app.jar 로 옮기기
+      - name: Copy Jar file
+        run: mv modules/applications/api-application/build/libs/$(ls modules/applications/api-application/build/libs) app.jar
+
+      -
+        name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO_API }}
+
+      # try login docker hub
+      - name: log in to docker hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{secrets.DOCKER_USERNAME}}
+          password: ${{secrets.DOCKER_PASSWORD}}
+      - run: echo "docker hub logged in ~ "
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile                     #빌드 시 사용할 Dockerfile의 위치 지정
+          platforms: linux/amd64                 #이미지 등록 시 Platform 이름 지정
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO_API }}:latest
+          labels: ${{ steps.meta.outputs.labels }}

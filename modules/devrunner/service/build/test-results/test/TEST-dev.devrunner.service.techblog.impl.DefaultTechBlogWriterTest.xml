@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.service.techblog.impl.DefaultTechBlogWriterTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:36" hostname="dankim0124ui-MacBookPro.local" time="0.015">
+  <properties/>
+  <testcase name="upsert_newBlog_callsRepositorySave()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogWriterTest" time="0.001"/>
+  <testcase name="delete_existingBlog_callsRepositoryDelete()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogWriterTest" time="0.001"/>
+  <testcase name="upsert_externalBlog_callsRepositorySave()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogWriterTest" time="0.005"/>
+  <testcase name="upsert_blogWithCategories_callsRepositorySave()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogWriterTest" time="0.001"/>
+  <testcase name="delete_callsRepositoryDeleteWithCorrectIdentity()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogWriterTest" time="0.002"/>
+  <testcase name="upsert_existingBlog_callsRepositorySave()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogWriterTest" time="0.001"/>
+  <testcase name="upsert_newBlog_recordsCreatedEvent()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogWriterTest" time="0.001"/>
+  <testcase name="upsert_existingBlog_recordsUpdatedEvent()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogWriterTest" time="0.001"/>
+  <system-out><![CDATA[2025-11-11T15:10:36.455+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : Upserting TechBlog: null
+2025-11-11T15:10:36.455+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : TechBlog upserted successfully: 1
+2025-11-11T15:10:36.457+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : Deleting TechBlog by id: 1
+2025-11-11T15:10:36.457+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : TechBlog deleted successfully: 1
+2025-11-11T15:10:36.462+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : Upserting TechBlog: null
+2025-11-11T15:10:36.462+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : TechBlog upserted successfully: null
+2025-11-11T15:10:36.464+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : Upserting TechBlog: null
+2025-11-11T15:10:36.464+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : TechBlog upserted successfully: null
+2025-11-11T15:10:36.466+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : Deleting TechBlog by id: 999
+2025-11-11T15:10:36.466+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : TechBlog deleted successfully: 999
+2025-11-11T15:10:36.467+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : Upserting TechBlog: 1
+2025-11-11T15:10:36.467+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : TechBlog upserted successfully: 1
+2025-11-11T15:10:36.468+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : Upserting TechBlog: null
+2025-11-11T15:10:36.468+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : TechBlog upserted successfully: 100
+2025-11-11T15:10:36.469+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : Upserting TechBlog: 1
+2025-11-11T15:10:36.469+09:00  INFO 56265 --- [    Test worker] d.d.s.t.impl.DefaultTechBlogWriter       : TechBlog upserted successfully: 1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

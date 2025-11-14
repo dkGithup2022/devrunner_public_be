@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="paginate 테스트" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:24" hostname="dankim0124ui-MacBookPro.local" time="0.006">
+  <properties/>
+  <testcase name="검색 결과가 정확히 requestedSize인 경우, hasNext는 false" classname="dev.devrunner.elasticsearch.internal.utils.PaginationUtilsTest$PaginateTest" time="0.0"/>
+  <testcase name="검색 결과가 requestedSize보다 많은 경우, hasNext는 true" classname="dev.devrunner.elasticsearch.internal.utils.PaginationUtilsTest$PaginateTest" time="0.001"/>
+  <testcase name="검색 결과가 비어있는 경우, 빈 리스트와 hasNext false 반환" classname="dev.devrunner.elasticsearch.internal.utils.PaginationUtilsTest$PaginateTest" time="0.0"/>
+  <testcase name="검색 결과가 requestedSize + 1개인 경우 (hasNext 경계 케이스)" classname="dev.devrunner.elasticsearch.internal.utils.PaginationUtilsTest$PaginateTest" time="0.0"/>
+  <testcase name="검색 결과가 requestedSize보다 적은 경우, hasNext는 false" classname="dev.devrunner.elasticsearch.internal.utils.PaginationUtilsTest$PaginateTest" time="0.0"/>
+  <testcase name="requestedSize가 0인 경우, 빈 리스트 반환" classname="dev.devrunner.elasticsearch.internal.utils.PaginationUtilsTest$PaginateTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

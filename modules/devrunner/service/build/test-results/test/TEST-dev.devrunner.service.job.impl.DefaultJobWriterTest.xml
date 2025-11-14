@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.service.job.impl.DefaultJobWriterTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:35" hostname="dankim0124ui-MacBookPro.local" time="0.01">
+  <properties/>
+  <testcase name="delete_existingJob_callsRepositoryDelete()" classname="dev.devrunner.service.job.impl.DefaultJobWriterTest" time="0.001"/>
+  <testcase name="upsert_existingJob_callsRepositorySave()" classname="dev.devrunner.service.job.impl.DefaultJobWriterTest" time="0.002"/>
+  <testcase name="delete_callsRepositoryDeleteWithCorrectIdentity()" classname="dev.devrunner.service.job.impl.DefaultJobWriterTest" time="0.001"/>
+  <testcase name="upsert_newJob_recordsCreatedEvent()" classname="dev.devrunner.service.job.impl.DefaultJobWriterTest" time="0.001"/>
+  <testcase name="upsert_jobWithTechCategories_callsRepositorySave()" classname="dev.devrunner.service.job.impl.DefaultJobWriterTest" time="0.001"/>
+  <testcase name="upsert_existingJob_recordsUpdatedEvent()" classname="dev.devrunner.service.job.impl.DefaultJobWriterTest" time="0.001"/>
+  <testcase name="upsert_newJob_callsRepositorySave()" classname="dev.devrunner.service.job.impl.DefaultJobWriterTest" time="0.001"/>
+  <system-out><![CDATA[2025-11-11T15:10:35.943+09:00  INFO 56265 --- [    Test worker] d.d.service.job.impl.DefaultJobWriter    : Deleting Job by id: 1
+2025-11-11T15:10:35.943+09:00  INFO 56265 --- [    Test worker] d.d.service.job.impl.DefaultJobWriter    : Job deleted successfully: 1
+2025-11-11T15:10:35.944+09:00  INFO 56265 --- [    Test worker] d.d.service.job.impl.DefaultJobWriter    : Upserting Job: 1
+2025-11-11T15:10:35.944+09:00  INFO 56265 --- [    Test worker] d.d.service.job.impl.DefaultJobWriter    : Job upserted successfully with outbox event: 1
+2025-11-11T15:10:35.945+09:00  INFO 56265 --- [    Test worker] d.d.service.job.impl.DefaultJobWriter    : Deleting Job by id: 999
+2025-11-11T15:10:35.946+09:00  INFO 56265 --- [    Test worker] d.d.service.job.impl.DefaultJobWriter    : Job deleted successfully: 999
+2025-11-11T15:10:35.947+09:00  INFO 56265 --- [    Test worker] d.d.service.job.impl.DefaultJobWriter    : Upserting Job: null
+2025-11-11T15:10:35.948+09:00  INFO 56265 --- [    Test worker] d.d.service.job.impl.DefaultJobWriter    : Job upserted successfully with outbox event: 100
+2025-11-11T15:10:35.949+09:00  INFO 56265 --- [    Test worker] d.d.service.job.impl.DefaultJobWriter    : Upserting Job: null
+2025-11-11T15:10:35.949+09:00  INFO 56265 --- [    Test worker] d.d.service.job.impl.DefaultJobWriter    : Job upserted successfully with outbox event: null
+2025-11-11T15:10:35.950+09:00  INFO 56265 --- [    Test worker] d.d.service.job.impl.DefaultJobWriter    : Upserting Job: 1
+2025-11-11T15:10:35.950+09:00  INFO 56265 --- [    Test worker] d.d.service.job.impl.DefaultJobWriter    : Job upserted successfully with outbox event: 1
+2025-11-11T15:10:35.951+09:00  INFO 56265 --- [    Test worker] d.d.service.job.impl.DefaultJobWriter    : Upserting Job: null
+2025-11-11T15:10:35.951+09:00  INFO 56265 --- [    Test worker] d.d.service.job.impl.DefaultJobWriter    : Job upserted successfully with outbox event: 1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

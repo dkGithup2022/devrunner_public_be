@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - UserJdbcRepositoryTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>UserJdbcRepositoryTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/dev.devrunner.jdbc.user.repository.html">dev.devrunner.jdbc.user.repository</a> &gt; UserJdbcRepositoryTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">17</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.111s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">deleteById_existingId_deletesSuccessfully()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">existsById_existingId_returnsTrue()</td>
+<td class="success">0.012s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">existsById_nonExistingId_returnsFalse()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findAllByIdIn_existingIds_returnsConvertedList()</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findAllByIdIn_nonExistingIds_returnsEmptyList()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findAll_emptyRepository_returnsEmptyList()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findAll_withData_returnsConvertedList()</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findByEmail_existingEmail_returnsConvertedDomain()</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findByEmail_nonExistingEmail_returnsEmpty()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findByGoogleId_existingGoogleId_returnsConvertedDomain()</td>
+<td class="success">0.009s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findByGoogleId_nonExistingGoogleId_returnsEmpty()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findById_existingId_returnsConvertedDomain()</td>
+<td class="success">0.014s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findById_nonExistingId_returnsEmpty()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findByNickname_existingNickname_returnsConvertedDomain()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">findByNickname_nonExistingNickname_returnsEmpty()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">save_withNullId_generatesIdAndReturns()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">save_withValidDomain_returnsConvertedDomain()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2025-11-11T15:10:31.577+09:00  INFO 56239 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest]: UserJdbcRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-11T15:10:31.583+09:00  INFO 56239 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration dev.devrunner.jdbc.TestApplication for test class dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.1)
+
+2025-11-11T15:10:31.591+09:00  INFO 56239 --- [    Test worker] d.d.j.u.r.UserJdbcRepositoryTest         : Starting UserJdbcRepositoryTest using Java 21.0.7 with PID 56239 (started by dankim0124 in /Users/dankim0124/IdeaProjects/breakin-be/breakin-be/modules/devrunner/repository-jdbc)
+2025-11-11T15:10:31.591+09:00  INFO 56239 --- [    Test worker] d.d.j.u.r.UserJdbcRepositoryTest         : The following 1 profile is active: &quot;test&quot;
+2025-11-11T15:10:31.614+09:00  INFO 56239 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-11-11T15:10:31.618+09:00  INFO 56239 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 9 JDBC repository interfaces.
+2025-11-11T15:10:31.633+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2025-11-11T15:10:31.633+09:00  INFO 56239 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2025-11-11T15:10:31.634+09:00  INFO 56239 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection conn59: url=jdbc:h2:mem:testdb user=SA
+2025-11-11T15:10:31.634+09:00  INFO 56239 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2025-11-11T15:10:31.634+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [schema.sql]
+2025-11-11T15:10:31.635+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS examples ( example_id BIGINT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) NOT NULL, created_at TIMESTAMP WITH TIME ZONE NOT NULL, updated_at TIMESTAMP WITH TIME ZONE NOT NULL )
+2025-11-11T15:10:31.636+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS users ( id BIGINT AUTO_INCREMENT PRIMARY KEY, google_id VARCHAR(255) NOT NULL UNIQUE, email VARCHAR(512) NOT NULL UNIQUE, nickname VARCHAR(100) NOT NULL UNIQUE, user_role VARCHAR(50) NOT NULL DEFAULT 'USER', email_enabled BOOLEAN DEFAULT TRUE, new_job_alerts BOOLEAN DEFAULT TRUE, reply_alerts BOOLEAN DEFAULT TRUE, like_alerts BOOLEAN DEFAULT TRUE, post_count BIGINT DEFAULT 0, comment_count BIGINT DEFAULT 0, likes_received BIGINT DEFAULT 0, like_given_count BIGINT DEFAULT 0, bookmark_count BIGINT DEFAULT 0, last_login_at TIMESTAMP WITH TIME ZONE NOT NULL, is_active BOOLEAN NOT NULL DEFAULT TRUE, is_withdrawn BOOLEAN NOT NULL DEFAULT FALSE, withdrawn_at TIMESTAMP WITH TIME ZONE, created_at TIMESTAMP WITH TIME ZONE NOT NULL, updated_at TIMESTAMP WITH TIME ZONE NOT NULL )
+2025-11-11T15:10:31.636+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS user_interested_companies ( user_id BIGINT NOT NULL, company_name VARCHAR(255) NOT NULL )
+2025-11-11T15:10:31.636+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS user_interested_locations ( user_id BIGINT NOT NULL, location_name VARCHAR(255) NOT NULL )
+2025-11-11T15:10:31.636+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS tech_blogs ( id BIGINT AUTO_INCREMENT PRIMARY KEY, url VARCHAR(512) NOT NULL UNIQUE, company VARCHAR(255), title VARCHAR(500) NOT NULL, one_liner VARCHAR(500), summary TEXT, summary_ko TEXT, markdown_body TEXT, thumbnail_url VARCHAR(512), original_url VARCHAR(512), view_count BIGINT NOT NULL DEFAULT 0, comment_count BIGINT NOT NULL DEFAULT 0, like_count BIGINT NOT NULL DEFAULT 0, dislike_count BIGINT NOT NULL DEFAULT 0, is_deleted BOOLEAN NOT NULL DEFAULT FALSE, created_at TIMESTAMP WITH TIME ZONE NOT NULL, updated_at TIMESTAMP WITH TIME ZONE NOT NULL )
+2025-11-11T15:10:31.636+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS tech_blog_tech_categories ( tech_blog_id BIGINT NOT NULL, category_name VARCHAR(100) NOT NULL )
+2025-11-11T15:10:31.636+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS jobs ( id BIGINT AUTO_INCREMENT PRIMARY KEY, url VARCHAR(512) NOT NULL UNIQUE, company VARCHAR(255) NOT NULL, title VARCHAR(500) NOT NULL, organization VARCHAR(255), one_line_summary VARCHAR(500), summary TEXT, min_years INT, max_years INT, experience_required BOOLEAN DEFAULT FALSE, career_level VARCHAR(50) DEFAULT 'ENTRY', employment_type VARCHAR(50) DEFAULT 'FULL_TIME', position_category VARCHAR(100), remote_policy VARCHAR(50) DEFAULT 'ONSITE', started_at TIMESTAMP, ended_at TIMESTAMP, is_open_ended BOOLEAN DEFAULT FALSE, is_closed BOOLEAN DEFAULT FALSE, position_introduction TEXT, full_description TEXT, has_assignment BOOLEAN DEFAULT FALSE, has_coding_test BOOLEAN DEFAULT FALSE, has_live_coding BOOLEAN DEFAULT FALSE, interview_count INT, interview_days INT, min_base_pay DECIMAL(15, 2), max_base_pay DECIMAL(15, 2), currency VARCHAR(10), unit VARCHAR(20), has_stock_option BOOLEAN, salary_note VARCHAR(1000), view_count BIGINT NOT NULL DEFAULT 0, comment_count BIGINT NOT NULL DEFAULT 0, like_count BIGINT NOT NULL DEFAULT 0, dislike_count BIGINT NOT NULL DEFAULT 0, is_deleted BOOLEAN NOT NULL DEFAULT FALSE, created_at TIMESTAMP WITH TIME ZONE NOT NULL, updated_at TIMESTAMP WITH TIME ZONE NOT NULL )
+2025-11-11T15:10:31.636+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS job_tech_categories ( job_id BIGINT NOT NULL, category_name VARCHAR(100) NOT NULL )
+2025-11-11T15:10:31.636+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS job_locations ( job_id BIGINT NOT NULL, location_name VARCHAR(255) NOT NULL )
+2025-11-11T15:10:31.636+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS job_responsibilities ( job_id BIGINT NOT NULL, responsibility VARCHAR(500) NOT NULL )
+2025-11-11T15:10:31.636+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS job_qualifications ( job_id BIGINT NOT NULL, qualification VARCHAR(500) NOT NULL )
+2025-11-11T15:10:31.636+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS job_preferred_qualifications ( job_id BIGINT NOT NULL, preferred_qualification VARCHAR(500) NOT NULL )
+2025-11-11T15:10:31.636+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS job_closed_checks ( id BIGINT AUTO_INCREMENT PRIMARY KEY, job_id BIGINT NOT NULL, url VARCHAR(2048) NOT NULL, closed BOOLEAN NOT NULL, closed_reason VARCHAR(300), explanation TEXT, checked_at TIMESTAMP WITH TIME ZONE NOT NULL )
+2025-11-11T15:10:31.636+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS community_posts ( id BIGINT AUTO_INCREMENT PRIMARY KEY, user_id BIGINT NOT NULL, category VARCHAR(100) NOT NULL, title VARCHAR(500) NOT NULL, markdown_body TEXT NOT NULL, company VARCHAR(255), location VARCHAR(255), job_id BIGINT, comment_id BIGINT, view_count BIGINT NOT NULL DEFAULT 0, comment_count BIGINT NOT NULL DEFAULT 0, like_count BIGINT NOT NULL DEFAULT 0, dislike_count BIGINT NOT NULL DEFAULT 0, is_deleted BOOLEAN NOT NULL DEFAULT FALSE, created_at TIMESTAMP WITH TIME ZONE NOT NULL, updated_at TIMESTAMP WITH TIME ZONE NOT NULL )
+2025-11-11T15:10:31.637+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS comments ( id BIGINT AUTO_INCREMENT PRIMARY KEY, user_id BIGINT NOT NULL, content TEXT NOT NULL, target_type VARCHAR(50) NOT NULL, target_id BIGINT NOT NULL, parent_id BIGINT, comment_order INT NOT NULL DEFAULT 0, level INT NOT NULL DEFAULT 0, sort_number INT NOT NULL DEFAULT 0, child_count INT NOT NULL DEFAULT 0, is_hidden BOOLEAN NOT NULL DEFAULT FALSE, created_at TIMESTAMP WITH TIME ZONE NOT NULL, updated_at TIMESTAMP WITH TIME ZONE NOT NULL )
+2025-11-11T15:10:31.637+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS reactions ( id BIGINT AUTO_INCREMENT PRIMARY KEY, user_id BIGINT NOT NULL, target_type VARCHAR(50) NOT NULL, target_id BIGINT NOT NULL, reaction_type VARCHAR(20) NOT NULL, created_at TIMESTAMP WITH TIME ZONE NOT NULL, updated_at TIMESTAMP WITH TIME ZONE NOT NULL )
+2025-11-11T15:10:31.637+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS bookmarks ( id BIGINT AUTO_INCREMENT PRIMARY KEY, user_id BIGINT NOT NULL, target_type VARCHAR(50) NOT NULL, target_id BIGINT NOT NULL, created_at TIMESTAMP WITH TIME ZONE NOT NULL, updated_at TIMESTAMP WITH TIME ZONE NOT NULL )
+2025-11-11T15:10:31.637+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE TABLE IF NOT EXISTS crawl_theirstack_jobs ( id BIGINT AUTO_INCREMENT PRIMARY KEY, their_stack_job_id BIGINT NOT NULL, raw_data TEXT NOT NULL, company VARCHAR(100), url TEXT, title TEXT, location TEXT, seniority VARCHAR(50), date_posted TIMESTAMP, description TEXT, status VARCHAR(20) NOT NULL, job_id BIGINT, error_message TEXT, created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, updated_at TIMESTAMP, CONSTRAINT uk_theirstack_job_id UNIQUE (their_stack_job_id) )
+2025-11-11T15:10:31.637+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE INDEX IF NOT EXISTS idx_crawl_theirstack_jobs_status ON crawl_theirstack_jobs (status)
+2025-11-11T15:10:31.637+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE INDEX IF NOT EXISTS idx_crawl_theirstack_jobs_company ON crawl_theirstack_jobs (company)
+2025-11-11T15:10:31.637+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE INDEX IF NOT EXISTS idx_crawl_theirstack_jobs_date_posted ON crawl_theirstack_jobs (date_posted DESC)
+2025-11-11T15:10:31.637+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 0 returned as update count for SQL: CREATE INDEX IF NOT EXISTS idx_crawl_theirstack_jobs_created_at ON crawl_theirstack_jobs (created_at DESC)
+2025-11-11T15:10:31.637+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [schema.sql] in 3 ms.
+2025-11-11T15:10:31.637+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2025-11-11T15:10:31.637+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from URL [jar:file:/Users/dankim0124/IdeaProjects/breakin-be/breakin-be/modules/schema/build/libs/schema-1.0-SNAPSHOT.jar!/data.sql]
+2025-11-11T15:10:31.637+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : 3 returned as update count for SQL: INSERT INTO examples (name, created_at, updated_at) VALUES ('First Example', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP), ('Second Example', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP), ('Third Example', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+2025-11-11T15:10:31.637+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from URL [jar:file:/Users/dankim0124/IdeaProjects/breakin-be/breakin-be/modules/schema/build/libs/schema-1.0-SNAPSHOT.jar!/data.sql] in 0 ms.
+2025-11-11T15:10:31.641+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.datasource.DataSourceUtils      : Fetching JDBC Connection from DataSource
+2025-11-11T15:10:31.653+09:00 DEBUG 56239 --- [    Test worker] o.s.d.j.r.s.JdbcQueryLookupStrategy      : Using the queryLookupStrategy CREATE_IF_NOT_FOUND
+2025-11-11T15:10:31.655+09:00  INFO 56239 --- [    Test worker] d.devrunner.encryption.EmailEncryptor    : email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+2025-11-11T15:10:31.655+09:00  INFO 56239 --- [    Test worker] d.devrunner.encryption.EmailEncryptor    : EmailEncryptor initialized with AES-256-GCM
+2025-11-11T15:10:31.657+09:00 DEBUG 56239 --- [    Test worker] o.s.d.j.r.s.JdbcQueryLookupStrategy      : Using the queryLookupStrategy CREATE_IF_NOT_FOUND
+2025-11-11T15:10:31.658+09:00 DEBUG 56239 --- [    Test worker] o.s.d.j.r.s.JdbcQueryLookupStrategy      : Using the queryLookupStrategy CREATE_IF_NOT_FOUND
+2025-11-11T15:10:31.659+09:00 DEBUG 56239 --- [    Test worker] o.s.d.j.r.s.JdbcQueryLookupStrategy      : Using the queryLookupStrategy CREATE_IF_NOT_FOUND
+2025-11-11T15:10:31.661+09:00 DEBUG 56239 --- [    Test worker] o.s.d.j.r.s.JdbcQueryLookupStrategy      : Using the queryLookupStrategy CREATE_IF_NOT_FOUND
+2025-11-11T15:10:31.662+09:00 DEBUG 56239 --- [    Test worker] o.s.d.j.r.s.JdbcQueryLookupStrategy      : Using the queryLookupStrategy CREATE_IF_NOT_FOUND
+2025-11-11T15:10:31.663+09:00 DEBUG 56239 --- [    Test worker] o.s.d.j.r.s.JdbcQueryLookupStrategy      : Using the queryLookupStrategy CREATE_IF_NOT_FOUND
+2025-11-11T15:10:31.665+09:00 DEBUG 56239 --- [    Test worker] o.s.d.j.r.s.JdbcQueryLookupStrategy      : Using the queryLookupStrategy CREATE_IF_NOT_FOUND
+2025-11-11T15:10:31.665+09:00 DEBUG 56239 --- [    Test worker] o.s.d.j.r.s.JdbcQueryLookupStrategy      : Using the queryLookupStrategy CREATE_IF_NOT_FOUND
+2025-11-11T15:10:31.667+09:00  INFO 56239 --- [    Test worker] d.d.j.u.r.UserJdbcRepositoryTest         : Started UserJdbcRepositoryTest in 0.082 seconds (process running for 5.17)
+2025-11-11T15:10:31.668+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.findById_existingId_returnsConvertedDomain]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.668+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@57525945 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.668+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@57525945 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.669+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.674+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2025-11-11T15:10:31.674+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;users&quot; (&quot;BOOKMARK_COUNT&quot;, &quot;COMMENT_COUNT&quot;, &quot;CREATED_AT&quot;, &quot;EMAIL&quot;, &quot;EMAIL_ENABLED&quot;, &quot;GOOGLE_ID&quot;, &quot;IS_ACTIVE&quot;, &quot;IS_WITHDRAWN&quot;, &quot;LAST_LOGIN_AT&quot;, &quot;LIKE_ALERTS&quot;, &quot;LIKE_GIVEN_COUNT&quot;, &quot;LIKES_RECEIVED&quot;, &quot;NEW_JOB_ALERTS&quot;, &quot;NICKNAME&quot;, &quot;POST_COUNT&quot;, &quot;REPLY_ALERTS&quot;, &quot;UPDATED_AT&quot;, &quot;USER_ROLE&quot;, &quot;WITHDRAWN_AT&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+2025-11-11T15:10:31.675+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.675+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.675+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.676+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.676+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.676+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.677+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.677+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.677+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;users&quot;.&quot;ID&quot; AS &quot;ID&quot;, &quot;users&quot;.&quot;EMAIL&quot; AS &quot;EMAIL&quot;, &quot;users&quot;.&quot;USER_ROLE&quot; AS &quot;USER_ROLE&quot;, &quot;users&quot;.&quot;GOOGLE_ID&quot; AS &quot;GOOGLE_ID&quot;, &quot;users&quot;.&quot;IS_ACTIVE&quot; AS &quot;IS_ACTIVE&quot;, &quot;users&quot;.&quot;NICKNAME&quot; AS &quot;NICKNAME&quot;, &quot;users&quot;.&quot;CREATED_AT&quot; AS &quot;CREATED_AT&quot;, &quot;users&quot;.&quot;UPDATED_AT&quot; AS &quot;UPDATED_AT&quot;, &quot;users&quot;.&quot;LAST_LOGIN_AT&quot; AS &quot;LAST_LOGIN_AT&quot;, &quot;users&quot;.&quot;IS_WITHDRAWN&quot; AS &quot;IS_WITHDRAWN&quot;, &quot;users&quot;.&quot;WITHDRAWN_AT&quot; AS &quot;WITHDRAWN_AT&quot;, &quot;users&quot;.&quot;POST_COUNT&quot; AS &quot;POST_COUNT&quot;, &quot;users&quot;.&quot;COMMENT_COUNT&quot; AS &quot;COMMENT_COUNT&quot;, &quot;users&quot;.&quot;BOOKMARK_COUNT&quot; AS &quot;BOOKMARK_COUNT&quot;, &quot;users&quot;.&quot;LIKES_RECEIVED&quot; AS &quot;LIKES_RECEIVED&quot;, &quot;users&quot;.&quot;LIKE_GIVEN_COUNT&quot; AS &quot;LIKE_GIVEN_COUNT&quot;, &quot;users&quot;.&quot;LIKE_ALERTS&quot; AS &quot;LIKE_ALERTS&quot;, &quot;users&quot;.&quot;REPLY_ALERTS&quot; AS &quot;REPLY_ALERTS&quot;, &quot;users&quot;.&quot;EMAIL_ENABLED&quot; AS &quot;EMAIL_ENABLED&quot;, &quot;users&quot;.&quot;NEW_JOB_ALERTS&quot; AS &quot;NEW_JOB_ALERTS&quot; FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;ID&quot; = ?]
+2025-11-11T15:10:31.679+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.679+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;user_interested_companies&quot;.&quot;company_name&quot; AS &quot;company_name&quot; FROM &quot;user_interested_companies&quot; WHERE &quot;user_interested_companies&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.679+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.679+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;user_interested_locations&quot;.&quot;location_name&quot; AS &quot;location_name&quot; FROM &quot;user_interested_locations&quot; WHERE &quot;user_interested_locations&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.681+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.681+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@57525945 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.682+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@57525945 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+2025-11-11T15:10:31.682+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.findAllByIdIn_nonExistingIds_returnsEmptyList]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.682+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@2054805916 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.682+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@2054805916 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.684+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.684+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;users&quot;.&quot;ID&quot; AS &quot;ID&quot;, &quot;users&quot;.&quot;EMAIL&quot; AS &quot;EMAIL&quot;, &quot;users&quot;.&quot;USER_ROLE&quot; AS &quot;USER_ROLE&quot;, &quot;users&quot;.&quot;GOOGLE_ID&quot; AS &quot;GOOGLE_ID&quot;, &quot;users&quot;.&quot;IS_ACTIVE&quot; AS &quot;IS_ACTIVE&quot;, &quot;users&quot;.&quot;NICKNAME&quot; AS &quot;NICKNAME&quot;, &quot;users&quot;.&quot;CREATED_AT&quot; AS &quot;CREATED_AT&quot;, &quot;users&quot;.&quot;UPDATED_AT&quot; AS &quot;UPDATED_AT&quot;, &quot;users&quot;.&quot;LAST_LOGIN_AT&quot; AS &quot;LAST_LOGIN_AT&quot;, &quot;users&quot;.&quot;IS_WITHDRAWN&quot; AS &quot;IS_WITHDRAWN&quot;, &quot;users&quot;.&quot;WITHDRAWN_AT&quot; AS &quot;WITHDRAWN_AT&quot;, &quot;users&quot;.&quot;POST_COUNT&quot; AS &quot;POST_COUNT&quot;, &quot;users&quot;.&quot;COMMENT_COUNT&quot; AS &quot;COMMENT_COUNT&quot;, &quot;users&quot;.&quot;BOOKMARK_COUNT&quot; AS &quot;BOOKMARK_COUNT&quot;, &quot;users&quot;.&quot;LIKES_RECEIVED&quot; AS &quot;LIKES_RECEIVED&quot;, &quot;users&quot;.&quot;LIKE_GIVEN_COUNT&quot; AS &quot;LIKE_GIVEN_COUNT&quot;, &quot;users&quot;.&quot;LIKE_ALERTS&quot; AS &quot;LIKE_ALERTS&quot;, &quot;users&quot;.&quot;REPLY_ALERTS&quot; AS &quot;REPLY_ALERTS&quot;, &quot;users&quot;.&quot;EMAIL_ENABLED&quot; AS &quot;EMAIL_ENABLED&quot;, &quot;users&quot;.&quot;NEW_JOB_ALERTS&quot; AS &quot;NEW_JOB_ALERTS&quot; FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;ID&quot; IN (?, ?)]
+2025-11-11T15:10:31.685+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.685+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@2054805916 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.685+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@2054805916 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+2025-11-11T15:10:31.686+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.existsById_nonExistingId_returnsFalse]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.686+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@1143322349 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.686+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@1143322349 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.687+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.687+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.687+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT COUNT(&quot;users&quot;.&quot;ID&quot;) FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;ID&quot; = ?]
+2025-11-11T15:10:31.688+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.688+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@1143322349 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.688+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@1143322349 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+2025-11-11T15:10:31.689+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.findByNickname_nonExistingNickname_returnsEmpty]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.689+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@1881420492 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.689+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@1881420492 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.692+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.692+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;users&quot;.&quot;ID&quot; AS &quot;ID&quot;, &quot;users&quot;.&quot;EMAIL&quot; AS &quot;EMAIL&quot;, &quot;users&quot;.&quot;USER_ROLE&quot; AS &quot;USER_ROLE&quot;, &quot;users&quot;.&quot;GOOGLE_ID&quot; AS &quot;GOOGLE_ID&quot;, &quot;users&quot;.&quot;IS_ACTIVE&quot; AS &quot;IS_ACTIVE&quot;, &quot;users&quot;.&quot;NICKNAME&quot; AS &quot;NICKNAME&quot;, &quot;users&quot;.&quot;CREATED_AT&quot; AS &quot;CREATED_AT&quot;, &quot;users&quot;.&quot;UPDATED_AT&quot; AS &quot;UPDATED_AT&quot;, &quot;users&quot;.&quot;LAST_LOGIN_AT&quot; AS &quot;LAST_LOGIN_AT&quot;, &quot;users&quot;.&quot;IS_WITHDRAWN&quot; AS &quot;IS_WITHDRAWN&quot;, &quot;users&quot;.&quot;WITHDRAWN_AT&quot; AS &quot;WITHDRAWN_AT&quot;, &quot;users&quot;.&quot;POST_COUNT&quot; AS &quot;POST_COUNT&quot;, &quot;users&quot;.&quot;COMMENT_COUNT&quot; AS &quot;COMMENT_COUNT&quot;, &quot;users&quot;.&quot;BOOKMARK_COUNT&quot; AS &quot;BOOKMARK_COUNT&quot;, &quot;users&quot;.&quot;LIKES_RECEIVED&quot; AS &quot;LIKES_RECEIVED&quot;, &quot;users&quot;.&quot;LIKE_GIVEN_COUNT&quot; AS &quot;LIKE_GIVEN_COUNT&quot;, &quot;users&quot;.&quot;LIKE_ALERTS&quot; AS &quot;LIKE_ALERTS&quot;, &quot;users&quot;.&quot;REPLY_ALERTS&quot; AS &quot;REPLY_ALERTS&quot;, &quot;users&quot;.&quot;EMAIL_ENABLED&quot; AS &quot;EMAIL_ENABLED&quot;, &quot;users&quot;.&quot;NEW_JOB_ALERTS&quot; AS &quot;NEW_JOB_ALERTS&quot; FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;NICKNAME&quot; = ?]
+2025-11-11T15:10:31.693+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.693+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@1881420492 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.693+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@1881420492 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+2025-11-11T15:10:31.695+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.findByGoogleId_nonExistingGoogleId_returnsEmpty]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.695+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@895175732 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.695+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@895175732 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.696+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.696+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;users&quot;.&quot;ID&quot; AS &quot;ID&quot;, &quot;users&quot;.&quot;EMAIL&quot; AS &quot;EMAIL&quot;, &quot;users&quot;.&quot;USER_ROLE&quot; AS &quot;USER_ROLE&quot;, &quot;users&quot;.&quot;GOOGLE_ID&quot; AS &quot;GOOGLE_ID&quot;, &quot;users&quot;.&quot;IS_ACTIVE&quot; AS &quot;IS_ACTIVE&quot;, &quot;users&quot;.&quot;NICKNAME&quot; AS &quot;NICKNAME&quot;, &quot;users&quot;.&quot;CREATED_AT&quot; AS &quot;CREATED_AT&quot;, &quot;users&quot;.&quot;UPDATED_AT&quot; AS &quot;UPDATED_AT&quot;, &quot;users&quot;.&quot;LAST_LOGIN_AT&quot; AS &quot;LAST_LOGIN_AT&quot;, &quot;users&quot;.&quot;IS_WITHDRAWN&quot; AS &quot;IS_WITHDRAWN&quot;, &quot;users&quot;.&quot;WITHDRAWN_AT&quot; AS &quot;WITHDRAWN_AT&quot;, &quot;users&quot;.&quot;POST_COUNT&quot; AS &quot;POST_COUNT&quot;, &quot;users&quot;.&quot;COMMENT_COUNT&quot; AS &quot;COMMENT_COUNT&quot;, &quot;users&quot;.&quot;BOOKMARK_COUNT&quot; AS &quot;BOOKMARK_COUNT&quot;, &quot;users&quot;.&quot;LIKES_RECEIVED&quot; AS &quot;LIKES_RECEIVED&quot;, &quot;users&quot;.&quot;LIKE_GIVEN_COUNT&quot; AS &quot;LIKE_GIVEN_COUNT&quot;, &quot;users&quot;.&quot;LIKE_ALERTS&quot; AS &quot;LIKE_ALERTS&quot;, &quot;users&quot;.&quot;REPLY_ALERTS&quot; AS &quot;REPLY_ALERTS&quot;, &quot;users&quot;.&quot;EMAIL_ENABLED&quot; AS &quot;EMAIL_ENABLED&quot;, &quot;users&quot;.&quot;NEW_JOB_ALERTS&quot; AS &quot;NEW_JOB_ALERTS&quot; FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;GOOGLE_ID&quot; = ?]
+2025-11-11T15:10:31.698+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.698+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@895175732 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.698+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@895175732 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+2025-11-11T15:10:31.699+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.findByEmail_nonExistingEmail_returnsEmpty]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.700+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@230944166 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.700+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@230944166 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.701+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.701+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;users&quot;.&quot;ID&quot; AS &quot;ID&quot;, &quot;users&quot;.&quot;EMAIL&quot; AS &quot;EMAIL&quot;, &quot;users&quot;.&quot;USER_ROLE&quot; AS &quot;USER_ROLE&quot;, &quot;users&quot;.&quot;GOOGLE_ID&quot; AS &quot;GOOGLE_ID&quot;, &quot;users&quot;.&quot;IS_ACTIVE&quot; AS &quot;IS_ACTIVE&quot;, &quot;users&quot;.&quot;NICKNAME&quot; AS &quot;NICKNAME&quot;, &quot;users&quot;.&quot;CREATED_AT&quot; AS &quot;CREATED_AT&quot;, &quot;users&quot;.&quot;UPDATED_AT&quot; AS &quot;UPDATED_AT&quot;, &quot;users&quot;.&quot;LAST_LOGIN_AT&quot; AS &quot;LAST_LOGIN_AT&quot;, &quot;users&quot;.&quot;IS_WITHDRAWN&quot; AS &quot;IS_WITHDRAWN&quot;, &quot;users&quot;.&quot;WITHDRAWN_AT&quot; AS &quot;WITHDRAWN_AT&quot;, &quot;users&quot;.&quot;POST_COUNT&quot; AS &quot;POST_COUNT&quot;, &quot;users&quot;.&quot;COMMENT_COUNT&quot; AS &quot;COMMENT_COUNT&quot;, &quot;users&quot;.&quot;BOOKMARK_COUNT&quot; AS &quot;BOOKMARK_COUNT&quot;, &quot;users&quot;.&quot;LIKES_RECEIVED&quot; AS &quot;LIKES_RECEIVED&quot;, &quot;users&quot;.&quot;LIKE_GIVEN_COUNT&quot; AS &quot;LIKE_GIVEN_COUNT&quot;, &quot;users&quot;.&quot;LIKE_ALERTS&quot; AS &quot;LIKE_ALERTS&quot;, &quot;users&quot;.&quot;REPLY_ALERTS&quot; AS &quot;REPLY_ALERTS&quot;, &quot;users&quot;.&quot;EMAIL_ENABLED&quot; AS &quot;EMAIL_ENABLED&quot;, &quot;users&quot;.&quot;NEW_JOB_ALERTS&quot; AS &quot;NEW_JOB_ALERTS&quot; FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;EMAIL&quot; = ?]
+2025-11-11T15:10:31.703+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.703+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@230944166 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.703+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@230944166 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+2025-11-11T15:10:31.704+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.findById_nonExistingId_returnsEmpty]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.704+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@2091367901 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.704+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@2091367901 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.705+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.705+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.705+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;users&quot;.&quot;ID&quot; AS &quot;ID&quot;, &quot;users&quot;.&quot;EMAIL&quot; AS &quot;EMAIL&quot;, &quot;users&quot;.&quot;USER_ROLE&quot; AS &quot;USER_ROLE&quot;, &quot;users&quot;.&quot;GOOGLE_ID&quot; AS &quot;GOOGLE_ID&quot;, &quot;users&quot;.&quot;IS_ACTIVE&quot; AS &quot;IS_ACTIVE&quot;, &quot;users&quot;.&quot;NICKNAME&quot; AS &quot;NICKNAME&quot;, &quot;users&quot;.&quot;CREATED_AT&quot; AS &quot;CREATED_AT&quot;, &quot;users&quot;.&quot;UPDATED_AT&quot; AS &quot;UPDATED_AT&quot;, &quot;users&quot;.&quot;LAST_LOGIN_AT&quot; AS &quot;LAST_LOGIN_AT&quot;, &quot;users&quot;.&quot;IS_WITHDRAWN&quot; AS &quot;IS_WITHDRAWN&quot;, &quot;users&quot;.&quot;WITHDRAWN_AT&quot; AS &quot;WITHDRAWN_AT&quot;, &quot;users&quot;.&quot;POST_COUNT&quot; AS &quot;POST_COUNT&quot;, &quot;users&quot;.&quot;COMMENT_COUNT&quot; AS &quot;COMMENT_COUNT&quot;, &quot;users&quot;.&quot;BOOKMARK_COUNT&quot; AS &quot;BOOKMARK_COUNT&quot;, &quot;users&quot;.&quot;LIKES_RECEIVED&quot; AS &quot;LIKES_RECEIVED&quot;, &quot;users&quot;.&quot;LIKE_GIVEN_COUNT&quot; AS &quot;LIKE_GIVEN_COUNT&quot;, &quot;users&quot;.&quot;LIKE_ALERTS&quot; AS &quot;LIKE_ALERTS&quot;, &quot;users&quot;.&quot;REPLY_ALERTS&quot; AS &quot;REPLY_ALERTS&quot;, &quot;users&quot;.&quot;EMAIL_ENABLED&quot; AS &quot;EMAIL_ENABLED&quot;, &quot;users&quot;.&quot;NEW_JOB_ALERTS&quot; AS &quot;NEW_JOB_ALERTS&quot; FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;ID&quot; = ?]
+2025-11-11T15:10:31.706+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.706+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@2091367901 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.706+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@2091367901 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+2025-11-11T15:10:31.707+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.deleteById_existingId_deletesSuccessfully]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.707+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@544100739 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.707+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@544100739 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.708+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.709+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2025-11-11T15:10:31.709+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;users&quot; (&quot;BOOKMARK_COUNT&quot;, &quot;COMMENT_COUNT&quot;, &quot;CREATED_AT&quot;, &quot;EMAIL&quot;, &quot;EMAIL_ENABLED&quot;, &quot;GOOGLE_ID&quot;, &quot;IS_ACTIVE&quot;, &quot;IS_WITHDRAWN&quot;, &quot;LAST_LOGIN_AT&quot;, &quot;LIKE_ALERTS&quot;, &quot;LIKE_GIVEN_COUNT&quot;, &quot;LIKES_RECEIVED&quot;, &quot;NEW_JOB_ALERTS&quot;, &quot;NICKNAME&quot;, &quot;POST_COUNT&quot;, &quot;REPLY_ALERTS&quot;, &quot;UPDATED_AT&quot;, &quot;USER_ROLE&quot;, &quot;WITHDRAWN_AT&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+2025-11-11T15:10:31.710+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.710+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.710+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.710+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.710+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.710+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.711+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.711+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.711+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;users&quot;.&quot;ID&quot; FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;ID&quot; = ? FOR UPDATE]
+2025-11-11T15:10:31.712+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2025-11-11T15:10:31.712+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [DELETE FROM &quot;user_interested_locations&quot; WHERE &quot;user_interested_locations&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.712+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2025-11-11T15:10:31.712+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [DELETE FROM &quot;user_interested_companies&quot; WHERE &quot;user_interested_companies&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.712+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2025-11-11T15:10:31.712+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [DELETE FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;ID&quot; = ?]
+2025-11-11T15:10:31.712+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.713+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.713+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT COUNT(&quot;users&quot;.&quot;ID&quot;) FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;ID&quot; = ?]
+2025-11-11T15:10:31.714+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.714+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@544100739 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.714+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@544100739 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+2025-11-11T15:10:31.715+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.save_withNullId_generatesIdAndReturns]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.715+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@1050165504 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.715+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@1050165504 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.715+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.717+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2025-11-11T15:10:31.717+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;users&quot; (&quot;BOOKMARK_COUNT&quot;, &quot;COMMENT_COUNT&quot;, &quot;CREATED_AT&quot;, &quot;EMAIL&quot;, &quot;EMAIL_ENABLED&quot;, &quot;GOOGLE_ID&quot;, &quot;IS_ACTIVE&quot;, &quot;IS_WITHDRAWN&quot;, &quot;LAST_LOGIN_AT&quot;, &quot;LIKE_ALERTS&quot;, &quot;LIKE_GIVEN_COUNT&quot;, &quot;LIKES_RECEIVED&quot;, &quot;NEW_JOB_ALERTS&quot;, &quot;NICKNAME&quot;, &quot;POST_COUNT&quot;, &quot;REPLY_ALERTS&quot;, &quot;UPDATED_AT&quot;, &quot;USER_ROLE&quot;, &quot;WITHDRAWN_AT&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+2025-11-11T15:10:31.717+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.717+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.717+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.718+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.718+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.718+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.719+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.719+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@1050165504 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.719+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@1050165504 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+2025-11-11T15:10:31.720+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.findByGoogleId_existingGoogleId_returnsConvertedDomain]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.720+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@1395523773 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.720+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@1395523773 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.721+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.721+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2025-11-11T15:10:31.721+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;users&quot; (&quot;BOOKMARK_COUNT&quot;, &quot;COMMENT_COUNT&quot;, &quot;CREATED_AT&quot;, &quot;EMAIL&quot;, &quot;EMAIL_ENABLED&quot;, &quot;GOOGLE_ID&quot;, &quot;IS_ACTIVE&quot;, &quot;IS_WITHDRAWN&quot;, &quot;LAST_LOGIN_AT&quot;, &quot;LIKE_ALERTS&quot;, &quot;LIKE_GIVEN_COUNT&quot;, &quot;LIKES_RECEIVED&quot;, &quot;NEW_JOB_ALERTS&quot;, &quot;NICKNAME&quot;, &quot;POST_COUNT&quot;, &quot;REPLY_ALERTS&quot;, &quot;UPDATED_AT&quot;, &quot;USER_ROLE&quot;, &quot;WITHDRAWN_AT&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+2025-11-11T15:10:31.722+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.722+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.722+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.722+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.722+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.722+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.724+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.724+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;users&quot;.&quot;ID&quot; AS &quot;ID&quot;, &quot;users&quot;.&quot;EMAIL&quot; AS &quot;EMAIL&quot;, &quot;users&quot;.&quot;USER_ROLE&quot; AS &quot;USER_ROLE&quot;, &quot;users&quot;.&quot;GOOGLE_ID&quot; AS &quot;GOOGLE_ID&quot;, &quot;users&quot;.&quot;IS_ACTIVE&quot; AS &quot;IS_ACTIVE&quot;, &quot;users&quot;.&quot;NICKNAME&quot; AS &quot;NICKNAME&quot;, &quot;users&quot;.&quot;CREATED_AT&quot; AS &quot;CREATED_AT&quot;, &quot;users&quot;.&quot;UPDATED_AT&quot; AS &quot;UPDATED_AT&quot;, &quot;users&quot;.&quot;LAST_LOGIN_AT&quot; AS &quot;LAST_LOGIN_AT&quot;, &quot;users&quot;.&quot;IS_WITHDRAWN&quot; AS &quot;IS_WITHDRAWN&quot;, &quot;users&quot;.&quot;WITHDRAWN_AT&quot; AS &quot;WITHDRAWN_AT&quot;, &quot;users&quot;.&quot;POST_COUNT&quot; AS &quot;POST_COUNT&quot;, &quot;users&quot;.&quot;COMMENT_COUNT&quot; AS &quot;COMMENT_COUNT&quot;, &quot;users&quot;.&quot;BOOKMARK_COUNT&quot; AS &quot;BOOKMARK_COUNT&quot;, &quot;users&quot;.&quot;LIKES_RECEIVED&quot; AS &quot;LIKES_RECEIVED&quot;, &quot;users&quot;.&quot;LIKE_GIVEN_COUNT&quot; AS &quot;LIKE_GIVEN_COUNT&quot;, &quot;users&quot;.&quot;LIKE_ALERTS&quot; AS &quot;LIKE_ALERTS&quot;, &quot;users&quot;.&quot;REPLY_ALERTS&quot; AS &quot;REPLY_ALERTS&quot;, &quot;users&quot;.&quot;EMAIL_ENABLED&quot; AS &quot;EMAIL_ENABLED&quot;, &quot;users&quot;.&quot;NEW_JOB_ALERTS&quot; AS &quot;NEW_JOB_ALERTS&quot; FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;GOOGLE_ID&quot; = ?]
+2025-11-11T15:10:31.725+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.725+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;user_interested_companies&quot;.&quot;company_name&quot; AS &quot;company_name&quot; FROM &quot;user_interested_companies&quot; WHERE &quot;user_interested_companies&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.725+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.725+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;user_interested_locations&quot;.&quot;location_name&quot; AS &quot;location_name&quot; FROM &quot;user_interested_locations&quot; WHERE &quot;user_interested_locations&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.728+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.728+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@1395523773 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.728+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@1395523773 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+2025-11-11T15:10:31.730+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.save_withValidDomain_returnsConvertedDomain]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.731+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@1640299572 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.731+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@1640299572 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.732+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.733+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2025-11-11T15:10:31.733+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;users&quot; (&quot;BOOKMARK_COUNT&quot;, &quot;COMMENT_COUNT&quot;, &quot;CREATED_AT&quot;, &quot;EMAIL&quot;, &quot;EMAIL_ENABLED&quot;, &quot;GOOGLE_ID&quot;, &quot;IS_ACTIVE&quot;, &quot;IS_WITHDRAWN&quot;, &quot;LAST_LOGIN_AT&quot;, &quot;LIKE_ALERTS&quot;, &quot;LIKE_GIVEN_COUNT&quot;, &quot;LIKES_RECEIVED&quot;, &quot;NEW_JOB_ALERTS&quot;, &quot;NICKNAME&quot;, &quot;POST_COUNT&quot;, &quot;REPLY_ALERTS&quot;, &quot;UPDATED_AT&quot;, &quot;USER_ROLE&quot;, &quot;WITHDRAWN_AT&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+2025-11-11T15:10:31.734+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.734+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.735+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.735+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.735+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.735+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.736+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.736+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@1640299572 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.736+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@1640299572 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+2025-11-11T15:10:31.738+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.findAll_withData_returnsConvertedList]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.738+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@1281853983 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.738+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@1281853983 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.739+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.740+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2025-11-11T15:10:31.740+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;users&quot; (&quot;BOOKMARK_COUNT&quot;, &quot;COMMENT_COUNT&quot;, &quot;CREATED_AT&quot;, &quot;EMAIL&quot;, &quot;EMAIL_ENABLED&quot;, &quot;GOOGLE_ID&quot;, &quot;IS_ACTIVE&quot;, &quot;IS_WITHDRAWN&quot;, &quot;LAST_LOGIN_AT&quot;, &quot;LIKE_ALERTS&quot;, &quot;LIKE_GIVEN_COUNT&quot;, &quot;LIKES_RECEIVED&quot;, &quot;NEW_JOB_ALERTS&quot;, &quot;NICKNAME&quot;, &quot;POST_COUNT&quot;, &quot;REPLY_ALERTS&quot;, &quot;UPDATED_AT&quot;, &quot;USER_ROLE&quot;, &quot;WITHDRAWN_AT&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+2025-11-11T15:10:31.741+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.741+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.741+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.741+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.742+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.742+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.742+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.742+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2025-11-11T15:10:31.742+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;users&quot; (&quot;BOOKMARK_COUNT&quot;, &quot;COMMENT_COUNT&quot;, &quot;CREATED_AT&quot;, &quot;EMAIL&quot;, &quot;EMAIL_ENABLED&quot;, &quot;GOOGLE_ID&quot;, &quot;IS_ACTIVE&quot;, &quot;IS_WITHDRAWN&quot;, &quot;LAST_LOGIN_AT&quot;, &quot;LIKE_ALERTS&quot;, &quot;LIKE_GIVEN_COUNT&quot;, &quot;LIKES_RECEIVED&quot;, &quot;NEW_JOB_ALERTS&quot;, &quot;NICKNAME&quot;, &quot;POST_COUNT&quot;, &quot;REPLY_ALERTS&quot;, &quot;UPDATED_AT&quot;, &quot;USER_ROLE&quot;, &quot;WITHDRAWN_AT&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+2025-11-11T15:10:31.743+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.743+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.744+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;users&quot;.&quot;ID&quot; AS &quot;ID&quot;, &quot;users&quot;.&quot;EMAIL&quot; AS &quot;EMAIL&quot;, &quot;users&quot;.&quot;USER_ROLE&quot; AS &quot;USER_ROLE&quot;, &quot;users&quot;.&quot;GOOGLE_ID&quot; AS &quot;GOOGLE_ID&quot;, &quot;users&quot;.&quot;IS_ACTIVE&quot; AS &quot;IS_ACTIVE&quot;, &quot;users&quot;.&quot;NICKNAME&quot; AS &quot;NICKNAME&quot;, &quot;users&quot;.&quot;CREATED_AT&quot; AS &quot;CREATED_AT&quot;, &quot;users&quot;.&quot;UPDATED_AT&quot; AS &quot;UPDATED_AT&quot;, &quot;users&quot;.&quot;LAST_LOGIN_AT&quot; AS &quot;LAST_LOGIN_AT&quot;, &quot;users&quot;.&quot;IS_WITHDRAWN&quot; AS &quot;IS_WITHDRAWN&quot;, &quot;users&quot;.&quot;WITHDRAWN_AT&quot; AS &quot;WITHDRAWN_AT&quot;, &quot;users&quot;.&quot;POST_COUNT&quot; AS &quot;POST_COUNT&quot;, &quot;users&quot;.&quot;COMMENT_COUNT&quot; AS &quot;COMMENT_COUNT&quot;, &quot;users&quot;.&quot;BOOKMARK_COUNT&quot; AS &quot;BOOKMARK_COUNT&quot;, &quot;users&quot;.&quot;LIKES_RECEIVED&quot; AS &quot;LIKES_RECEIVED&quot;, &quot;users&quot;.&quot;LIKE_GIVEN_COUNT&quot; AS &quot;LIKE_GIVEN_COUNT&quot;, &quot;users&quot;.&quot;LIKE_ALERTS&quot; AS &quot;LIKE_ALERTS&quot;, &quot;users&quot;.&quot;REPLY_ALERTS&quot; AS &quot;REPLY_ALERTS&quot;, &quot;users&quot;.&quot;EMAIL_ENABLED&quot; AS &quot;EMAIL_ENABLED&quot;, &quot;users&quot;.&quot;NEW_JOB_ALERTS&quot; AS &quot;NEW_JOB_ALERTS&quot; FROM &quot;users&quot;]
+2025-11-11T15:10:31.744+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.744+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;user_interested_companies&quot;.&quot;company_name&quot; AS &quot;company_name&quot; FROM &quot;user_interested_companies&quot; WHERE &quot;user_interested_companies&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.744+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.744+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;user_interested_locations&quot;.&quot;location_name&quot; AS &quot;location_name&quot; FROM &quot;user_interested_locations&quot; WHERE &quot;user_interested_locations&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.745+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.745+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;user_interested_companies&quot;.&quot;company_name&quot; AS &quot;company_name&quot; FROM &quot;user_interested_companies&quot; WHERE &quot;user_interested_companies&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.745+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.745+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;user_interested_locations&quot;.&quot;location_name&quot; AS &quot;location_name&quot; FROM &quot;user_interested_locations&quot; WHERE &quot;user_interested_locations&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.746+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.746+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@1281853983 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.746+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@1281853983 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+2025-11-11T15:10:31.748+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.findAllByIdIn_existingIds_returnsConvertedList]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.748+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@587108575 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.748+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@587108575 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.749+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.750+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2025-11-11T15:10:31.750+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;users&quot; (&quot;BOOKMARK_COUNT&quot;, &quot;COMMENT_COUNT&quot;, &quot;CREATED_AT&quot;, &quot;EMAIL&quot;, &quot;EMAIL_ENABLED&quot;, &quot;GOOGLE_ID&quot;, &quot;IS_ACTIVE&quot;, &quot;IS_WITHDRAWN&quot;, &quot;LAST_LOGIN_AT&quot;, &quot;LIKE_ALERTS&quot;, &quot;LIKE_GIVEN_COUNT&quot;, &quot;LIKES_RECEIVED&quot;, &quot;NEW_JOB_ALERTS&quot;, &quot;NICKNAME&quot;, &quot;POST_COUNT&quot;, &quot;REPLY_ALERTS&quot;, &quot;UPDATED_AT&quot;, &quot;USER_ROLE&quot;, &quot;WITHDRAWN_AT&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+2025-11-11T15:10:31.750+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.750+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.750+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.750+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.750+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.751+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.751+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.752+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2025-11-11T15:10:31.752+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;users&quot; (&quot;BOOKMARK_COUNT&quot;, &quot;COMMENT_COUNT&quot;, &quot;CREATED_AT&quot;, &quot;EMAIL&quot;, &quot;EMAIL_ENABLED&quot;, &quot;GOOGLE_ID&quot;, &quot;IS_ACTIVE&quot;, &quot;IS_WITHDRAWN&quot;, &quot;LAST_LOGIN_AT&quot;, &quot;LIKE_ALERTS&quot;, &quot;LIKE_GIVEN_COUNT&quot;, &quot;LIKES_RECEIVED&quot;, &quot;NEW_JOB_ALERTS&quot;, &quot;NICKNAME&quot;, &quot;POST_COUNT&quot;, &quot;REPLY_ALERTS&quot;, &quot;UPDATED_AT&quot;, &quot;USER_ROLE&quot;, &quot;WITHDRAWN_AT&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+2025-11-11T15:10:31.753+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.753+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2025-11-11T15:10:31.753+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;users&quot; (&quot;BOOKMARK_COUNT&quot;, &quot;COMMENT_COUNT&quot;, &quot;CREATED_AT&quot;, &quot;EMAIL&quot;, &quot;EMAIL_ENABLED&quot;, &quot;GOOGLE_ID&quot;, &quot;IS_ACTIVE&quot;, &quot;IS_WITHDRAWN&quot;, &quot;LAST_LOGIN_AT&quot;, &quot;LIKE_ALERTS&quot;, &quot;LIKE_GIVEN_COUNT&quot;, &quot;LIKES_RECEIVED&quot;, &quot;NEW_JOB_ALERTS&quot;, &quot;NICKNAME&quot;, &quot;POST_COUNT&quot;, &quot;REPLY_ALERTS&quot;, &quot;UPDATED_AT&quot;, &quot;USER_ROLE&quot;, &quot;WITHDRAWN_AT&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+2025-11-11T15:10:31.754+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.754+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;users&quot;.&quot;ID&quot; AS &quot;ID&quot;, &quot;users&quot;.&quot;EMAIL&quot; AS &quot;EMAIL&quot;, &quot;users&quot;.&quot;USER_ROLE&quot; AS &quot;USER_ROLE&quot;, &quot;users&quot;.&quot;GOOGLE_ID&quot; AS &quot;GOOGLE_ID&quot;, &quot;users&quot;.&quot;IS_ACTIVE&quot; AS &quot;IS_ACTIVE&quot;, &quot;users&quot;.&quot;NICKNAME&quot; AS &quot;NICKNAME&quot;, &quot;users&quot;.&quot;CREATED_AT&quot; AS &quot;CREATED_AT&quot;, &quot;users&quot;.&quot;UPDATED_AT&quot; AS &quot;UPDATED_AT&quot;, &quot;users&quot;.&quot;LAST_LOGIN_AT&quot; AS &quot;LAST_LOGIN_AT&quot;, &quot;users&quot;.&quot;IS_WITHDRAWN&quot; AS &quot;IS_WITHDRAWN&quot;, &quot;users&quot;.&quot;WITHDRAWN_AT&quot; AS &quot;WITHDRAWN_AT&quot;, &quot;users&quot;.&quot;POST_COUNT&quot; AS &quot;POST_COUNT&quot;, &quot;users&quot;.&quot;COMMENT_COUNT&quot; AS &quot;COMMENT_COUNT&quot;, &quot;users&quot;.&quot;BOOKMARK_COUNT&quot; AS &quot;BOOKMARK_COUNT&quot;, &quot;users&quot;.&quot;LIKES_RECEIVED&quot; AS &quot;LIKES_RECEIVED&quot;, &quot;users&quot;.&quot;LIKE_GIVEN_COUNT&quot; AS &quot;LIKE_GIVEN_COUNT&quot;, &quot;users&quot;.&quot;LIKE_ALERTS&quot; AS &quot;LIKE_ALERTS&quot;, &quot;users&quot;.&quot;REPLY_ALERTS&quot; AS &quot;REPLY_ALERTS&quot;, &quot;users&quot;.&quot;EMAIL_ENABLED&quot; AS &quot;EMAIL_ENABLED&quot;, &quot;users&quot;.&quot;NEW_JOB_ALERTS&quot; AS &quot;NEW_JOB_ALERTS&quot; FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;ID&quot; IN (?, ?)]
+2025-11-11T15:10:31.754+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.754+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;user_interested_companies&quot;.&quot;company_name&quot; AS &quot;company_name&quot; FROM &quot;user_interested_companies&quot; WHERE &quot;user_interested_companies&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.755+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.755+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;user_interested_locations&quot;.&quot;location_name&quot; AS &quot;location_name&quot; FROM &quot;user_interested_locations&quot; WHERE &quot;user_interested_locations&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.755+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.755+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;user_interested_companies&quot;.&quot;company_name&quot; AS &quot;company_name&quot; FROM &quot;user_interested_companies&quot; WHERE &quot;user_interested_companies&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.755+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.755+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;user_interested_locations&quot;.&quot;location_name&quot; AS &quot;location_name&quot; FROM &quot;user_interested_locations&quot; WHERE &quot;user_interested_locations&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.756+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.756+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@587108575 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.756+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@587108575 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+2025-11-11T15:10:31.757+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.findByEmail_existingEmail_returnsConvertedDomain]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.757+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@1725904428 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.757+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@1725904428 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.758+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.759+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2025-11-11T15:10:31.759+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;users&quot; (&quot;BOOKMARK_COUNT&quot;, &quot;COMMENT_COUNT&quot;, &quot;CREATED_AT&quot;, &quot;EMAIL&quot;, &quot;EMAIL_ENABLED&quot;, &quot;GOOGLE_ID&quot;, &quot;IS_ACTIVE&quot;, &quot;IS_WITHDRAWN&quot;, &quot;LAST_LOGIN_AT&quot;, &quot;LIKE_ALERTS&quot;, &quot;LIKE_GIVEN_COUNT&quot;, &quot;LIKES_RECEIVED&quot;, &quot;NEW_JOB_ALERTS&quot;, &quot;NICKNAME&quot;, &quot;POST_COUNT&quot;, &quot;REPLY_ALERTS&quot;, &quot;UPDATED_AT&quot;, &quot;USER_ROLE&quot;, &quot;WITHDRAWN_AT&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+2025-11-11T15:10:31.759+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.759+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.760+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.760+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.760+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.760+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.761+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.761+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;users&quot;.&quot;ID&quot; AS &quot;ID&quot;, &quot;users&quot;.&quot;EMAIL&quot; AS &quot;EMAIL&quot;, &quot;users&quot;.&quot;USER_ROLE&quot; AS &quot;USER_ROLE&quot;, &quot;users&quot;.&quot;GOOGLE_ID&quot; AS &quot;GOOGLE_ID&quot;, &quot;users&quot;.&quot;IS_ACTIVE&quot; AS &quot;IS_ACTIVE&quot;, &quot;users&quot;.&quot;NICKNAME&quot; AS &quot;NICKNAME&quot;, &quot;users&quot;.&quot;CREATED_AT&quot; AS &quot;CREATED_AT&quot;, &quot;users&quot;.&quot;UPDATED_AT&quot; AS &quot;UPDATED_AT&quot;, &quot;users&quot;.&quot;LAST_LOGIN_AT&quot; AS &quot;LAST_LOGIN_AT&quot;, &quot;users&quot;.&quot;IS_WITHDRAWN&quot; AS &quot;IS_WITHDRAWN&quot;, &quot;users&quot;.&quot;WITHDRAWN_AT&quot; AS &quot;WITHDRAWN_AT&quot;, &quot;users&quot;.&quot;POST_COUNT&quot; AS &quot;POST_COUNT&quot;, &quot;users&quot;.&quot;COMMENT_COUNT&quot; AS &quot;COMMENT_COUNT&quot;, &quot;users&quot;.&quot;BOOKMARK_COUNT&quot; AS &quot;BOOKMARK_COUNT&quot;, &quot;users&quot;.&quot;LIKES_RECEIVED&quot; AS &quot;LIKES_RECEIVED&quot;, &quot;users&quot;.&quot;LIKE_GIVEN_COUNT&quot; AS &quot;LIKE_GIVEN_COUNT&quot;, &quot;users&quot;.&quot;LIKE_ALERTS&quot; AS &quot;LIKE_ALERTS&quot;, &quot;users&quot;.&quot;REPLY_ALERTS&quot; AS &quot;REPLY_ALERTS&quot;, &quot;users&quot;.&quot;EMAIL_ENABLED&quot; AS &quot;EMAIL_ENABLED&quot;, &quot;users&quot;.&quot;NEW_JOB_ALERTS&quot; AS &quot;NEW_JOB_ALERTS&quot; FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;EMAIL&quot; = ?]
+2025-11-11T15:10:31.761+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.762+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;user_interested_companies&quot;.&quot;company_name&quot; AS &quot;company_name&quot; FROM &quot;user_interested_companies&quot; WHERE &quot;user_interested_companies&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.762+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.762+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;user_interested_locations&quot;.&quot;location_name&quot; AS &quot;location_name&quot; FROM &quot;user_interested_locations&quot; WHERE &quot;user_interested_locations&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.763+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.763+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@1725904428 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.763+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@1725904428 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+2025-11-11T15:10:31.765+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.existsById_existingId_returnsTrue]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.765+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@779034440 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.765+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@779034440 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.765+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.771+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2025-11-11T15:10:31.771+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;users&quot; (&quot;BOOKMARK_COUNT&quot;, &quot;COMMENT_COUNT&quot;, &quot;CREATED_AT&quot;, &quot;EMAIL&quot;, &quot;EMAIL_ENABLED&quot;, &quot;GOOGLE_ID&quot;, &quot;IS_ACTIVE&quot;, &quot;IS_WITHDRAWN&quot;, &quot;LAST_LOGIN_AT&quot;, &quot;LIKE_ALERTS&quot;, &quot;LIKE_GIVEN_COUNT&quot;, &quot;LIKES_RECEIVED&quot;, &quot;NEW_JOB_ALERTS&quot;, &quot;NICKNAME&quot;, &quot;POST_COUNT&quot;, &quot;REPLY_ALERTS&quot;, &quot;UPDATED_AT&quot;, &quot;USER_ROLE&quot;, &quot;WITHDRAWN_AT&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+2025-11-11T15:10:31.772+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.773+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.773+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.773+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.773+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.774+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.774+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.774+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.774+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT COUNT(&quot;users&quot;.&quot;ID&quot;) FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;ID&quot; = ?]
+2025-11-11T15:10:31.775+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.775+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@779034440 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.775+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@779034440 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+2025-11-11T15:10:31.777+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.findAll_emptyRepository_returnsEmptyList]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.777+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@1985918977 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.777+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@1985918977 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.778+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.778+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.778+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;users&quot;.&quot;ID&quot; AS &quot;ID&quot;, &quot;users&quot;.&quot;EMAIL&quot; AS &quot;EMAIL&quot;, &quot;users&quot;.&quot;USER_ROLE&quot; AS &quot;USER_ROLE&quot;, &quot;users&quot;.&quot;GOOGLE_ID&quot; AS &quot;GOOGLE_ID&quot;, &quot;users&quot;.&quot;IS_ACTIVE&quot; AS &quot;IS_ACTIVE&quot;, &quot;users&quot;.&quot;NICKNAME&quot; AS &quot;NICKNAME&quot;, &quot;users&quot;.&quot;CREATED_AT&quot; AS &quot;CREATED_AT&quot;, &quot;users&quot;.&quot;UPDATED_AT&quot; AS &quot;UPDATED_AT&quot;, &quot;users&quot;.&quot;LAST_LOGIN_AT&quot; AS &quot;LAST_LOGIN_AT&quot;, &quot;users&quot;.&quot;IS_WITHDRAWN&quot; AS &quot;IS_WITHDRAWN&quot;, &quot;users&quot;.&quot;WITHDRAWN_AT&quot; AS &quot;WITHDRAWN_AT&quot;, &quot;users&quot;.&quot;POST_COUNT&quot; AS &quot;POST_COUNT&quot;, &quot;users&quot;.&quot;COMMENT_COUNT&quot; AS &quot;COMMENT_COUNT&quot;, &quot;users&quot;.&quot;BOOKMARK_COUNT&quot; AS &quot;BOOKMARK_COUNT&quot;, &quot;users&quot;.&quot;LIKES_RECEIVED&quot; AS &quot;LIKES_RECEIVED&quot;, &quot;users&quot;.&quot;LIKE_GIVEN_COUNT&quot; AS &quot;LIKE_GIVEN_COUNT&quot;, &quot;users&quot;.&quot;LIKE_ALERTS&quot; AS &quot;LIKE_ALERTS&quot;, &quot;users&quot;.&quot;REPLY_ALERTS&quot; AS &quot;REPLY_ALERTS&quot;, &quot;users&quot;.&quot;EMAIL_ENABLED&quot; AS &quot;EMAIL_ENABLED&quot;, &quot;users&quot;.&quot;NEW_JOB_ALERTS&quot; AS &quot;NEW_JOB_ALERTS&quot; FROM &quot;users&quot;]
+2025-11-11T15:10:31.780+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.780+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@1985918977 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.780+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@1985918977 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+2025-11-11T15:10:31.782+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Creating new transaction with name [dev.devrunner.jdbc.user.repository.UserJdbcRepositoryTest.findByNickname_existingNickname_returnsConvertedDomain]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+2025-11-11T15:10:31.782+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Acquired Connection [HikariProxyConnection@1404671279 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] for JDBC transaction
+2025-11-11T15:10:31.782+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Switching JDBC Connection [HikariProxyConnection@1404671279 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] to manual commit
+2025-11-11T15:10:31.783+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Participating in existing transaction
+2025-11-11T15:10:31.784+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2025-11-11T15:10:31.784+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;users&quot; (&quot;BOOKMARK_COUNT&quot;, &quot;COMMENT_COUNT&quot;, &quot;CREATED_AT&quot;, &quot;EMAIL&quot;, &quot;EMAIL_ENABLED&quot;, &quot;GOOGLE_ID&quot;, &quot;IS_ACTIVE&quot;, &quot;IS_WITHDRAWN&quot;, &quot;LAST_LOGIN_AT&quot;, &quot;LIKE_ALERTS&quot;, &quot;LIKE_GIVEN_COUNT&quot;, &quot;LIKES_RECEIVED&quot;, &quot;NEW_JOB_ALERTS&quot;, &quot;NICKNAME&quot;, &quot;POST_COUNT&quot;, &quot;REPLY_ALERTS&quot;, &quot;UPDATED_AT&quot;, &quot;USER_ROLE&quot;, &quot;WITHDRAWN_AT&quot;) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+2025-11-11T15:10:31.785+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.785+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_locations&quot; (&quot;location_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.785+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.786+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.786+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO &quot;user_interested_companies&quot; (&quot;company_name&quot;, &quot;user_id&quot;) VALUES (?, ?)]
+2025-11-11T15:10:31.786+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcUtils               : JDBC driver supports batch updates
+2025-11-11T15:10:31.787+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.787+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;users&quot;.&quot;ID&quot; AS &quot;ID&quot;, &quot;users&quot;.&quot;EMAIL&quot; AS &quot;EMAIL&quot;, &quot;users&quot;.&quot;USER_ROLE&quot; AS &quot;USER_ROLE&quot;, &quot;users&quot;.&quot;GOOGLE_ID&quot; AS &quot;GOOGLE_ID&quot;, &quot;users&quot;.&quot;IS_ACTIVE&quot; AS &quot;IS_ACTIVE&quot;, &quot;users&quot;.&quot;NICKNAME&quot; AS &quot;NICKNAME&quot;, &quot;users&quot;.&quot;CREATED_AT&quot; AS &quot;CREATED_AT&quot;, &quot;users&quot;.&quot;UPDATED_AT&quot; AS &quot;UPDATED_AT&quot;, &quot;users&quot;.&quot;LAST_LOGIN_AT&quot; AS &quot;LAST_LOGIN_AT&quot;, &quot;users&quot;.&quot;IS_WITHDRAWN&quot; AS &quot;IS_WITHDRAWN&quot;, &quot;users&quot;.&quot;WITHDRAWN_AT&quot; AS &quot;WITHDRAWN_AT&quot;, &quot;users&quot;.&quot;POST_COUNT&quot; AS &quot;POST_COUNT&quot;, &quot;users&quot;.&quot;COMMENT_COUNT&quot; AS &quot;COMMENT_COUNT&quot;, &quot;users&quot;.&quot;BOOKMARK_COUNT&quot; AS &quot;BOOKMARK_COUNT&quot;, &quot;users&quot;.&quot;LIKES_RECEIVED&quot; AS &quot;LIKES_RECEIVED&quot;, &quot;users&quot;.&quot;LIKE_GIVEN_COUNT&quot; AS &quot;LIKE_GIVEN_COUNT&quot;, &quot;users&quot;.&quot;LIKE_ALERTS&quot; AS &quot;LIKE_ALERTS&quot;, &quot;users&quot;.&quot;REPLY_ALERTS&quot; AS &quot;REPLY_ALERTS&quot;, &quot;users&quot;.&quot;EMAIL_ENABLED&quot; AS &quot;EMAIL_ENABLED&quot;, &quot;users&quot;.&quot;NEW_JOB_ALERTS&quot; AS &quot;NEW_JOB_ALERTS&quot; FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;NICKNAME&quot; = ?]
+2025-11-11T15:10:31.787+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.787+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;user_interested_companies&quot;.&quot;company_name&quot; AS &quot;company_name&quot; FROM &quot;user_interested_companies&quot; WHERE &quot;user_interested_companies&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.788+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2025-11-11T15:10:31.788+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT &quot;user_interested_locations&quot;.&quot;location_name&quot; AS &quot;location_name&quot; FROM &quot;user_interested_locations&quot; WHERE &quot;user_interested_locations&quot;.&quot;user_id&quot; = ?]
+2025-11-11T15:10:31.789+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Initiating transaction rollback
+2025-11-11T15:10:31.789+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Rolling back JDBC transaction on Connection [HikariProxyConnection@1404671279 wrapping conn59: url=jdbc:h2:mem:testdb user=SA]
+2025-11-11T15:10:31.789+09:00 DEBUG 56239 --- [    Test worker] o.s.jdbc.support.JdbcTransactionManager  : Releasing JDBC Connection [HikariProxyConnection@1404671279 wrapping conn59: url=jdbc:h2:mem:testdb user=SA] after transaction
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.12</a> at 2025. 11. 11. 오후 3:10:31</p>
+</div>
+</div>
+</body>
+</html>

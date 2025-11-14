@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - MultiAggregation 실제 사용 사례 테스트</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>MultiAggregation 실제 사용 사례 테스트</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/dev.devrunner.elasticsearch.agg.html">dev.devrunner.elasticsearch.agg</a> &gt; MultiAggregationUseCaseTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.041s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">경력별 통계 - 범위별 집계</td>
+<td class="success">aggregateByExperienceRanges()</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">포지션별 통계 - 회사 필터 적용</td>
+<td class="success">aggregateByPosition_withCompanyFilter()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">4가지 집계를 한 번에 실행 - 회사별/주니어/시니어/최근</td>
+<td class="success">aggregateMultiple_realWorldScenario()</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">최근 30일 트렌드 + 전체 통계</td>
+<td class="success">aggregateTrendAndOverallStats()</td>
+<td class="success">0.014s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>
+======================================================================
+Test: aggregateTrendAndOverallStats
+======================================================================
+{
+  &quot;top_companies_recent&quot; : {
+    &quot;filter&quot; : {
+      &quot;bool&quot; : {
+        &quot;filter&quot; : [ {
+          &quot;range&quot; : {
+            &quot;created_at&quot; : {
+              &quot;gte&quot; : &quot;1726930800000&quot;,
+              &quot;lte&quot; : &quot;1729522800000&quot;
+            }
+          }
+        } ],
+        &quot;must&quot; : [ {
+          &quot;term&quot; : {
+            &quot;deleted&quot; : {
+              &quot;value&quot; : &quot;false&quot;
+            }
+          }
+        } ]
+      }
+    },
+    &quot;aggs&quot; : {
+      &quot;companies&quot; : {
+        &quot;terms&quot; : {
+          &quot;field&quot; : &quot;company&quot;,
+          &quot;size&quot; : 10
+        },
+        &quot;aggs&quot; : {
+          &quot;job_count&quot; : {
+            &quot;value_count&quot; : {
+              &quot;field&quot; : &quot;_index&quot;
+            }
+          }
+        }
+      }
+    }
+  },
+  &quot;overall_stats&quot; : {
+    &quot;filter&quot; : {
+      &quot;bool&quot; : {
+        &quot;must&quot; : [ {
+          &quot;term&quot; : {
+            &quot;deleted&quot; : {
+              &quot;value&quot; : &quot;false&quot;
+            }
+          }
+        } ]
+      }
+    },
+    &quot;aggs&quot; : {
+      &quot;total_jobs&quot; : {
+        &quot;value_count&quot; : {
+          &quot;field&quot; : &quot;_index&quot;
+        }
+      },
+      &quot;avg_views&quot; : {
+        &quot;avg&quot; : {
+          &quot;field&quot; : &quot;popularity_view_count&quot;
+        }
+      },
+      &quot;avg_max_salary&quot; : {
+        &quot;avg&quot; : {
+          &quot;field&quot; : &quot;compensation_max_base_pay&quot;
+        }
+      }
+    }
+  },
+  &quot;recent_trend&quot; : {
+    &quot;filter&quot; : {
+      &quot;bool&quot; : {
+        &quot;filter&quot; : [ {
+          &quot;range&quot; : {
+            &quot;created_at&quot; : {
+              &quot;gte&quot; : &quot;1726930800000&quot;,
+              &quot;lte&quot; : &quot;1729522800000&quot;
+            }
+          }
+        } ],
+        &quot;must&quot; : [ {
+          &quot;term&quot; : {
+            &quot;deleted&quot; : {
+              &quot;value&quot; : &quot;false&quot;
+            }
+          }
+        } ]
+      }
+    },
+    &quot;aggs&quot; : {
+      &quot;daily&quot; : {
+        &quot;date_histogram&quot; : {
+          &quot;field&quot; : &quot;created_at&quot;,
+          &quot;calendar_interval&quot; : &quot;1d&quot;
+        },
+        &quot;aggs&quot; : {
+          &quot;daily_count&quot; : {
+            &quot;value_count&quot; : {
+              &quot;field&quot; : &quot;_index&quot;
+            }
+          },
+          &quot;avg_views&quot; : {
+            &quot;avg&quot; : {
+              &quot;field&quot; : &quot;popularity_view_count&quot;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{&quot;top_companies_recent&quot;:{&quot;filter&quot;:{&quot;bool&quot;:{&quot;filter&quot;:[{&quot;range&quot;:{&quot;created_at&quot;:{&quot;gte&quot;:&quot;1726930800000&quot;,&quot;lte&quot;:&quot;1729522800000&quot;}}}],&quot;must&quot;:[{&quot;term&quot;:{&quot;deleted&quot;:{&quot;value&quot;:&quot;false&quot;}}}]}},&quot;aggs&quot;:{&quot;companies&quot;:{&quot;terms&quot;:{&quot;field&quot;:&quot;company&quot;,&quot;size&quot;:10},&quot;aggs&quot;:{&quot;job_count&quot;:{&quot;value_count&quot;:{&quot;field&quot;:&quot;_index&quot;}}}}}},&quot;overall_stats&quot;:{&quot;filter&quot;:{&quot;bool&quot;:{&quot;must&quot;:[{&quot;term&quot;:{&quot;deleted&quot;:{&quot;value&quot;:&quot;false&quot;}}}]}},&quot;aggs&quot;:{&quot;total_jobs&quot;:{&quot;value_count&quot;:{&quot;field&quot;:&quot;_index&quot;}},&quot;avg_views&quot;:{&quot;avg&quot;:{&quot;field&quot;:&quot;popularity_view_count&quot;}},&quot;avg_max_salary&quot;:{&quot;avg&quot;:{&quot;field&quot;:&quot;compensation_max_base_pay&quot;}}}},&quot;recent_trend&quot;:{&quot;filter&quot;:{&quot;bool&quot;:{&quot;filter&quot;:[{&quot;range&quot;:{&quot;created_at&quot;:{&quot;gte&quot;:&quot;1726930800000&quot;,&quot;lte&quot;:&quot;1729522800000&quot;}}}],&quot;must&quot;:[{&quot;term&quot;:{&quot;deleted&quot;:{&quot;value&quot;:&quot;false&quot;}}}]}},&quot;aggs&quot;:{&quot;daily&quot;:{&quot;date_histogram&quot;:{&quot;field&quot;:&quot;created_at&quot;,&quot;calendar_interval&quot;:&quot;1d&quot;},&quot;aggs&quot;:{&quot;daily_count&quot;:{&quot;value_count&quot;:{&quot;field&quot;:&quot;_index&quot;}},&quot;avg_views&quot;:{&quot;avg&quot;:{&quot;field&quot;:&quot;popularity_view_count&quot;}}}}}}}
+======================================================================
+
+
+======================================================================
+Test: aggregateMultiple_realWorldScenario
+======================================================================
+{
+  &quot;recent_week&quot; : {
+    &quot;filter&quot; : {
+      &quot;bool&quot; : {
+        &quot;filter&quot; : [ {
+          &quot;range&quot; : {
+            &quot;created_at&quot; : {
+              &quot;gte&quot; : &quot;1762236624149&quot;,
+              &quot;lte&quot; : &quot;1762841424149&quot;
+            }
+          }
+        } ],
+        &quot;must&quot; : [ {
+          &quot;term&quot; : {
+            &quot;deleted&quot; : {
+              &quot;value&quot; : &quot;false&quot;
+            }
+          }
+        } ]
+      }
+    },
+    &quot;aggs&quot; : {
+      &quot;daily&quot; : {
+        &quot;date_histogram&quot; : {
+          &quot;field&quot; : &quot;created_at&quot;,
+          &quot;calendar_interval&quot; : &quot;1d&quot;
+        },
+        &quot;aggs&quot; : {
+          &quot;daily_count&quot; : {
+            &quot;value_count&quot; : {
+              &quot;field&quot; : &quot;_index&quot;
+            }
+          }
+        }
+      }
+    }
+  },
+  &quot;by_company&quot; : {
+    &quot;terms&quot; : {
+      &quot;field&quot; : &quot;company&quot;,
+      &quot;size&quot; : 10
+    },
+    &quot;aggs&quot; : {
+      &quot;job_count&quot; : {
+        &quot;value_count&quot; : {
+          &quot;field&quot; : &quot;_index&quot;
+        }
+      }
+    }
+  },
+  &quot;senior_positions&quot; : {
+    &quot;filter&quot; : {
+      &quot;bool&quot; : {
+        &quot;filter&quot; : [ {
+          &quot;range&quot; : {
+            &quot;min_years&quot; : {
+              &quot;gte&quot; : &quot;5&quot;
+            }
+          }
+        } ],
+        &quot;must&quot; : [ {
+          &quot;term&quot; : {
+            &quot;deleted&quot; : {
+              &quot;value&quot; : &quot;false&quot;
+            }
+          }
+        } ]
+      }
+    },
+    &quot;aggs&quot; : {
+      &quot;position_bucket&quot; : {
+        &quot;terms&quot; : {
+          &quot;field&quot; : &quot;position_category&quot;,
+          &quot;size&quot; : 5
+        },
+        &quot;aggs&quot; : {
+          &quot;count&quot; : {
+            &quot;value_count&quot; : {
+              &quot;field&quot; : &quot;_index&quot;
+            }
+          }
+        }
+      }
+    }
+  },
+  &quot;junior_positions_by_years&quot; : {
+    &quot;filter&quot; : {
+      &quot;bool&quot; : {
+        &quot;filter&quot; : [ {
+          &quot;term&quot; : {
+            &quot;experience_required&quot; : {
+              &quot;value&quot; : &quot;true&quot;
+            }
+          }
+        }, {
+          &quot;range&quot; : {
+            &quot;min_years&quot; : {
+              &quot;lte&quot; : &quot;2&quot;
+            }
+          }
+        } ],
+        &quot;must&quot; : [ {
+          &quot;term&quot; : {
+            &quot;deleted&quot; : {
+              &quot;value&quot; : &quot;false&quot;
+            }
+          }
+        } ]
+      }
+    },
+    &quot;aggs&quot; : {
+      &quot;avg_views&quot; : {
+        &quot;avg&quot; : {
+          &quot;field&quot; : &quot;popularity_view_count&quot;
+        }
+      },
+      &quot;count&quot; : {
+        &quot;value_count&quot; : {
+          &quot;field&quot; : &quot;_index&quot;
+        }
+      }
+    }
+  },
+  &quot;junior_positions_by_experience&quot; : {
+    &quot;filter&quot; : {
+      &quot;bool&quot; : {
+        &quot;filter&quot; : [ {
+          &quot;term&quot; : {
+            &quot;experience_required&quot; : {
+              &quot;value&quot; : &quot;false&quot;
+            }
+          }
+        } ],
+        &quot;must&quot; : [ {
+          &quot;term&quot; : {
+            &quot;deleted&quot; : {
+              &quot;value&quot; : &quot;false&quot;
+            }
+          }
+        } ]
+      }
+    },
+    &quot;aggs&quot; : {
+      &quot;count&quot; : {
+        &quot;value_count&quot; : {
+          &quot;field&quot; : &quot;_index&quot;
+        }
+      }
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{&quot;recent_week&quot;:{&quot;filter&quot;:{&quot;bool&quot;:{&quot;filter&quot;:[{&quot;range&quot;:{&quot;created_at&quot;:{&quot;gte&quot;:&quot;1762236624149&quot;,&quot;lte&quot;:&quot;1762841424149&quot;}}}],&quot;must&quot;:[{&quot;term&quot;:{&quot;deleted&quot;:{&quot;value&quot;:&quot;false&quot;}}}]}},&quot;aggs&quot;:{&quot;daily&quot;:{&quot;date_histogram&quot;:{&quot;field&quot;:&quot;created_at&quot;,&quot;calendar_interval&quot;:&quot;1d&quot;},&quot;aggs&quot;:{&quot;daily_count&quot;:{&quot;value_count&quot;:{&quot;field&quot;:&quot;_index&quot;}}}}}},&quot;by_company&quot;:{&quot;terms&quot;:{&quot;field&quot;:&quot;company&quot;,&quot;size&quot;:10},&quot;aggs&quot;:{&quot;job_count&quot;:{&quot;value_count&quot;:{&quot;field&quot;:&quot;_index&quot;}}}},&quot;senior_positions&quot;:{&quot;filter&quot;:{&quot;bool&quot;:{&quot;filter&quot;:[{&quot;range&quot;:{&quot;min_years&quot;:{&quot;gte&quot;:&quot;5&quot;}}}],&quot;must&quot;:[{&quot;term&quot;:{&quot;deleted&quot;:{&quot;value&quot;:&quot;false&quot;}}}]}},&quot;aggs&quot;:{&quot;position_bucket&quot;:{&quot;terms&quot;:{&quot;field&quot;:&quot;position_category&quot;,&quot;size&quot;:5},&quot;aggs&quot;:{&quot;count&quot;:{&quot;value_count&quot;:{&quot;field&quot;:&quot;_index&quot;}}}}}},&quot;junior_positions_by_years&quot;:{&quot;filter&quot;:{&quot;bool&quot;:{&quot;filter&quot;:[{&quot;term&quot;:{&quot;experience_required&quot;:{&quot;value&quot;:&quot;true&quot;}}},{&quot;range&quot;:{&quot;min_years&quot;:{&quot;lte&quot;:&quot;2&quot;}}}],&quot;must&quot;:[{&quot;term&quot;:{&quot;deleted&quot;:{&quot;value&quot;:&quot;false&quot;}}}]}},&quot;aggs&quot;:{&quot;avg_views&quot;:{&quot;avg&quot;:{&quot;field&quot;:&quot;popularity_view_count&quot;}},&quot;count&quot;:{&quot;value_count&quot;:{&quot;field&quot;:&quot;_index&quot;}}}},&quot;junior_positions_by_experience&quot;:{&quot;filter&quot;:{&quot;bool&quot;:{&quot;filter&quot;:[{&quot;term&quot;:{&quot;experience_required&quot;:{&quot;value&quot;:&quot;false&quot;}}}],&quot;must&quot;:[{&quot;term&quot;:{&quot;deleted&quot;:{&quot;value&quot;:&quot;false&quot;}}}]}},&quot;aggs&quot;:{&quot;count&quot;:{&quot;value_count&quot;:{&quot;field&quot;:&quot;_index&quot;}}}}}
+======================================================================
+
+
+======================================================================
+Test: aggregateByExperienceRanges
+======================================================================
+{
+  &quot;junior_level&quot; : {
+    &quot;filter&quot; : {
+      &quot;bool&quot; : {
+        &quot;filter&quot; : [ {
+          &quot;range&quot; : {
+            &quot;min_years&quot; : {
+              &quot;gte&quot; : &quot;2&quot;,
+              &quot;lte&quot; : &quot;5&quot;
+            }
+          }
+        } ],
+        &quot;must&quot; : [ {
+          &quot;term&quot; : {
+            &quot;deleted&quot; : {
+              &quot;value&quot; : &quot;false&quot;
+            }
+          }
+        } ]
+      }
+    },
+    &quot;aggs&quot; : {
+      &quot;count&quot; : {
+        &quot;value_count&quot; : {
+          &quot;field&quot; : &quot;_index&quot;
+        }
+      },
+      &quot;avg_salary&quot; : {
+        &quot;avg&quot; : {
+          &quot;field&quot; : &quot;compensation_max_base_pay&quot;
+        }
+      }
+    }
+  },
+  &quot;entry_level&quot; : {
+    &quot;filter&quot; : {
+      &quot;bool&quot; : {
+        &quot;filter&quot; : [ {
+          &quot;range&quot; : {
+            &quot;min_years&quot; : {
+              &quot;lte&quot; : &quot;2&quot;
+            }
+          }
+        } ],
+        &quot;must&quot; : [ {
+          &quot;term&quot; : {
+            &quot;deleted&quot; : {
+              &quot;value&quot; : &quot;false&quot;
+            }
+          }
+        } ]
+      }
+    },
+    &quot;aggs&quot; : {
+      &quot;count&quot; : {
+        &quot;value_count&quot; : {
+          &quot;field&quot; : &quot;_index&quot;
+        }
+      },
+      &quot;avg_salary&quot; : {
+        &quot;avg&quot; : {
+          &quot;field&quot; : &quot;compensation_max_base_pay&quot;
+        }
+      }
+    }
+  },
+  &quot;senior_level&quot; : {
+    &quot;filter&quot; : {
+      &quot;bool&quot; : {
+        &quot;filter&quot; : [ {
+          &quot;range&quot; : {
+            &quot;min_years&quot; : {
+              &quot;gte&quot; : &quot;5&quot;
+            }
+          }
+        } ],
+        &quot;must&quot; : [ {
+          &quot;term&quot; : {
+            &quot;deleted&quot; : {
+              &quot;value&quot; : &quot;false&quot;
+            }
+          }
+        } ]
+      }
+    },
+    &quot;aggs&quot; : {
+      &quot;max_salary&quot; : {
+        &quot;max&quot; : {
+          &quot;field&quot; : &quot;compensation_max_base_pay&quot;
+        }
+      },
+      &quot;count&quot; : {
+        &quot;value_count&quot; : {
+          &quot;field&quot; : &quot;_index&quot;
+        }
+      },
+      &quot;avg_salary&quot; : {
+        &quot;avg&quot; : {
+          &quot;field&quot; : &quot;compensation_max_base_pay&quot;
+        }
+      }
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{&quot;junior_level&quot;:{&quot;filter&quot;:{&quot;bool&quot;:{&quot;filter&quot;:[{&quot;range&quot;:{&quot;min_years&quot;:{&quot;gte&quot;:&quot;2&quot;,&quot;lte&quot;:&quot;5&quot;}}}],&quot;must&quot;:[{&quot;term&quot;:{&quot;deleted&quot;:{&quot;value&quot;:&quot;false&quot;}}}]}},&quot;aggs&quot;:{&quot;count&quot;:{&quot;value_count&quot;:{&quot;field&quot;:&quot;_index&quot;}},&quot;avg_salary&quot;:{&quot;avg&quot;:{&quot;field&quot;:&quot;compensation_max_base_pay&quot;}}}},&quot;entry_level&quot;:{&quot;filter&quot;:{&quot;bool&quot;:{&quot;filter&quot;:[{&quot;range&quot;:{&quot;min_years&quot;:{&quot;lte&quot;:&quot;2&quot;}}}],&quot;must&quot;:[{&quot;term&quot;:{&quot;deleted&quot;:{&quot;value&quot;:&quot;false&quot;}}}]}},&quot;aggs&quot;:{&quot;count&quot;:{&quot;value_count&quot;:{&quot;field&quot;:&quot;_index&quot;}},&quot;avg_salary&quot;:{&quot;avg&quot;:{&quot;field&quot;:&quot;compensation_max_base_pay&quot;}}}},&quot;senior_level&quot;:{&quot;filter&quot;:{&quot;bool&quot;:{&quot;filter&quot;:[{&quot;range&quot;:{&quot;min_years&quot;:{&quot;gte&quot;:&quot;5&quot;}}}],&quot;must&quot;:[{&quot;term&quot;:{&quot;deleted&quot;:{&quot;value&quot;:&quot;false&quot;}}}]}},&quot;aggs&quot;:{&quot;max_salary&quot;:{&quot;max&quot;:{&quot;field&quot;:&quot;compensation_max_base_pay&quot;}},&quot;count&quot;:{&quot;value_count&quot;:{&quot;field&quot;:&quot;_index&quot;}},&quot;avg_salary&quot;:{&quot;avg&quot;:{&quot;field&quot;:&quot;compensation_max_base_pay&quot;}}}}}
+======================================================================
+
+
+======================================================================
+Test: aggregateByPosition_withCompanyFilter
+======================================================================
+{
+  &quot;google_positions&quot; : {
+    &quot;filter&quot; : {
+      &quot;bool&quot; : {
+        &quot;filter&quot; : [ {
+          &quot;term&quot; : {
+            &quot;company&quot; : {
+              &quot;value&quot; : &quot;Google&quot;
+            }
+          }
+        } ],
+        &quot;must&quot; : [ {
+          &quot;term&quot; : {
+            &quot;deleted&quot; : {
+              &quot;value&quot; : &quot;false&quot;
+            }
+          }
+        } ]
+      }
+    },
+    &quot;aggs&quot; : {
+      &quot;positions&quot; : {
+        &quot;terms&quot; : {
+          &quot;field&quot; : &quot;position_category&quot;,
+          &quot;size&quot; : 10
+        },
+        &quot;aggs&quot; : {
+          &quot;avg_views&quot; : {
+            &quot;avg&quot; : {
+              &quot;field&quot; : &quot;popularity_view_count&quot;
+            }
+          },
+          &quot;count&quot; : {
+            &quot;value_count&quot; : {
+              &quot;field&quot; : &quot;_index&quot;
+            }
+          }
+        }
+      }
+    }
+  },
+  &quot;meta_positions&quot; : {
+    &quot;filter&quot; : {
+      &quot;bool&quot; : {
+        &quot;filter&quot; : [ {
+          &quot;term&quot; : {
+            &quot;company&quot; : {
+              &quot;value&quot; : &quot;META&quot;
+            }
+          }
+        } ],
+        &quot;must&quot; : [ {
+          &quot;term&quot; : {
+            &quot;deleted&quot; : {
+              &quot;value&quot; : &quot;false&quot;
+            }
+          }
+        } ]
+      }
+    },
+    &quot;aggs&quot; : {
+      &quot;positions&quot; : {
+        &quot;terms&quot; : {
+          &quot;field&quot; : &quot;position_category&quot;,
+          &quot;size&quot; : 10
+        },
+        &quot;aggs&quot; : {
+          &quot;avg_views&quot; : {
+            &quot;avg&quot; : {
+              &quot;field&quot; : &quot;popularity_view_count&quot;
+            }
+          },
+          &quot;count&quot; : {
+            &quot;value_count&quot; : {
+              &quot;field&quot; : &quot;_index&quot;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{&quot;google_positions&quot;:{&quot;filter&quot;:{&quot;bool&quot;:{&quot;filter&quot;:[{&quot;term&quot;:{&quot;company&quot;:{&quot;value&quot;:&quot;Google&quot;}}}],&quot;must&quot;:[{&quot;term&quot;:{&quot;deleted&quot;:{&quot;value&quot;:&quot;false&quot;}}}]}},&quot;aggs&quot;:{&quot;positions&quot;:{&quot;terms&quot;:{&quot;field&quot;:&quot;position_category&quot;,&quot;size&quot;:10},&quot;aggs&quot;:{&quot;avg_views&quot;:{&quot;avg&quot;:{&quot;field&quot;:&quot;popularity_view_count&quot;}},&quot;count&quot;:{&quot;value_count&quot;:{&quot;field&quot;:&quot;_index&quot;}}}}}},&quot;meta_positions&quot;:{&quot;filter&quot;:{&quot;bool&quot;:{&quot;filter&quot;:[{&quot;term&quot;:{&quot;company&quot;:{&quot;value&quot;:&quot;META&quot;}}}],&quot;must&quot;:[{&quot;term&quot;:{&quot;deleted&quot;:{&quot;value&quot;:&quot;false&quot;}}}]}},&quot;aggs&quot;:{&quot;positions&quot;:{&quot;terms&quot;:{&quot;field&quot;:&quot;position_category&quot;,&quot;size&quot;:10},&quot;aggs&quot;:{&quot;avg_views&quot;:{&quot;avg&quot;:{&quot;field&quot;:&quot;popularity_view_count&quot;}},&quot;count&quot;:{&quot;value_count&quot;:{&quot;field&quot;:&quot;_index&quot;}}}}}}}
+======================================================================
+
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.12</a> at 2025. 11. 11. 오후 3:10:25</p>
+</div>
+</div>
+</body>
+</html>

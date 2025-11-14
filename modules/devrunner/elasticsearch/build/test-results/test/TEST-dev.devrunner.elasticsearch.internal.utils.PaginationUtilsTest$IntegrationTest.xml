@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="calculatePaginationInfo와 paginate 통합 시나리오" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:24" hostname="dankim0124ui-MacBookPro.local" time="0.016">
+  <properties/>
+  <testcase name="첫 페이지 조회 시나리오 (from=null, to=null)" classname="dev.devrunner.elasticsearch.internal.utils.PaginationUtilsTest$IntegrationTest" time="0.012"/>
+  <testcase name="중간 페이지 조회 시나리오" classname="dev.devrunner.elasticsearch.internal.utils.PaginationUtilsTest$IntegrationTest" time="0.002"/>
+  <testcase name="마지막 페이지 조회 시나리오 (다음 페이지 없음)" classname="dev.devrunner.elasticsearch.internal.utils.PaginationUtilsTest$IntegrationTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

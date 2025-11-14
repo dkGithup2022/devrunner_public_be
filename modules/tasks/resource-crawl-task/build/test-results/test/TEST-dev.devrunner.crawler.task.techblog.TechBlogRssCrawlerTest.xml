@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.crawler.task.techblog.TechBlogRssCrawlerTest" tests="14" skipped="14" failures="0" errors="0" timestamp="2025-11-11T06:11:58" hostname="dankim0124ui-MacBookPro.local" time="0.003">
+  <properties/>
+  <testcase name="testProcessAirbnb()" classname="dev.devrunner.crawler.task.techblog.TechBlogRssCrawlerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testProcessKarrot()" classname="dev.devrunner.crawler.task.techblog.TechBlogRssCrawlerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testFetchAirbnb()" classname="dev.devrunner.crawler.task.techblog.TechBlogRssCrawlerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testFetchMeta()" classname="dev.devrunner.crawler.task.techblog.TechBlogRssCrawlerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testFetchToss()" classname="dev.devrunner.crawler.task.techblog.TechBlogRssCrawlerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testProcessMeta()" classname="dev.devrunner.crawler.task.techblog.TechBlogRssCrawlerTest" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase name="testProcessToss()" classname="dev.devrunner.crawler.task.techblog.TechBlogRssCrawlerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testFetchKarrot()" classname="dev.devrunner.crawler.task.techblog.TechBlogRssCrawlerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testFetchMusinsa()" classname="dev.devrunner.crawler.task.techblog.TechBlogRssCrawlerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testProcessMusinsa()" classname="dev.devrunner.crawler.task.techblog.TechBlogRssCrawlerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testFetchNaverD2()" classname="dev.devrunner.crawler.task.techblog.TechBlogRssCrawlerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testProcessNaverD2()" classname="dev.devrunner.crawler.task.techblog.TechBlogRssCrawlerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testFetchSpotify()" classname="dev.devrunner.crawler.task.techblog.TechBlogRssCrawlerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testProcessSpotify()" classname="dev.devrunner.crawler.task.techblog.TechBlogRssCrawlerTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

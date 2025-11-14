@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.service.techblog.impl.DefaultTechBlogReaderTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:36" hostname="dankim0124ui-MacBookPro.local" time="0.054">
+  <properties/>
+  <testcase name="getByIds_withPartiallyExistingIds_returnsOnlyExistingBlogs()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogReaderTest" time="0.043"/>
+  <testcase name="getById_existingId_returnsBlogWithoutViewCount()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogReaderTest" time="0.001"/>
+  <testcase name="getByIds_withExistingIds_returnsList()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogReaderTest" time="0.0"/>
+  <testcase name="findByUrl_existingUrl_returnsOptionalWithBlog()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogReaderTest" time="0.001"/>
+  <testcase name="read_existingId_returnsBlogAndIncrementsViewCount()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogReaderTest" time="0.001"/>
+  <testcase name="getByIds_withEmptyIds_returnsEmptyList()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogReaderTest" time="0.0"/>
+  <testcase name="getByCompany_existingCompany_returnsList()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogReaderTest" time="0.001"/>
+  <testcase name="findByUrl_nonExistingUrl_returnsEmptyOptional()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogReaderTest" time="0.001"/>
+  <testcase name="getAll_emptyData_returnsEmptyList()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogReaderTest" time="0.001"/>
+  <testcase name="getById_nonExistingId_throwsTechBlogNotFoundException()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogReaderTest" time="0.002"/>
+  <testcase name="getByCompany_nonExistingCompany_returnsEmptyList()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogReaderTest" time="0.001"/>
+  <testcase name="getAll_withData_returnsList()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogReaderTest" time="0.0"/>
+  <testcase name="read_nonExistingId_throwsTechBlogNotFoundException()" classname="dev.devrunner.service.techblog.impl.DefaultTechBlogReaderTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

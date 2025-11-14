@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="GenericSearchQueryBuilder 통합 테스트" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:24" hostname="dankim0124ui-MacBookPro.local" time="0.073">
+  <properties/>
+  <testcase name="등록되지 않은 필드 사용 시 SearchFieldNotFoundException 발생" classname="dev.devrunner.elasticsearch.internal.queryBuilder.GenericSearchQueryBuilderTest" time="0.065"/>
+  <testcase name="여러 조건 혼합 시 BoolQuery 생성 - TERM + MATCH + RANGE" classname="dev.devrunner.elasticsearch.internal.queryBuilder.GenericSearchQueryBuilderTest" time="0.008"/>
+  <system-out><![CDATA[
+======================================================================
+Test: build_withMixedConditions_createsBoolQuery
+======================================================================
+{
+  "bool" : {
+    "filter" : [ {
+      "term" : {
+        "company" : {
+          "value" : "META"
+        }
+      }
+    }, {
+      "range" : {
+        "min_years" : {
+          "gte" : "0",
+          "lte" : "3"
+        }
+      }
+    } ],
+    "minimum_should_match" : "1",
+    "must" : [ {
+      "term" : {
+        "deleted" : {
+          "value" : "false"
+        }
+      }
+    } ],
+    "should" : [ {
+      "match" : {
+        "title" : {
+          "query" : "백엔드"
+        }
+      }
+    } ]
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"bool":{"filter":[{"term":{"company":{"value":"META"}}},{"range":{"min_years":{"gte":"0","lte":"3"}}}],"minimum_should_match":"1","must":[{"term":{"deleted":{"value":"false"}}}],"should":[{"match":{"title":{"query":"백엔드"}}}]}}
+======================================================================
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

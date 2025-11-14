@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - RangeQueryBuilder 테스트</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>RangeQueryBuilder 테스트</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.html">dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder</a> &gt; RangeQueryBuilderTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">8</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.009s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">FILTER BoolType 반환 확인</td>
+<td class="success">boolType_withFilter_returnsFilter()</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">MUST BoolType 반환 확인</td>
+<td class="success">boolType_withMust_returnsMust()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">gte와 lte 모두 있는 경우 range 쿼리 생성</td>
+<td class="success">build_withBothGteAndLte_createsRangeQuery()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">큰 숫자 값으로 range 쿼리 생성</td>
+<td class="success">build_withLargeNumbers_createsRangeQuery()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">음수 값으로 range 쿼리 생성</td>
+<td class="success">build_withNegativeNumbers_createsRangeQuery()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">gte만 있는 경우 range 쿼리 생성</td>
+<td class="success">build_withOnlyGte_createsRangeQueryWithGte()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">lte만 있는 경우 range 쿼리 생성</td>
+<td class="success">build_withOnlyLte_createsRangeQueryWithLte()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">날짜(timestamp) 값으로 range 쿼리 생성</td>
+<td class="success">build_withTimestamp_createsRangeQuery()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>
+======================================================================
+Test: build_withNegativeNumbers_createsRangeQuery
+======================================================================
+{
+  &quot;range&quot; : {
+    &quot;some_field&quot; : {
+      &quot;gte&quot; : &quot;-10&quot;,
+      &quot;lte&quot; : &quot;10&quot;
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{&quot;range&quot;:{&quot;some_field&quot;:{&quot;gte&quot;:&quot;-10&quot;,&quot;lte&quot;:&quot;10&quot;}}}
+======================================================================
+
+
+======================================================================
+Test: build_withOnlyGte_createsRangeQueryWithGte
+======================================================================
+{
+  &quot;range&quot; : {
+    &quot;compensation_min_base_pay&quot; : {
+      &quot;gte&quot; : &quot;80000000&quot;
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{&quot;range&quot;:{&quot;compensation_min_base_pay&quot;:{&quot;gte&quot;:&quot;80000000&quot;}}}
+======================================================================
+
+
+======================================================================
+Test: build_withLargeNumbers_createsRangeQuery
+======================================================================
+{
+  &quot;range&quot; : {
+    &quot;compensation_max_base_pay&quot; : {
+      &quot;gte&quot; : &quot;100000000&quot;,
+      &quot;lte&quot; : &quot;200000000&quot;
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{&quot;range&quot;:{&quot;compensation_max_base_pay&quot;:{&quot;gte&quot;:&quot;100000000&quot;,&quot;lte&quot;:&quot;200000000&quot;}}}
+======================================================================
+
+
+======================================================================
+Test: build_withBothGteAndLte_createsRangeQuery
+======================================================================
+{
+  &quot;range&quot; : {
+    &quot;min_years&quot; : {
+      &quot;gte&quot; : &quot;0&quot;,
+      &quot;lte&quot; : &quot;3&quot;
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{&quot;range&quot;:{&quot;min_years&quot;:{&quot;gte&quot;:&quot;0&quot;,&quot;lte&quot;:&quot;3&quot;}}}
+======================================================================
+
+
+======================================================================
+Test: build_withOnlyLte_createsRangeQueryWithLte
+======================================================================
+{
+  &quot;range&quot; : {
+    &quot;max_years&quot; : {
+      &quot;lte&quot; : &quot;5&quot;
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{&quot;range&quot;:{&quot;max_years&quot;:{&quot;lte&quot;:&quot;5&quot;}}}
+======================================================================
+
+
+======================================================================
+Test: build_withTimestamp_createsRangeQuery
+======================================================================
+{
+  &quot;range&quot; : {
+    &quot;started_at&quot; : {
+      &quot;gte&quot; : &quot;1696118400000&quot;,
+      &quot;lte&quot; : &quot;1698796800000&quot;
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{&quot;range&quot;:{&quot;started_at&quot;:{&quot;gte&quot;:&quot;1696118400000&quot;,&quot;lte&quot;:&quot;1698796800000&quot;}}}
+======================================================================
+
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.12</a> at 2025. 11. 11. 오후 3:10:25</p>
+</div>
+</div>
+</body>
+</html>

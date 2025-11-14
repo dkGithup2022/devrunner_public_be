@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.service.job.view.integration.DefaultJobViewMemoryConcurrencyTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:36" hostname="dankim0124ui-MacBookPro.local" time="0.106">
+  <properties/>
+  <testcase name="동시에 countUp + flush가 호출되어도 데이터 손실 없이 처리됨" classname="dev.devrunner.service.job.view.integration.DefaultJobViewMemoryConcurrencyTest" time="0.036"/>
+  <testcase name="같은 Job에 여러 번 countUp 후 flush하면 누적된 값이 DB에 정확히 반영됨" classname="dev.devrunner.service.job.view.integration.DefaultJobViewMemoryConcurrencyTest" time="0.015"/>
+  <testcase name="여러 Job에 동시에 조회수를 증가시켜도 각각 정확히 누적됨" classname="dev.devrunner.service.job.view.integration.DefaultJobViewMemoryConcurrencyTest" time="0.028"/>
+  <testcase name="100명이 같은 Job을 동시에 조회하면 viewCounts에 100이 정확히 누적됨" classname="dev.devrunner.service.job.view.integration.DefaultJobViewMemoryConcurrencyTest" time="0.015"/>
+  <testcase name="flush 후 다시 countUp하면 새로운 조회수가 누적됨" classname="dev.devrunner.service.job.view.integration.DefaultJobViewMemoryConcurrencyTest" time="0.009"/>
+  <system-out><![CDATA[2025-11-11T15:10:36.026+09:00  INFO 56265 --- [    Test worker] d.d.s.job.view.DefaultJobViewMemory      : Starting to flush 1 Job view counts
+2025-11-11T15:10:36.028+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Recording outbox event: targetType=JOB, targetId=3, updateType=POPULARITY_ONLY
+2025-11-11T15:10:36.030+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Outbox event recorded: id=7
+2025-11-11T15:10:36.030+09:00  INFO 56265 --- [    Test worker] d.d.s.job.view.DefaultJobViewMemory      : Flush completed - Success: 1, Failed: 0
+2025-11-11T15:10:36.047+09:00  INFO 56265 --- [    Test worker] .v.i.DefaultJobViewMemoryConcurrencyTest : View count after concurrent countUp+flush: 50 (expected <= 50)
+2025-11-11T15:10:36.057+09:00  INFO 56265 --- [    Test worker] d.d.s.job.view.DefaultJobViewMemory      : Starting to flush 1 Job view counts
+2025-11-11T15:10:36.058+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Recording outbox event: targetType=JOB, targetId=4, updateType=POPULARITY_ONLY
+2025-11-11T15:10:36.060+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Outbox event recorded: id=8
+2025-11-11T15:10:36.060+09:00  INFO 56265 --- [    Test worker] d.d.s.job.view.DefaultJobViewMemory      : Flush completed - Success: 1, Failed: 0
+2025-11-11T15:10:36.082+09:00  INFO 56265 --- [    Test worker] d.d.s.job.view.DefaultJobViewMemory      : Starting to flush 3 Job view counts
+2025-11-11T15:10:36.084+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Recording outbox event: targetType=JOB, targetId=5, updateType=POPULARITY_ONLY
+2025-11-11T15:10:36.085+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Outbox event recorded: id=9
+2025-11-11T15:10:36.085+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Recording outbox event: targetType=JOB, targetId=6, updateType=POPULARITY_ONLY
+2025-11-11T15:10:36.086+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Outbox event recorded: id=10
+2025-11-11T15:10:36.086+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Recording outbox event: targetType=JOB, targetId=7, updateType=POPULARITY_ONLY
+2025-11-11T15:10:36.088+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Outbox event recorded: id=11
+2025-11-11T15:10:36.088+09:00  INFO 56265 --- [    Test worker] d.d.s.job.view.DefaultJobViewMemory      : Flush completed - Success: 3, Failed: 0
+2025-11-11T15:10:36.093+09:00  INFO 56265 --- [    Test worker] .v.i.DefaultJobViewMemoryConcurrencyTest : Job1: 30, Job2: 30, Job3: 30 view counts
+2025-11-11T15:10:36.103+09:00  INFO 56265 --- [    Test worker] d.d.s.job.view.DefaultJobViewMemory      : Starting to flush 1 Job view counts
+2025-11-11T15:10:36.104+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Recording outbox event: targetType=JOB, targetId=8, updateType=POPULARITY_ONLY
+2025-11-11T15:10:36.105+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Outbox event recorded: id=12
+2025-11-11T15:10:36.105+09:00  INFO 56265 --- [    Test worker] d.d.s.job.view.DefaultJobViewMemory      : Flush completed - Success: 1, Failed: 0
+2025-11-11T15:10:36.108+09:00  INFO 56265 --- [    Test worker] .v.i.DefaultJobViewMemoryConcurrencyTest : View count after 100 concurrent views: 100
+2025-11-11T15:10:36.113+09:00  INFO 56265 --- [    Test worker] d.d.s.job.view.DefaultJobViewMemory      : Starting to flush 1 Job view counts
+2025-11-11T15:10:36.114+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Recording outbox event: targetType=JOB, targetId=9, updateType=POPULARITY_ONLY
+2025-11-11T15:10:36.116+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Outbox event recorded: id=13
+2025-11-11T15:10:36.116+09:00  INFO 56265 --- [    Test worker] d.d.s.job.view.DefaultJobViewMemory      : Flush completed - Success: 1, Failed: 0
+2025-11-11T15:10:36.116+09:00  INFO 56265 --- [    Test worker] d.d.s.job.view.DefaultJobViewMemory      : Starting to flush 1 Job view counts
+2025-11-11T15:10:36.116+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Recording outbox event: targetType=JOB, targetId=9, updateType=POPULARITY_ONLY
+2025-11-11T15:10:36.117+09:00  INFO 56265 --- [    Test worker] d.d.outbox.impl.OutboxEventJdbcRecorder  : Outbox event recorded: id=14
+2025-11-11T15:10:36.117+09:00  INFO 56265 --- [    Test worker] d.d.s.job.view.DefaultJobViewMemory      : Flush completed - Success: 1, Failed: 0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

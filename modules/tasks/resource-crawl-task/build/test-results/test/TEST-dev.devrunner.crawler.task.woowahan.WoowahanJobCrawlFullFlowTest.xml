@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.crawler.task.woowahan.WoowahanJobCrawlFullFlowTest" tests="3" skipped="3" failures="0" errors="0" timestamp="2025-11-11T06:11:58" hostname="dankim0124ui-MacBookPro.local" time="0.001">
+  <properties/>
+  <testcase name="testStage2_ContentParsing()" classname="dev.devrunner.crawler.task.woowahan.WoowahanJobCrawlFullFlowTest" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase name="testStage1_UrlCollection()" classname="dev.devrunner.crawler.task.woowahan.WoowahanJobCrawlFullFlowTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="testStage3_JobGeneration()" classname="dev.devrunner.crawler.task.woowahan.WoowahanJobCrawlFullFlowTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

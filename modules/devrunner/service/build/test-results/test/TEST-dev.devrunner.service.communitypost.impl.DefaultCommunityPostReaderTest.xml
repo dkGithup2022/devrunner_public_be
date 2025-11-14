@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.service.communitypost.impl.DefaultCommunityPostReaderTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:35" hostname="dankim0124ui-MacBookPro.local" time="0.041">
+  <properties/>
+  <testcase name="getByIds_withPartiallyExistingIds_returnsOnlyExistingPosts()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostReaderTest" time="0.019"/>
+  <testcase name="getByLocation_existingLocation_returnsList()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostReaderTest" time="0.0"/>
+  <testcase name="getByIds_withExistingIds_returnsList()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostReaderTest" time="0.0"/>
+  <testcase name="getById_existingId_returnsPostWithoutViewCount()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostReaderTest" time="0.002"/>
+  <testcase name="getByIds_withEmptyIds_returnsEmptyList()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostReaderTest" time="0.001"/>
+  <testcase name="getByCompany_existingCompany_returnsList()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostReaderTest" time="0.001"/>
+  <testcase name="getAll_emptyData_returnsEmptyList()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostReaderTest" time="0.001"/>
+  <testcase name="getByLocation_nonExistingLocation_returnsEmptyList()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostReaderTest" time="0.002"/>
+  <testcase name="getByUserId_existingUser_returnsList()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostReaderTest" time="0.001"/>
+  <testcase name="read_existingId_returnsPostAndIncrementsViewCount()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostReaderTest" time="0.001"/>
+  <testcase name="read_nonExistingId_throwsCommunityPostNotFoundException()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostReaderTest" time="0.002"/>
+  <testcase name="getByCompany_nonExistingCompany_returnsEmptyList()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostReaderTest" time="0.001"/>
+  <testcase name="getById_nonExistingId_throwsCommunityPostNotFoundException()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostReaderTest" time="0.001"/>
+  <testcase name="getByUserId_nonExistingUser_returnsEmptyList()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostReaderTest" time="0.001"/>
+  <testcase name="getAll_withData_returnsList()" classname="dev.devrunner.service.communitypost.impl.DefaultCommunityPostReaderTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

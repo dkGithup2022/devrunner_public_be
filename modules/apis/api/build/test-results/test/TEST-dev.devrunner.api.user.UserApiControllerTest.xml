@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.api.user.UserApiControllerTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:05" hostname="dankim0124ui-MacBookPro.local" time="0.115">
+  <properties/>
+  <testcase name="getCommentActivityLogs_nonExistingUser_throwsException()" classname="dev.devrunner.api.user.UserApiControllerTest" time="0.075"/>
+  <testcase name="getCommentActivityLogs_existingUser_returnsOkWithLogs()" classname="dev.devrunner.api.user.UserApiControllerTest" time="0.011"/>
+  <testcase name="getPostActivityLogs_existingUser_returnsOkWithLogs()" classname="dev.devrunner.api.user.UserApiControllerTest" time="0.004"/>
+  <testcase name="withdrawUser_validSession_returnsNoContent()" classname="dev.devrunner.api.user.UserApiControllerTest" time="0.001"/>
+  <testcase name="getUserMetrics_nonExistingUser_throwsException()" classname="dev.devrunner.api.user.UserApiControllerTest" time="0.004"/>
+  <testcase name="getUserMetrics_existingUser_returnsOkWithMetrics()" classname="dev.devrunner.api.user.UserApiControllerTest" time="0.002"/>
+  <testcase name="withdrawUser_nullSessionUser_throwsException()" classname="dev.devrunner.api.user.UserApiControllerTest" time="0.004"/>
+  <testcase name="getLikeActivityLogs_existingUser_returnsOkWithLogs()" classname="dev.devrunner.api.user.UserApiControllerTest" time="0.004"/>
+  <testcase name="getBookmarkActivityLogs_existingUser_returnsOkWithLogs()" classname="dev.devrunner.api.user.UserApiControllerTest" time="0.006"/>
+  <system-out><![CDATA[15:10:05.259 [Test worker] INFO dev.devrunner.api.user.UserApiController -- GET /api/users/999/activity-logs/comments - page: 0, size: 20
+15:10:05.268 [Test worker] INFO dev.devrunner.api.user.UserApiController -- GET /api/users/1/activity-logs/comments - page: 0, size: 20
+15:10:05.269 [Test worker] INFO dev.devrunner.api.user.UserApiController -- Retrieved 1 comment activity logs for userId: 1
+15:10:05.273 [Test worker] INFO dev.devrunner.api.user.UserApiController -- GET /api/users/1/activity-logs/posts - page: 0, size: 20
+15:10:05.274 [Test worker] INFO dev.devrunner.api.user.UserApiController -- Retrieved 1 post activity logs for userId: 1
+15:10:05.277 [Test worker] INFO dev.devrunner.api.user.UserApiController -- DELETE /api/users/me - Withdraw request by userId=1
+15:10:05.277 [Test worker] INFO dev.devrunner.api.user.UserApiController -- User withdrawn successfully: userId=1
+15:10:05.280 [Test worker] INFO dev.devrunner.api.user.UserApiController -- GET /api/users/999/metrics
+15:10:05.285 [Test worker] INFO dev.devrunner.api.user.UserApiController -- GET /api/users/1/metrics
+15:10:05.285 [Test worker] INFO dev.devrunner.api.user.UserApiController -- User metrics retrieved - userId: 1, postCount: 15, commentCount: 48, likeGivenCount: 120, bookmarkCount: 32
+15:10:05.291 [Test worker] INFO dev.devrunner.api.user.UserApiController -- GET /api/users/1/activity-logs/likes - page: 0, size: 20
+15:10:05.292 [Test worker] INFO dev.devrunner.api.user.UserApiController -- Retrieved 1 like activity logs for userId: 1
+15:10:05.296 [Test worker] INFO dev.devrunner.api.user.UserApiController -- GET /api/users/1/activity-logs/bookmarks - page: 0, size: 20
+15:10:05.298 [Test worker] INFO dev.devrunner.api.user.UserApiController -- Retrieved 1 bookmark activity logs for userId: 1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

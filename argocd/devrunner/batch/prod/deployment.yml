@@ -1,0 +1,122 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devrunner-prod-batch
+  namespace: devrunner-prod-batch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devrunner-prod-batch
+  template:
+    metadata:
+      labels:
+        app: devrunner-prod-batch
+    spec:
+      containers:
+        - name: devrunner-prod-batch
+          # 실제 배포 시에는 본인의 Docker Hub 레포지토리 경로로 변경하세요
+          image: private_info/private_info:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+
+          resources:
+            limits:
+              cpu: "1.5"
+              memory: "2500Mi"
+
+          args: ["--spring.profiles.active=devrunner-prod"]
+
+          volumeMounts:
+            - name: prod-ca-cer
+              mountPath: /etc/certs/ca
+              readOnly: true
+            - name: prod-server-cer
+              mountPath: /etc/certs/server
+              readOnly: true
+
+          env:
+            # Database
+            - name: SPRING_DATASOURCE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-batch-env
+                  key: SPRING_DATASOURCE_URL
+
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-batch-env
+                  key: SPRING_DATASOURCE_USERNAME
+
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-batch-env
+                  key: SPRING_DATASOURCE_PASSWORD
+
+            # Encryption
+            - name: EMAIL_ENCRYPTION_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-batch-env
+                  key: EMAIL_ENCRYPTION_KEY
+
+            # Elasticsearch
+            - name: ES_DEVELOP_URL
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-batch-env
+                  key: ES_DEVELOP_URL
+
+            - name: ES_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-batch-env
+                  key: ES_API_KEY
+
+            # Vector API
+            - name: DEVWIKI_E5_VECTOR_API
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-batch-env
+                  key: DEVWIKI_E5_VECTOR_API
+
+            # OpenAI
+            - name: OPENAI_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-batch-env
+                  key: OPENAI_KEY
+
+            # Firecrawl
+            - name: FIRECRAWL_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-batch-env
+                  key: FIRECRAWL_API_KEY
+
+            # Google CSE
+            - name: GOOGLE_JSON_API_CX
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-batch-env
+                  key: GOOGLE_JSON_API_CX
+
+            - name: GOOGLE_JSON_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-batch-env
+                  key: GOOGLE_JSON_API_KEY
+
+      volumes:
+        - name: prod-ca-cer
+          secret:
+            secretName: devrunner-batch-ca-cer
+        - name: prod-server-cer
+          secret:
+            secretName: devrunner-batch-cer
+
+      imagePullSecrets:
+        - name: dockerhubsecret

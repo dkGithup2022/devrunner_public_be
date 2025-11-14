@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - DefaultCommunityPostWriterTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>DefaultCommunityPostWriterTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/dev.devrunner.service.communitypost.impl.html">dev.devrunner.service.communitypost.impl</a> &gt; DefaultCommunityPostWriterTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">14</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.056s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">delete_callsRepositoryDeleteWithCorrectIdentity()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">delete_existingPost_callsRepositoryDelete()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">delete_postNotFound_throwsCommunityPostNotFoundException()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">delete_recordsUpdatedEvent()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">delete_unauthorizedUser_throwsUnauthorizedException()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">upsert_existingPost_callsRepositorySaveWithoutIncrementingPostCount()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">upsert_existingPost_recordsUpdatedEvent()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">upsert_linkedContentFromJobComment_createsLinkedContent()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">upsert_linkedContentFromJob_createsLinkedContent()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">upsert_newPost_callsRepositorySaveAndIncrementsUserPostCount()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">upsert_newPost_recordsCreatedEvent()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">upsert_noLinkedContent_createsNoneLinkedContent()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">upsert_postFromJobComment_callsRepositorySaveAndIncrementsUserPostCount()</td>
+<td class="success">0.026s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">upsert_userNotFound_throwsRuntimeException()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2025-11-11T15:10:35.668+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: null
+2025-11-11T15:10:35.669+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : User 1 postCount incremented
+2025-11-11T15:10:35.670+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost upserted successfully: 1
+2025-11-11T15:10:35.671+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: null
+2025-11-11T15:10:35.672+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : User 1 postCount incremented
+2025-11-11T15:10:35.672+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost upserted successfully: 1
+2025-11-11T15:10:35.674+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: null
+2025-11-11T15:10:35.674+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : User 1 postCount incremented
+2025-11-11T15:10:35.674+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost upserted successfully: 1
+2025-11-11T15:10:35.676+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: 1
+2025-11-11T15:10:35.676+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost upserted successfully: 1
+2025-11-11T15:10:35.678+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Deleting CommunityPost by id: 1 / requestUserId: 1
+2025-11-11T15:10:35.678+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost deleted successfully: 1
+2025-11-11T15:10:35.681+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: null
+2025-11-11T15:10:35.681+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : User 1 postCount incremented
+2025-11-11T15:10:35.681+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost upserted successfully: 1
+2025-11-11T15:10:35.684+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Deleting CommunityPost by id: 1 / requestUserId: 2
+2025-11-11T15:10:35.687+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Deleting CommunityPost by id: 1 / requestUserId: 1
+2025-11-11T15:10:35.687+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost deleted successfully: 1
+2025-11-11T15:10:35.690+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: 1
+2025-11-11T15:10:35.690+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost upserted successfully: 1
+2025-11-11T15:10:35.691+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: null
+2025-11-11T15:10:35.691+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : User 1 postCount incremented
+2025-11-11T15:10:35.691+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost upserted successfully: 1
+2025-11-11T15:10:35.693+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Deleting CommunityPost by id: 999 / requestUserId: 1
+2025-11-11T15:10:35.694+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost deleted successfully: 999
+2025-11-11T15:10:35.695+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Deleting CommunityPost by id: 1 / requestUserId: 1
+2025-11-11T15:10:35.701+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: null
+2025-11-11T15:10:35.707+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : Upserting CommunityPost - userId: 1, communityPostId: null
+2025-11-11T15:10:35.707+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : User 1 postCount incremented
+2025-11-11T15:10:35.707+09:00  INFO 56265 --- [    Test worker] d.d.s.c.impl.DefaultCommunityPostWriter  : CommunityPost upserted successfully: 1
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.12</a> at 2025. 11. 11. 오후 3:10:36</p>
+</div>
+</div>
+</body>
+</html>

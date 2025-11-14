@@ -1,0 +1,18 @@
+spring:
+  ai:
+    openai:
+      api-key: ${OPENAI_KEY}
+    retry:
+      max-attempts: 3
+
+---
+# DevRunner Production Profile
+spring:
+  config:
+    activate:
+      on-profile: devrunner-prod
+  ai:
+    openai:
+      api-key: ${OPENAI_KEY}
+    retry:
+      max-attempts: 3

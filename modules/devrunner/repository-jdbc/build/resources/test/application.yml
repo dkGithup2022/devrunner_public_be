@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=MySQL;CASE_INSENSITIVE_IDENTIFIERS=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+
+  # Spring Data JDBC 설정
+  data:
+    jdbc:
+      repositories:
+        enabled: true
+
+# 로깅 설정
+logging:
+  level:
+    org.springframework.jdbc: DEBUG
+    org.springframework.data.jdbc: DEBUG
+
+# Email Encryption 설정 (테스트용)
+encryption:
+  email:
+    secret-key: 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+
+# 모듈별 auto-scan 활성화 (테스트용)
+devrunner:
+  module:
+    jdbc:
+      auto-scan: true
+    auth:
+      auto-scan: true
+    outbox:
+      auto-scan: true

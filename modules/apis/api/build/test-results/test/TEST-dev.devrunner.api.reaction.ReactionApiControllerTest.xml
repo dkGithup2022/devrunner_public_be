@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.api.reaction.ReactionApiControllerTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:05" hostname="dankim0124ui-MacBookPro.local" time="0.062">
+  <properties/>
+  <testcase name="dislikeDown_validRequest_returnsNoContent()" classname="dev.devrunner.api.reaction.ReactionApiControllerTest" time="0.023"/>
+  <testcase name="likeUp_exception_throwsException()" classname="dev.devrunner.api.reaction.ReactionApiControllerTest" time="0.007"/>
+  <testcase name="likeDown_validRequest_returnsNoContent()" classname="dev.devrunner.api.reaction.ReactionApiControllerTest" time="0.005"/>
+  <testcase name="dislikeDown_exception_throwsException()" classname="dev.devrunner.api.reaction.ReactionApiControllerTest" time="0.006"/>
+  <testcase name="likeDown_exception_throwsException()" classname="dev.devrunner.api.reaction.ReactionApiControllerTest" time="0.006"/>
+  <testcase name="dislikeUp_exception_throwsException()" classname="dev.devrunner.api.reaction.ReactionApiControllerTest" time="0.004"/>
+  <testcase name="likeUp_validRequest_returnsOk()" classname="dev.devrunner.api.reaction.ReactionApiControllerTest" time="0.004"/>
+  <testcase name="dislikeUp_validRequest_returnsOk()" classname="dev.devrunner.api.reaction.ReactionApiControllerTest" time="0.003"/>
+  <system-out><![CDATA[15:10:05.118 [Test worker] INFO dev.devrunner.api.reaction.ReactionApiController -- DELETE /api/reactions/dislike - userId: 1, targetType: JOB, targetId: 100
+15:10:05.118 [Test worker] INFO dev.devrunner.api.reaction.ReactionApiController -- Dislike removed - userId: 1, targetType: JOB, targetId: 100
+15:10:05.124 [Test worker] INFO dev.devrunner.api.reaction.ReactionApiController -- POST /api/reactions/like - userId: 1, targetType: JOB, targetId: 100
+15:10:05.130 [Test worker] INFO dev.devrunner.api.reaction.ReactionApiController -- DELETE /api/reactions/like - userId: 1, targetType: JOB, targetId: 100
+15:10:05.131 [Test worker] INFO dev.devrunner.api.reaction.ReactionApiController -- Like removed - userId: 1, targetType: JOB, targetId: 100
+15:10:05.137 [Test worker] INFO dev.devrunner.api.reaction.ReactionApiController -- DELETE /api/reactions/dislike - userId: 1, targetType: JOB, targetId: 100
+15:10:05.143 [Test worker] INFO dev.devrunner.api.reaction.ReactionApiController -- DELETE /api/reactions/like - userId: 1, targetType: JOB, targetId: 100
+15:10:05.148 [Test worker] INFO dev.devrunner.api.reaction.ReactionApiController -- POST /api/reactions/dislike - userId: 1, targetType: JOB, targetId: 100
+15:10:05.153 [Test worker] INFO dev.devrunner.api.reaction.ReactionApiController -- POST /api/reactions/like - userId: 1, targetType: JOB, targetId: 100
+15:10:05.153 [Test worker] INFO dev.devrunner.api.reaction.ReactionApiController -- Like added - userId: 1, targetType: JOB, targetId: 100
+15:10:05.156 [Test worker] INFO dev.devrunner.api.reaction.ReactionApiController -- POST /api/reactions/dislike - userId: 1, targetType: JOB, targetId: 100
+15:10:05.156 [Test worker] INFO dev.devrunner.api.reaction.ReactionApiController -- Dislike added - userId: 1, targetType: JOB, targetId: 100
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

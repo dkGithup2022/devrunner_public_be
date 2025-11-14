@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.api.bookmark.BookmarkApiControllerTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:03" hostname="dankim0124ui-MacBookPro.local" time="1.028">
+  <properties/>
+  <testcase name="addBookmark_success()" classname="dev.devrunner.api.bookmark.BookmarkApiControllerTest" time="1.003"/>
+  <testcase name="getBookmarks_withoutTargetType_success()" classname="dev.devrunner.api.bookmark.BookmarkApiControllerTest" time="0.01"/>
+  <testcase name="getBookmarks_withTargetType_success()" classname="dev.devrunner.api.bookmark.BookmarkApiControllerTest" time="0.003"/>
+  <testcase name="checkBookmark_notBookmarked_returnsFalse()" classname="dev.devrunner.api.bookmark.BookmarkApiControllerTest" time="0.004"/>
+  <testcase name="checkBookmark_bookmarked_returnsTrue()" classname="dev.devrunner.api.bookmark.BookmarkApiControllerTest" time="0.002"/>
+  <testcase name="removeBookmark_success()" classname="dev.devrunner.api.bookmark.BookmarkApiControllerTest" time="0.002"/>
+  <system-out><![CDATA[15:10:04.479 [Test worker] INFO dev.devrunner.api.bookmark.BookmarkApiController -- POST /api/bookmarks - userId: 1, targetType: JOB, targetId: 100
+15:10:04.487 [Test worker] INFO dev.devrunner.api.bookmark.BookmarkApiController -- Bookmark added - userId: 1, targetType: JOB, targetId: 100
+15:10:04.573 [Test worker] INFO dev.devrunner.api.bookmark.BookmarkApiController -- GET /api/bookmarks - userId: 1, page: 0, size: 20, targetType: null
+15:10:04.574 [Test worker] INFO dev.devrunner.api.bookmark.BookmarkApiController -- Retrieved 2 bookmarks for userId: 1
+15:10:04.583 [Test worker] INFO dev.devrunner.api.bookmark.BookmarkApiController -- GET /api/bookmarks - userId: 1, page: 0, size: 20, targetType: JOB
+15:10:04.583 [Test worker] INFO dev.devrunner.api.bookmark.BookmarkApiController -- Retrieved 2 bookmarks for userId: 1
+15:10:04.586 [Test worker] INFO dev.devrunner.api.bookmark.BookmarkApiController -- GET /api/bookmarks/check - userId: 1, targetType: JOB, targetId: 100
+15:10:04.587 [Test worker] INFO dev.devrunner.api.bookmark.BookmarkApiController -- Bookmark check result - userId: 1, isBookmarked: false
+15:10:04.590 [Test worker] INFO dev.devrunner.api.bookmark.BookmarkApiController -- GET /api/bookmarks/check - userId: 1, targetType: JOB, targetId: 100
+15:10:04.591 [Test worker] INFO dev.devrunner.api.bookmark.BookmarkApiController -- Bookmark check result - userId: 1, isBookmarked: true
+15:10:04.593 [Test worker] INFO dev.devrunner.api.bookmark.BookmarkApiController -- DELETE /api/bookmarks - userId: 1, targetType: JOB, targetId: 100
+15:10:04.593 [Test worker] INFO dev.devrunner.api.bookmark.BookmarkApiController -- Bookmark removed - userId: 1, targetType: JOB, targetId: 100
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/Users/dankim0124/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.10/90ed94ac044ea8953b224304c762316e91fd6b31/byte-buddy-agent-1.14.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>

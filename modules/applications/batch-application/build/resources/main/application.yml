@@ -1,0 +1,114 @@
+spring:
+  application:
+    name: devrunner-application-batch
+
+  # Import elasticsearch configuration
+  config:
+    import:
+      - classpath:elasticsearch.yml
+      - classpath:openai.yml
+
+  datasource:
+    url: jdbc:h2:file:./data/breakin;AUTO_SERVER=TRUE;MODE=MySQL;CASE_INSENSITIVE_IDENTIFIERS=TRUE;DATABASE_TO_LOWER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+server:
+  port: 8081  # API 서버와 다른 포트
+
+# Encryption 설정
+encryption:
+  email:
+    secret-key: ${EMAIL_ENCRYPTION_KEY}
+
+logging:
+  config: classpath:logback-json-format.xml
+
+# Firecrawl API 설정
+firecrawl:
+  api-key: ${FIRECRAWL_API_KEY}
+
+# Playwright 설정
+playwright:
+  wait-after-load-ms: 5000
+
+# Google Custom Search Engine 설정
+google:
+  cse:
+    cx: ${GOOGLE_JSON_API_CX}
+    key: ${GOOGLE_JSON_API_KEY}
+
+
+theirstack:
+  api:
+    key: ${THEIRSTACK_API_KEY:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkYW5raW0wMTI0QGdtYWlsLmNvbSIsInBlcm1pc3Npb25zIjoidXNlciIsImNyZWF0ZWRfYXQiOiIyMDI1LTExLTAxVDA1OjQ5OjA4LjAyMzYxNSswMDowMCJ9.5ddxjArWIZc03iwUeYjGQt9B-JdPbKNKRf8vzzVYbww}
+    url: https://api.theirstack.com/v1/jobs/search
+
+
+crawler:
+  job:
+    listurl:
+      google: https://www.google.com/about/careers/applications/jobs/results?sort_by=date&q=%22Software%20Engineer%22
+      meta: https://www.metacareers.com/jobs?q=software%20engineer&sort_by_new=true
+      netflix: https://www.google.com/search?q=site:explore.jobs.netflix.net+Engineer+(inurl:/careers/job/)+&tbs=qdr:w
+      tiktok: https://lifeattiktok.com/search?recruitment_id_list=&job_category_id_list=6704215862603155720&subject_id_list=&location_code_list=&keyword=&limit=12&offset=0
+      spotify: https://engineering.atspotify.com/jobs
+      naver: https://recruit.navercorp.com/rcrt/list.do?srchClassCd=1000000
+      line: https://careers.linecorp.com/ko/jobs?ca=Engineering&ci=Gwacheon,Bundang&co=East%20Asia
+      woowahan: https://career.woowahan.com/?jobCodes=&employmentTypeCodes=&serviceSectionCodes=&careerPeriod=&keyword=&category=jobGroupCodes%3ABA005001#recruit-list
+
+
+
+---
+# 로컬 개발 환경 (기본 프로파일)
+spring:
+  config:
+    activate:
+      on-profile: local
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql,classpath:schema-session.sql,classpath:schema-outbox.sql,classpath:crawler-schema.sql
+
+
+
+
+---
+# 프로덕션 환경
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  sql:
+    init:
+      mode: never
+
+server:
+  port: 8080  # 프로덕션에서는 8080 사용 (K8s containerPort와 일치)
+
+---
+# DevRunner 프로덕션 환경 (한국 서비스)
+spring:
+  config:
+    activate:
+      on-profile: devrunner-prod
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  sql:
+    init:
+      mode: never
+
+server:
+  port: 8080  # K8s containerPort와 일치
+

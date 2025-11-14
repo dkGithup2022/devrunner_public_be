@@ -1,0 +1,97 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devrunner-prod-api
+  namespace: devrunner-prod-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devrunner-prod-api
+  template:
+    metadata:
+      labels:
+        app: devrunner-prod-api
+      annotations:
+        prometheus.io/scrape: "true"              # Prometheus가 스크레이핑할지 여부
+        prometheus.io/port: "8080"                # 애플리케이션이 메트릭을 노출하는 포트
+        prometheus.io/path: "/actuator/prometheus" # 메트릭 엔드포인트 경로
+    spec:
+      containers:
+        - name: devrunner-prod-api
+          # 실제 배포 시에는 본인의 Docker Hub 레포지토리 경로로 변경하세요
+          image: private_info/private_info:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          args: ["--spring.profiles.active=devrunner-prod"]
+          resources:
+            limits:
+              cpu: "1"
+              memory: "1000Mi"
+
+          volumeMounts:
+            - name: prod-ca-cer
+              mountPath: /etc/certs/ca
+              readOnly: true
+            - name: prod-server-cer
+              mountPath: /etc/certs/server
+              readOnly: true
+
+          env:
+            # Database
+            - name: SPRING_DATASOURCE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-api-env
+                  key: SPRING_DATASOURCE_URL
+
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-api-env
+                  key: SPRING_DATASOURCE_USERNAME
+
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-api-env
+                  key: SPRING_DATASOURCE_PASSWORD
+
+            # Encryption
+            - name: EMAIL_ENCRYPTION_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-api-env
+                  key: EMAIL_ENCRYPTION_KEY
+
+            # Elasticsearch
+            - name: ES_DEVELOP_URL
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-api-env
+                  key: ES_DEVELOP_URL
+
+            - name: ES_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-api-env
+                  key: ES_API_KEY
+
+            # Vector API
+            - name: DEVWIKI_E5_VECTOR_API
+              valueFrom:
+                secretKeyRef:
+                  name: devrunner-prod-api-env
+                  key: DEVWIKI_E5_VECTOR_API
+
+      volumes:
+        - name: prod-ca-cer
+          secret:
+            secretName: devrunner-api-ca-cer
+        - name: prod-server-cer
+          secret:
+            secretName: devrunner-api-cer
+
+      imagePullSecrets:
+        - name: dockerhubsecret

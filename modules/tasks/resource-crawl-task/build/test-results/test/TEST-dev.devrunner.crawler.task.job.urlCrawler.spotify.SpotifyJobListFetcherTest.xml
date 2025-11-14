@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.crawler.task.job.urlCrawler.spotify.SpotifyJobListFetcherTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2025-11-11T06:11:58" hostname="dankim0124ui-MacBookPro.local" time="0.0">
+  <properties/>
+  <testcase name="checkHtmlToggleOpen()" classname="dev.devrunner.crawler.task.job.urlCrawler.spotify.SpotifyJobListFetcherTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

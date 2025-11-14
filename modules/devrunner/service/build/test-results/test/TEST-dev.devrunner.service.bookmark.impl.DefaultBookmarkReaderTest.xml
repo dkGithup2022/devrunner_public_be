@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.service.bookmark.impl.DefaultBookmarkReaderTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:33" hostname="dankim0124ui-MacBookPro.local" time="0.58">
+  <properties/>
+  <testcase name="findByUserIdAndTargetTypeAndTargetId_nonExistingBookmark_returnsEmptyOptional()" classname="dev.devrunner.service.bookmark.impl.DefaultBookmarkReaderTest" time="0.549"/>
+  <testcase name="getByUserIdAndTargetType_nonExistingData_returnsEmptyList()" classname="dev.devrunner.service.bookmark.impl.DefaultBookmarkReaderTest" time="0.003"/>
+  <testcase name="getById_existingId_returnsBookmark()" classname="dev.devrunner.service.bookmark.impl.DefaultBookmarkReaderTest" time="0.004"/>
+  <testcase name="getByUserIdAndTargetType_existingData_returnsList()" classname="dev.devrunner.service.bookmark.impl.DefaultBookmarkReaderTest" time="0.002"/>
+  <testcase name="countByUserId_nonExistingUser_returnsZero()" classname="dev.devrunner.service.bookmark.impl.DefaultBookmarkReaderTest" time="0.002"/>
+  <testcase name="findByUserIdAndTargetTypeAndTargetId_existingBookmark_returnsOptionalWithBookmark()" classname="dev.devrunner.service.bookmark.impl.DefaultBookmarkReaderTest" time="0.002"/>
+  <testcase name="countByUserId_existingUser_returnsCount()" classname="dev.devrunner.service.bookmark.impl.DefaultBookmarkReaderTest" time="0.002"/>
+  <testcase name="getByUserId_existingUser_returnsList()" classname="dev.devrunner.service.bookmark.impl.DefaultBookmarkReaderTest" time="0.002"/>
+  <testcase name="getByUserId_nonExistingUser_returnsEmptyList()" classname="dev.devrunner.service.bookmark.impl.DefaultBookmarkReaderTest" time="0.002"/>
+  <testcase name="getById_nonExistingId_throwsBookmarkNotFoundException()" classname="dev.devrunner.service.bookmark.impl.DefaultBookmarkReaderTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/Users/dankim0124/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.10/90ed94ac044ea8953b224304c762316e91fd6b31/byte-buddy-agent-1.14.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devrunner-prod-api
+  namespace: devrunner-prod-api
+spec:
+  selector:
+    app: devrunner-prod-api
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 8080

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.service.comment.impl.DefaultCommentWriterTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:33" hostname="dankim0124ui-MacBookPro.local" time="0.07">
+  <properties/>
+  <testcase name="showComment_alreadyShown_throwsWrongCommentException()" classname="dev.devrunner.service.comment.impl.DefaultCommentWriterTest" time="0.036"/>
+  <testcase name="showComment_existingHiddenComment_showsAndSaves()" classname="dev.devrunner.service.comment.impl.DefaultCommentWriterTest" time="0.002"/>
+  <testcase name="hideComment_alreadyHidden_throwsWrongCommentException()" classname="dev.devrunner.service.comment.impl.DefaultCommentWriterTest" time="0.002"/>
+  <testcase name="showComment_nonExistingComment_throwsCommentNotFoundException()" classname="dev.devrunner.service.comment.impl.DefaultCommentWriterTest" time="0.002"/>
+  <testcase name="showComment_unauthorizedUser_throwsUnauthorizedException()" classname="dev.devrunner.service.comment.impl.DefaultCommentWriterTest" time="0.002"/>
+  <testcase name="hideComment_unauthorizedUser_throwsUnauthorizedException()" classname="dev.devrunner.service.comment.impl.DefaultCommentWriterTest" time="0.002"/>
+  <testcase name="updateComment_existingComment_updatesAndSaves()" classname="dev.devrunner.service.comment.impl.DefaultCommentWriterTest" time="0.002"/>
+  <testcase name="updateComment_unauthorizedUser_throwsUnauthorizedException()" classname="dev.devrunner.service.comment.impl.DefaultCommentWriterTest" time="0.003"/>
+  <testcase name="hideComment_existingComment_hidesAndSaves()" classname="dev.devrunner.service.comment.impl.DefaultCommentWriterTest" time="0.002"/>
+  <testcase name="hideComment_nonExistingComment_throwsCommentNotFoundException()" classname="dev.devrunner.service.comment.impl.DefaultCommentWriterTest" time="0.003"/>
+  <testcase name="write_newRootComment_callsRepositorySaveAndIncrementsUserCommentCount()" classname="dev.devrunner.service.comment.impl.DefaultCommentWriterTest" time="0.005"/>
+  <testcase name="updateComment_nonExistingComment_throwsCommentNotFoundException()" classname="dev.devrunner.service.comment.impl.DefaultCommentWriterTest" time="0.003"/>
+  <testcase name="write_newReply_callsRepositorySaveAndIncrementsUserCommentCount()" classname="dev.devrunner.service.comment.impl.DefaultCommentWriterTest" time="0.003"/>
+  <system-out><![CDATA[15:10:33.758 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Showing comment 1 - requestUserId :1
+15:10:33.760 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Showing comment 1 - requestUserId :1
+15:10:33.762 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Hiding comment 1 / userId : 1
+15:10:33.765 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Showing comment 999 - requestUserId :1
+15:10:33.767 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Showing comment 1 - requestUserId :999
+15:10:33.770 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Hiding comment 1 / userId : 999
+15:10:33.772 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Updating comment 1 / requestUserID : 1 
+15:10:33.775 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Updating comment 1 / requestUserID : 999 
+15:10:33.777 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Hiding comment 1 / userId : 1
+15:10:33.780 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Hiding comment 999 / userId : 1
+15:10:33.785 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Job 1 comment_count incremented (row locked)
+15:10:33.785 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Writing new root comment for JOB 1
+15:10:33.785 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Root comment created: commentId=1, commentOrder=1
+15:10:33.785 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- User 1 commentCount incremented
+15:10:33.788 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Updating comment 999 / requestUserID : 1 
+15:10:33.790 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Job 1 comment_count incremented (row locked)
+15:10:33.791 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Writing reply to comment 1 for JOB 1
+15:10:33.791 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- Reply created: commentId=2, parentId=1, level=1, sortNumber=1
+15:10:33.791 [Test worker] INFO dev.devrunner.service.comment.impl.DefaultCommentWriter -- User 1 commentCount incremented
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

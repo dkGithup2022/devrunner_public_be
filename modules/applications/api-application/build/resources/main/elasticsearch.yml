@@ -1,0 +1,44 @@
+# Elasticsearch Configuration
+elasticsearch:
+  url: ${ES_DEVELOP_URL}
+  api-key: ${ES_API_KEY}
+
+  # Index names (default: dev)
+  index:
+    job: breakin-dev-job
+    techblog: breakin-dev-techblog
+    communitypost: breakin-dev-communitypost
+    job_keyword_boost: hiring_keyword_boost
+
+# Vector API Configuration
+api:
+  sentence_transformer:
+    url: ${DEVWIKI_E5_VECTOR_API}
+
+---
+# Production Profile
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+elasticsearch:
+  index:
+    job: breakin-prod-job
+    techblog: breakin-prod-techblog
+    communitypost: breakin-prod-communitypost
+    job_keyword_boost: hiring_keyword_boost
+
+---
+# DevRunner Production Profile (한국 서비스)
+spring:
+  config:
+    activate:
+      on-profile: devrunner-prod
+
+elasticsearch:
+  index:
+    job: devrunner-prod-job
+    techblog: devrunner-prod-techblog
+    communitypost: devrunner-prod-communitypost
+    job_keyword_boost: hiring_keyword_boost

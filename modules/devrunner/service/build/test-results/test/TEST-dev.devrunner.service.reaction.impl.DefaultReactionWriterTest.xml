@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:36" hostname="dankim0124ui-MacBookPro.local" time="0.074">
+  <properties/>
+  <testcase name="likeDown_existingLike_onJob_deletesReactionAndDecrementsUserLikeGivenCount()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.03"/>
+  <testcase name="likeDown_noExistingReaction_doesNothingAndNoUserUpdate()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.001"/>
+  <testcase name="likeDown_userNotFound_throwsRuntimeException()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.002"/>
+  <testcase name="dislikeUp_existingLike_throwsReactionConflictException()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.002"/>
+  <testcase name="likeUp_noExistingReaction_onJob_createsNewLikeAndIncrementsUserLikeGivenCount()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.003"/>
+  <testcase name="likeUp_onCommunityPost_postDeleted_incrementsOnlyUserMetrics()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.002"/>
+  <testcase name="likeUp_noExistingReaction_onCommunityPost_incrementsBothUserAndAuthorMetrics()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.003"/>
+  <testcase name="likeUp_existingDislike_onCommunityPost_throwsReactionConflictException()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.002"/>
+  <testcase name="likeUp_existingLike_throwsReactionConflictException()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.002"/>
+  <testcase name="likeUp_existingDislike_onJob_throwsReactionConflictException()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.002"/>
+  <testcase name="dislikeDown_existingLike_doesNothingAndNoUserUpdate()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.002"/>
+  <testcase name="likeDown_existingDislike_doesNothingAndNoUserUpdate()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.001"/>
+  <testcase name="likeUp_userNotFound_throwsRuntimeException()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.004"/>
+  <testcase name="dislikeDown_noExistingReaction_doesNothingAndNoUserUpdate()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.002"/>
+  <testcase name="dislikeUp_noExistingReaction_createsNewDislikeWithoutUserMetricUpdate()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.002"/>
+  <testcase name="dislikeUp_existingDislike_throwsReactionConflictException()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.003"/>
+  <testcase name="dislikeDown_existingDislike_deletesReactionWithoutUserMetricUpdate()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.001"/>
+  <testcase name="likeUp_onCommunityPost_authorDeleted_incrementsOnlyUserMetrics()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.004"/>
+  <testcase name="likeDown_existingLike_onCommunityPost_decrementsBothUserAndAuthorMetrics()" classname="dev.devrunner.service.reaction.impl.DefaultReactionWriterTest" time="0.003"/>
+  <system-out><![CDATA[2025-11-11T15:10:36.183+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 removing LIKE from JOB 100
+2025-11-11T15:10:36.183+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 removed LIKE from JOB 100
+2025-11-11T15:10:36.183+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : Job 100 like_count changed by -1
+2025-11-11T15:10:36.184+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 likeGivenCount decremented
+2025-11-11T15:10:36.185+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 removing LIKE from JOB 100
+2025-11-11T15:10:36.185+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : No reaction found for user 1 on JOB 100
+2025-11-11T15:10:36.187+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 removing LIKE from JOB 100
+2025-11-11T15:10:36.187+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 removed LIKE from JOB 100
+2025-11-11T15:10:36.187+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : Job 100 like_count changed by -1
+2025-11-11T15:10:36.189+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 adding DISLIKE to JOB 100
+2025-11-11T15:10:36.189+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : Job 100 dislike_count changed by 0
+2025-11-11T15:10:36.191+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 adding LIKE to JOB 100
+2025-11-11T15:10:36.191+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : Job 100 like_count changed by 0
+2025-11-11T15:10:36.191+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 created new LIKE on JOB 100
+2025-11-11T15:10:36.191+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : Job 100 like_count changed by 1
+2025-11-11T15:10:36.192+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 likeGivenCount incremented
+2025-11-11T15:10:36.194+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 adding LIKE to COMMUNITY_POST 100
+2025-11-11T15:10:36.194+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : CommunityPost 100 like_count changed by 0
+2025-11-11T15:10:36.194+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 created new LIKE on COMMUNITY_POST 100
+2025-11-11T15:10:36.194+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : CommunityPost 100 like_count changed by 1
+2025-11-11T15:10:36.194+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 likeGivenCount incremented
+2025-11-11T15:10:36.194+09:00  WARN 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : CommunityPost 100 not found, skipping author likesReceived increment
+2025-11-11T15:10:36.196+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 adding LIKE to COMMUNITY_POST 100
+2025-11-11T15:10:36.196+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : CommunityPost 100 like_count changed by 0
+2025-11-11T15:10:36.197+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 created new LIKE on COMMUNITY_POST 100
+2025-11-11T15:10:36.197+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : CommunityPost 100 like_count changed by 1
+2025-11-11T15:10:36.197+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 likeGivenCount incremented
+2025-11-11T15:10:36.197+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : CommunityPost 100 author 2 likesReceived incremented
+2025-11-11T15:10:36.199+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 adding LIKE to COMMUNITY_POST 100
+2025-11-11T15:10:36.199+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : CommunityPost 100 like_count changed by 0
+2025-11-11T15:10:36.201+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 adding LIKE to JOB 100
+2025-11-11T15:10:36.201+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : Job 100 like_count changed by 0
+2025-11-11T15:10:36.203+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 adding LIKE to JOB 100
+2025-11-11T15:10:36.203+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : Job 100 like_count changed by 0
+2025-11-11T15:10:36.204+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 removing DISLIKE from JOB 100
+2025-11-11T15:10:36.205+09:00  WARN 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 tried to remove DISLIKE but has LIKE on JOB 100
+2025-11-11T15:10:36.206+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 removing LIKE from JOB 100
+2025-11-11T15:10:36.207+09:00  WARN 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 tried to remove LIKE but has DISLIKE on JOB 100
+2025-11-11T15:10:36.209+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 adding LIKE to JOB 100
+2025-11-11T15:10:36.209+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : Job 100 like_count changed by 0
+2025-11-11T15:10:36.209+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 created new LIKE on JOB 100
+2025-11-11T15:10:36.210+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : Job 100 like_count changed by 1
+2025-11-11T15:10:36.213+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 removing DISLIKE from JOB 100
+2025-11-11T15:10:36.213+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : No reaction found for user 1 on JOB 100
+2025-11-11T15:10:36.215+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 adding DISLIKE to JOB 100
+2025-11-11T15:10:36.215+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : Job 100 dislike_count changed by 0
+2025-11-11T15:10:36.215+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 created new DISLIKE on JOB 100
+2025-11-11T15:10:36.215+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : Job 100 dislike_count changed by 1
+2025-11-11T15:10:36.218+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 adding DISLIKE to JOB 100
+2025-11-11T15:10:36.218+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : Job 100 dislike_count changed by 0
+2025-11-11T15:10:36.220+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 removing DISLIKE from JOB 100
+2025-11-11T15:10:36.220+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 removed DISLIKE from JOB 100
+2025-11-11T15:10:36.220+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : Job 100 dislike_count changed by -1
+2025-11-11T15:10:36.223+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 adding LIKE to COMMUNITY_POST 100
+2025-11-11T15:10:36.223+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : CommunityPost 100 like_count changed by 0
+2025-11-11T15:10:36.224+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 created new LIKE on COMMUNITY_POST 100
+2025-11-11T15:10:36.224+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : CommunityPost 100 like_count changed by 1
+2025-11-11T15:10:36.224+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 likeGivenCount incremented
+2025-11-11T15:10:36.224+09:00  WARN 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : Author 2 not found (may be deleted), skipping likesReceived increment
+2025-11-11T15:10:36.226+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 removing LIKE from COMMUNITY_POST 100
+2025-11-11T15:10:36.226+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 removed LIKE from COMMUNITY_POST 100
+2025-11-11T15:10:36.226+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : CommunityPost 100 like_count changed by -1
+2025-11-11T15:10:36.226+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : User 1 likeGivenCount decremented
+2025-11-11T15:10:36.227+09:00  INFO 56265 --- [    Test worker] d.d.s.r.impl.DefaultReactionWriter       : CommunityPost 100 author 2 likesReceived decremented
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

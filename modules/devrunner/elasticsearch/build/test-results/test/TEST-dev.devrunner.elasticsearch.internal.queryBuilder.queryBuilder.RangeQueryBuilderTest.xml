@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="RangeQueryBuilder 테스트" tests="8" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:24" hostname="dankim0124ui-MacBookPro.local" time="0.013">
+  <properties/>
+  <testcase name="음수 값으로 range 쿼리 생성" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.RangeQueryBuilderTest" time="0.001"/>
+  <testcase name="gte만 있는 경우 range 쿼리 생성" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.RangeQueryBuilderTest" time="0.001"/>
+  <testcase name="FILTER BoolType 반환 확인" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.RangeQueryBuilderTest" time="0.0"/>
+  <testcase name="큰 숫자 값으로 range 쿼리 생성" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.RangeQueryBuilderTest" time="0.001"/>
+  <testcase name="gte와 lte 모두 있는 경우 range 쿼리 생성" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.RangeQueryBuilderTest" time="0.002"/>
+  <testcase name="lte만 있는 경우 range 쿼리 생성" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.RangeQueryBuilderTest" time="0.001"/>
+  <testcase name="MUST BoolType 반환 확인" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.RangeQueryBuilderTest" time="0.001"/>
+  <testcase name="날짜(timestamp) 값으로 range 쿼리 생성" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.RangeQueryBuilderTest" time="0.002"/>
+  <system-out><![CDATA[
+======================================================================
+Test: build_withNegativeNumbers_createsRangeQuery
+======================================================================
+{
+  "range" : {
+    "some_field" : {
+      "gte" : "-10",
+      "lte" : "10"
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"range":{"some_field":{"gte":"-10","lte":"10"}}}
+======================================================================
+
+
+======================================================================
+Test: build_withOnlyGte_createsRangeQueryWithGte
+======================================================================
+{
+  "range" : {
+    "compensation_min_base_pay" : {
+      "gte" : "80000000"
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"range":{"compensation_min_base_pay":{"gte":"80000000"}}}
+======================================================================
+
+
+======================================================================
+Test: build_withLargeNumbers_createsRangeQuery
+======================================================================
+{
+  "range" : {
+    "compensation_max_base_pay" : {
+      "gte" : "100000000",
+      "lte" : "200000000"
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"range":{"compensation_max_base_pay":{"gte":"100000000","lte":"200000000"}}}
+======================================================================
+
+
+======================================================================
+Test: build_withBothGteAndLte_createsRangeQuery
+======================================================================
+{
+  "range" : {
+    "min_years" : {
+      "gte" : "0",
+      "lte" : "3"
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"range":{"min_years":{"gte":"0","lte":"3"}}}
+======================================================================
+
+
+======================================================================
+Test: build_withOnlyLte_createsRangeQueryWithLte
+======================================================================
+{
+  "range" : {
+    "max_years" : {
+      "lte" : "5"
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"range":{"max_years":{"lte":"5"}}}
+======================================================================
+
+
+======================================================================
+Test: build_withTimestamp_createsRangeQuery
+======================================================================
+{
+  "range" : {
+    "started_at" : {
+      "gte" : "1696118400000",
+      "lte" : "1698796800000"
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"range":{"started_at":{"gte":"1696118400000","lte":"1698796800000"}}}
+======================================================================
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

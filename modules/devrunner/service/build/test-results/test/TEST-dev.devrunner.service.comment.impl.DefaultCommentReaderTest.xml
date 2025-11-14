@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.service.comment.impl.DefaultCommentReaderTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:33" hostname="dankim0124ui-MacBookPro.local" time="0.037">
+  <properties/>
+  <testcase name="getById_nonExistingId_throwsCommentNotFoundException()" classname="dev.devrunner.service.comment.impl.DefaultCommentReaderTest" time="0.019"/>
+  <testcase name="getByTargetTypeAndTargetId_existingData_returnsList()" classname="dev.devrunner.service.comment.impl.DefaultCommentReaderTest" time="0.001"/>
+  <testcase name="getAll_noComments_returnsEmptyList()" classname="dev.devrunner.service.comment.impl.DefaultCommentReaderTest" time="0.001"/>
+  <testcase name="getById_existingId_returnsCommentRead()" classname="dev.devrunner.service.comment.impl.DefaultCommentReaderTest" time="0.001"/>
+  <testcase name="getByParentId_nonExistingParent_returnsEmptyList()" classname="dev.devrunner.service.comment.impl.DefaultCommentReaderTest" time="0.001"/>
+  <testcase name="getByUserId_existingUser_returnsList()" classname="dev.devrunner.service.comment.impl.DefaultCommentReaderTest" time="0.002"/>
+  <testcase name="getByParentId_existingParent_returnsList()" classname="dev.devrunner.service.comment.impl.DefaultCommentReaderTest" time="0.002"/>
+  <testcase name="getByUserId_nonExistingUser_returnsEmptyList()" classname="dev.devrunner.service.comment.impl.DefaultCommentReaderTest" time="0.002"/>
+  <testcase name="getByTargetTypeAndTargetId_nonExistingData_returnsEmptyList()" classname="dev.devrunner.service.comment.impl.DefaultCommentReaderTest" time="0.001"/>
+  <testcase name="getAll_existingComments_returnsList()" classname="dev.devrunner.service.comment.impl.DefaultCommentReaderTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

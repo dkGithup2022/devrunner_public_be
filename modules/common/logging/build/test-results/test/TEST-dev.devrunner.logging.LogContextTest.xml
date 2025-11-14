@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.logging.LogContextTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:21" hostname="dankim0124ui-MacBookPro.local" time="0.508">
+  <properties/>
+  <testcase name="testNoContext()" classname="dev.devrunner.logging.LogContextTest" time="0.496"/>
+  <testcase name="testMixedContext()" classname="dev.devrunner.logging.LogContextTest" time="0.003"/>
+  <testcase name="testBatchContext()" classname="dev.devrunner.logging.LogContextTest" time="0.003"/>
+  <testcase name="testApiContext()" classname="dev.devrunner.logging.LogContextTest" time="0.002"/>
+  <system-out><![CDATA[{"timestamp":"2025-11-11T15:10:20.71013+09:00","level":"INFO","logger":"org.springframework.test.context.support.AnnotationConfigContextLoaderUtils","message":"Could not detect default configuration classes for test class [dev.devrunner.logging.LogContextTest]: LogContextTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration."}
+{"timestamp":"2025-11-11T15:10:20.79167+09:00","level":"INFO","logger":"org.springframework.boot.test.context.SpringBootTestContextBootstrapper","message":"Found @SpringBootConfiguration dev.devrunner.logging.TestApp for test class dev.devrunner.logging.LogContextTest"}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.1)
+
+{"timestamp":"2025-11-11T15:10:21.073454+09:00","level":"INFO","logger":"dev.devrunner.logging.LogContextTest","message":"Starting LogContextTest using Java 21.0.7 with PID 56208 (started by dankim0124 in /Users/dankim0124/IdeaProjects/breakin-be/breakin-be/modules/common/logging)"}
+{"timestamp":"2025-11-11T15:10:21.074414+09:00","level":"INFO","logger":"dev.devrunner.logging.LogContextTest","message":"No active profile set, falling back to 1 default profile: \"default\""}
+{"timestamp":"2025-11-11T15:10:21.858753+09:00","level":"INFO","logger":"dev.devrunner.logging.LogContextTest","message":"Started LogContextTest in 0.944 seconds (process running for 1.921)"}
+{"timestamp":"2025-11-11T15:10:22.358189+09:00","level":"INFO","logger":"dev.devrunner.logging.LogContextTest","message":"Log without any context"}
+{"timestamp":"2025-11-11T15:10:22.364908+09:00","level":"INFO","logger":"dev.devrunner.logging.LogContextTest","traceId":"79c4603d-6de8-4581-815d-4848a9ffff1a","method":"GET","endpoint":"/api/jobs/1","message":"Fetching job details"}
+{"timestamp":"2025-11-11T15:10:22.365221+09:00","level":"INFO","logger":"dev.devrunner.logging.LogContextTest","jobName":"EsSyncTask","startedAt":"2025-11-11T06:10:22.365064Z","message":"Indexing job to Elasticsearch"}
+{"timestamp":"2025-11-11T15:10:22.368391+09:00","level":"INFO","logger":"dev.devrunner.logging.LogContextTest","jobName":"ResourceCrawlTask","startedAt":"2025-11-11T06:10:22.368364Z","message":"Testing batch context logging"}
+{"timestamp":"2025-11-11T15:10:22.368647+09:00","level":"INFO","logger":"dev.devrunner.logging.LogContextTest","jobName":"ResourceCrawlTask","startedAt":"2025-11-11T06:10:22.368364Z","message":"Crawling started for Google jobs"}
+{"timestamp":"2025-11-11T15:10:22.368751+09:00","level":"INFO","logger":"dev.devrunner.logging.LogContextTest","jobName":"ResourceCrawlTask","startedAt":"2025-11-11T06:10:22.368364Z","message":"Crawling completed: 50 jobs processed"}
+{"timestamp":"2025-11-11T15:10:22.373006+09:00","level":"INFO","logger":"dev.devrunner.logging.LogContextTest","traceId":"63a835b0-3c9f-4083-a83d-98c49103f8aa","method":"POST","endpoint":"/api/jobs/search","message":"Testing API context logging"}
+{"timestamp":"2025-11-11T15:10:22.373347+09:00","level":"INFO","logger":"dev.devrunner.logging.LogContextTest","traceId":"63a835b0-3c9f-4083-a83d-98c49103f8aa","method":"POST","endpoint":"/api/jobs/search","message":"Search results found: 10 items"}
+{"timestamp":"2025-11-11T15:10:22.373487+09:00","level":"WARN","logger":"dev.devrunner.logging.LogContextTest","traceId":"63a835b0-3c9f-4083-a83d-98c49103f8aa","method":"POST","endpoint":"/api/jobs/search","message":"Some warning message"}
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/Users/dankim0124/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.10/90ed94ac044ea8953b224304c762316e91fd6b31/byte-buddy-agent-1.14.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>

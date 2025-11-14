@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="DocID 생성 테스트" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:24" hostname="dankim0124ui-MacBookPro.local" time="0.003">
+  <properties/>
+  <testcase name="techBlogId를 사용하여 'techblog_{techBlogId}' 형식의 docId 생성" classname="dev.devrunner.elasticsearch.mapper.TechBlogDocMapperTest$DocIdGenerationTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

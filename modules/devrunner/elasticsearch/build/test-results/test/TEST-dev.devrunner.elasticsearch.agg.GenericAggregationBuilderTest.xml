@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="GenericAggregationBuilder 테스트" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:23" hostname="dankim0124ui-MacBookPro.local" time="0.376">
+  <properties/>
+  <testcase name="메트릭만 있는 집계 (global aggregation)" classname="dev.devrunner.elasticsearch.agg.GenericAggregationBuilderTest" time="0.314"/>
+  <testcase name="TERMS 버킷 집계 - 필터 조건 포함" classname="dev.devrunner.elasticsearch.agg.GenericAggregationBuilderTest" time="0.033"/>
+  <testcase name="TERMS 버킷 집계 - 조건 없음" classname="dev.devrunner.elasticsearch.agg.GenericAggregationBuilderTest" time="0.002"/>
+  <testcase name="복잡한 필터 조건 + DATE_HISTOGRAM" classname="dev.devrunner.elasticsearch.agg.GenericAggregationBuilderTest" time="0.012"/>
+  <testcase name="여러 집계를 동시에 실행 (Multi-Aggregation)" classname="dev.devrunner.elasticsearch.agg.GenericAggregationBuilderTest" time="0.005"/>
+  <testcase name="DATE_HISTOGRAM 버킷 집계" classname="dev.devrunner.elasticsearch.agg.GenericAggregationBuilderTest" time="0.004"/>
+  <system-out><![CDATA[
+======================================================================
+Test: build_metricsOnly
+======================================================================
+{
+  "global_metrics" : {
+    "global" : { },
+    "aggs" : {
+      "min_experience" : {
+        "min" : {
+          "field" : "min_years"
+        }
+      },
+      "total" : {
+        "value_count" : {
+          "field" : "_index"
+        }
+      },
+      "avg_views" : {
+        "avg" : {
+          "field" : "popularity_view_count"
+        }
+      },
+      "total_views" : {
+        "sum" : {
+          "field" : "popularity_view_count"
+        }
+      },
+      "max_experience" : {
+        "max" : {
+          "field" : "max_years"
+        }
+      }
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"global_metrics":{"global":{},"aggs":{"min_experience":{"min":{"field":"min_years"}},"total":{"value_count":{"field":"_index"}},"avg_views":{"avg":{"field":"popularity_view_count"}},"total_views":{"sum":{"field":"popularity_view_count"}},"max_experience":{"max":{"field":"max_years"}}}}}
+======================================================================
+
+
+======================================================================
+Test: build_termsAggregation_withFilterConditions
+======================================================================
+{
+  "meta_by_position" : {
+    "filter" : {
+      "bool" : {
+        "filter" : [ {
+          "term" : {
+            "company" : {
+              "value" : "META"
+            }
+          }
+        } ],
+        "must" : [ {
+          "term" : {
+            "deleted" : {
+              "value" : "false"
+            }
+          }
+        } ]
+      }
+    },
+    "aggs" : {
+      "position_bucket" : {
+        "terms" : {
+          "field" : "position_category",
+          "size" : 5
+        },
+        "aggs" : {
+          "count" : {
+            "value_count" : {
+              "field" : "_index"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"meta_by_position":{"filter":{"bool":{"filter":[{"term":{"company":{"value":"META"}}}],"must":[{"term":{"deleted":{"value":"false"}}}]}},"aggs":{"position_bucket":{"terms":{"field":"position_category","size":5},"aggs":{"count":{"value_count":{"field":"_index"}}}}}}}
+======================================================================
+
+
+======================================================================
+Test: build_termsAggregation_withoutConditions
+======================================================================
+{
+  "company_stats" : {
+    "terms" : {
+      "field" : "company",
+      "size" : 10
+    },
+    "aggs" : {
+      "job_count" : {
+        "value_count" : {
+          "field" : "_index"
+        }
+      },
+      "avg_views" : {
+        "avg" : {
+          "field" : "popularity_view_count"
+        }
+      }
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"company_stats":{"terms":{"field":"company","size":10},"aggs":{"job_count":{"value_count":{"field":"_index"}},"avg_views":{"avg":{"field":"popularity_view_count"}}}}}
+======================================================================
+
+
+======================================================================
+Test: build_complexFilterWithDateHistogram
+======================================================================
+{
+  "meta_backend_trend" : {
+    "filter" : {
+      "bool" : {
+        "filter" : [ {
+          "term" : {
+            "company" : {
+              "value" : "META"
+            }
+          }
+        }, {
+          "term" : {
+            "position_category" : {
+              "value" : "Backend"
+            }
+          }
+        }, {
+          "range" : {
+            "created_at" : {
+              "gte" : "1726930800000",
+              "lte" : "1729522800000"
+            }
+          }
+        } ],
+        "must" : [ {
+          "term" : {
+            "deleted" : {
+              "value" : "false"
+            }
+          }
+        } ]
+      }
+    },
+    "aggs" : {
+      "daily" : {
+        "date_histogram" : {
+          "field" : "created_at",
+          "calendar_interval" : "1d"
+        },
+        "aggs" : {
+          "avg_views" : {
+            "avg" : {
+              "field" : "popularity_view_count"
+            }
+          },
+          "jobs_count" : {
+            "value_count" : {
+              "field" : "_index"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"meta_backend_trend":{"filter":{"bool":{"filter":[{"term":{"company":{"value":"META"}}},{"term":{"position_category":{"value":"Backend"}}},{"range":{"created_at":{"gte":"1726930800000","lte":"1729522800000"}}}],"must":[{"term":{"deleted":{"value":"false"}}}]}},"aggs":{"daily":{"date_histogram":{"field":"created_at","calendar_interval":"1d"},"aggs":{"avg_views":{"avg":{"field":"popularity_view_count"}},"jobs_count":{"value_count":{"field":"_index"}}}}}}}
+======================================================================
+
+
+======================================================================
+Test: build_multipleAggregations
+======================================================================
+{
+  "overall_stats" : {
+    "global" : { },
+    "aggs" : {
+      "total_jobs" : {
+        "value_count" : {
+          "field" : "_index"
+        }
+      },
+      "avg_views" : {
+        "avg" : {
+          "field" : "popularity_view_count"
+        }
+      }
+    }
+  },
+  "recent_stats" : {
+    "filter" : {
+      "bool" : {
+        "filter" : [ {
+          "range" : {
+            "created_at" : {
+              "gte" : "1728918000000",
+              "lte" : "1729522800000"
+            }
+          }
+        } ]
+      }
+    },
+    "aggs" : {
+      "recent_jobs" : {
+        "value_count" : {
+          "field" : "_index"
+        }
+      }
+    }
+  },
+  "top_companies" : {
+    "terms" : {
+      "field" : "company",
+      "size" : 5
+    },
+    "aggs" : {
+      "count" : {
+        "value_count" : {
+          "field" : "_index"
+        }
+      }
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"overall_stats":{"global":{},"aggs":{"total_jobs":{"value_count":{"field":"_index"}},"avg_views":{"avg":{"field":"popularity_view_count"}}}},"recent_stats":{"filter":{"bool":{"filter":[{"range":{"created_at":{"gte":"1728918000000","lte":"1729522800000"}}}]}},"aggs":{"recent_jobs":{"value_count":{"field":"_index"}}}},"top_companies":{"terms":{"field":"company","size":5},"aggs":{"count":{"value_count":{"field":"_index"}}}}}
+======================================================================
+
+
+======================================================================
+Test: build_dateHistogramAggregation
+======================================================================
+{
+  "daily_trend" : {
+    "date_histogram" : {
+      "field" : "created_at",
+      "calendar_interval" : "1d"
+    },
+    "aggs" : {
+      "daily_count" : {
+        "value_count" : {
+          "field" : "_index"
+        }
+      }
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"daily_trend":{"date_histogram":{"field":"created_at","calendar_interval":"1d"},"aggs":{"daily_count":{"value_count":{"field":"_index"}}}}}
+======================================================================
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

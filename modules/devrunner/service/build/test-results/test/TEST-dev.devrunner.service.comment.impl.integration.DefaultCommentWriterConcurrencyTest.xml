@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.service.comment.impl.integration.DefaultCommentWriterConcurrencyTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:35" hostname="dankim0124ui-MacBookPro.local" time="0.296">
+  <properties/>
+  <testcase name="10개의 최상위 댓글을 동시에 생성하면 commentOrder가 1~10으로 중복 없이 할당됨" classname="dev.devrunner.service.comment.impl.integration.DefaultCommentWriterConcurrencyTest" time="0.202"/>
+  <testcase name="한 댓글에 대한 10개의 대댓글을 동시에 생성하면 같은 commentOrder에 sortNumber가 1~10으로 순차 증가" classname="dev.devrunner.service.comment.impl.integration.DefaultCommentWriterConcurrencyTest" time="0.094"/>
+  <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.1)
+
+2025-11-11T15:10:34.048+09:00  INFO 56265 --- [    Test worker] .i.i.DefaultCommentWriterConcurrencyTest : Starting DefaultCommentWriterConcurrencyTest using Java 21.0.7 with PID 56265 (started by dankim0124 in /Users/dankim0124/IdeaProjects/breakin-be/breakin-be/modules/devrunner/service)
+2025-11-11T15:10:34.049+09:00  INFO 56265 --- [    Test worker] .i.i.DefaultCommentWriterConcurrencyTest : The following 1 profile is active: "test"
+2025-11-11T15:10:34.296+09:00  INFO 56265 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-11-11T15:10:34.321+09:00  INFO 56265 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 9 JDBC repository interfaces.
+2025-11-11T15:10:34.323+09:00  INFO 56265 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-11-11T15:10:34.326+09:00  INFO 56265 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 1 JDBC repository interface.
+2025-11-11T15:10:34.326+09:00  INFO 56265 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-11-11T15:10:34.328+09:00  INFO 56265 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 1 JDBC repository interface.
+2025-11-11T15:10:34.610+09:00  INFO 56265 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-11T15:10:34.700+09:00  INFO 56265 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-11-11T15:10:34.701+09:00  INFO 56265 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-11T15:10:34.846+09:00  INFO 56265 --- [    Test worker] d.devrunner.encryption.EmailEncryptor    : email key : 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+2025-11-11T15:10:34.846+09:00  INFO 56265 --- [    Test worker] d.devrunner.encryption.EmailEncryptor    : EmailEncryptor initialized with AES-256-GCM
+2025-11-11T15:10:35.021+09:00  WARN 56265 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 1693989c-23be-44ed-9868-057dac70df19
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-11-11T15:10:35.162+09:00  INFO 56265 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@43201f84, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c51c756, org.springframework.security.web.context.SecurityContextHolderFilter@5d373794, org.springframework.security.web.header.HeaderWriterFilter@1e09c0b, org.springframework.web.filter.CorsFilter@4ef277ef, org.springframework.web.filter.CorsFilter@1ddc889b, org.springframework.security.web.authentication.logout.LogoutFilter@b791e6e, dev.devrunner.auth.filter.SessionAuthenticationFilter@5ec3689b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c07023, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@13ae87a6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7c0a6f62, org.springframework.security.web.session.SessionManagementFilter@12478b4e, org.springframework.security.web.access.ExceptionTranslationFilter@257d3968, org.springframework.security.web.access.intercept.AuthorizationFilter@27691ee8]
+2025-11-11T15:10:35.273+09:00  INFO 56265 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-11-11T15:10:35.296+09:00  INFO 56265 --- [    Test worker] .i.i.DefaultCommentWriterConcurrencyTest : Started DefaultCommentWriterConcurrencyTest in 1.376 seconds (process running for 2.61)
+2025-11-11T15:10:35.374+09:00  INFO 56265 --- [pool-2-thread-1] .i.i.DefaultCommentWriterConcurrencyTest : Ready for comment order 0
+2025-11-11T15:10:35.374+09:00  INFO 56265 --- [pool-2-thread-2] .i.i.DefaultCommentWriterConcurrencyTest : Ready for comment order 1
+2025-11-11T15:10:35.374+09:00  INFO 56265 --- [pool-2-thread-3] .i.i.DefaultCommentWriterConcurrencyTest : Ready for comment order 2
+2025-11-11T15:10:35.374+09:00  INFO 56265 --- [pool-2-thread-4] .i.i.DefaultCommentWriterConcurrencyTest : Ready for comment order 3
+2025-11-11T15:10:35.375+09:00  INFO 56265 --- [pool-2-thread-6] .i.i.DefaultCommentWriterConcurrencyTest : Ready for comment order 5
+2025-11-11T15:10:35.375+09:00  INFO 56265 --- [pool-2-thread-5] .i.i.DefaultCommentWriterConcurrencyTest : Ready for comment order 4
+2025-11-11T15:10:35.375+09:00  INFO 56265 --- [pool-2-thread-8] .i.i.DefaultCommentWriterConcurrencyTest : Ready for comment order 7
+2025-11-11T15:10:35.375+09:00  INFO 56265 --- [pool-2-thread-9] .i.i.DefaultCommentWriterConcurrencyTest : Ready for comment order 8
+2025-11-11T15:10:35.375+09:00  INFO 56265 --- [pool-2-thread-7] .i.i.DefaultCommentWriterConcurrencyTest : Ready for comment order 6
+2025-11-11T15:10:35.375+09:00  INFO 56265 --- [    Test worker] .i.i.DefaultCommentWriterConcurrencyTest : start
+2025-11-11T15:10:35.375+09:00  INFO 56265 --- [ool-2-thread-10] .i.i.DefaultCommentWriterConcurrencyTest : Ready for comment order 9
+2025-11-11T15:10:35.375+09:00  INFO 56265 --- [ool-2-thread-10] .i.i.DefaultCommentWriterConcurrencyTest : Running comment order 9
+2025-11-11T15:10:35.375+09:00  INFO 56265 --- [pool-2-thread-1] .i.i.DefaultCommentWriterConcurrencyTest : Running comment order 0
+2025-11-11T15:10:35.375+09:00  INFO 56265 --- [pool-2-thread-3] .i.i.DefaultCommentWriterConcurrencyTest : Running comment order 2
+2025-11-11T15:10:35.375+09:00  INFO 56265 --- [pool-2-thread-2] .i.i.DefaultCommentWriterConcurrencyTest : Running comment order 1
+2025-11-11T15:10:35.375+09:00  INFO 56265 --- [pool-2-thread-4] .i.i.DefaultCommentWriterConcurrencyTest : Running comment order 3
+2025-11-11T15:10:35.376+09:00  INFO 56265 --- [pool-2-thread-5] .i.i.DefaultCommentWriterConcurrencyTest : Running comment order 4
+2025-11-11T15:10:35.376+09:00  INFO 56265 --- [pool-2-thread-6] .i.i.DefaultCommentWriterConcurrencyTest : Running comment order 5
+2025-11-11T15:10:35.376+09:00  INFO 56265 --- [pool-2-thread-8] .i.i.DefaultCommentWriterConcurrencyTest : Running comment order 7
+2025-11-11T15:10:35.376+09:00  INFO 56265 --- [pool-2-thread-9] .i.i.DefaultCommentWriterConcurrencyTest : Running comment order 8
+2025-11-11T15:10:35.376+09:00  INFO 56265 --- [pool-2-thread-7] .i.i.DefaultCommentWriterConcurrencyTest : Running comment order 6
+2025-11-11T15:10:35.385+09:00  INFO 56265 --- [pool-2-thread-2] d.d.s.comment.impl.DefaultCommentWriter  : Job 1 comment_count incremented (row locked)
+2025-11-11T15:10:35.385+09:00  INFO 56265 --- [pool-2-thread-2] d.d.s.comment.impl.DefaultCommentWriter  : Writing new root comment for JOB 1
+2025-11-11T15:10:35.393+09:00  INFO 56265 --- [pool-2-thread-2] d.d.s.comment.impl.DefaultCommentWriter  : Root comment created: commentId=1, commentOrder=1
+2025-11-11T15:10:35.418+09:00  INFO 56265 --- [pool-2-thread-2] d.d.s.comment.impl.DefaultCommentWriter  : User 1 commentCount incremented
+2025-11-11T15:10:35.418+09:00  INFO 56265 --- [pool-2-thread-2] .i.i.DefaultCommentWriterConcurrencyTest : Comment order done 1
+2025-11-11T15:10:35.418+09:00  INFO 56265 --- [pool-2-thread-5] d.d.s.comment.impl.DefaultCommentWriter  : Job 1 comment_count incremented (row locked)
+2025-11-11T15:10:35.418+09:00  INFO 56265 --- [pool-2-thread-5] d.d.s.comment.impl.DefaultCommentWriter  : Writing new root comment for JOB 1
+2025-11-11T15:10:35.420+09:00  INFO 56265 --- [pool-2-thread-5] d.d.s.comment.impl.DefaultCommentWriter  : Root comment created: commentId=2, commentOrder=2
+2025-11-11T15:10:35.424+09:00  INFO 56265 --- [pool-2-thread-5] d.d.s.comment.impl.DefaultCommentWriter  : User 1 commentCount incremented
+2025-11-11T15:10:35.424+09:00  INFO 56265 --- [pool-2-thread-5] .i.i.DefaultCommentWriterConcurrencyTest : Comment order done 4
+2025-11-11T15:10:35.424+09:00  INFO 56265 --- [pool-2-thread-6] d.d.s.comment.impl.DefaultCommentWriter  : Job 1 comment_count incremented (row locked)
+2025-11-11T15:10:35.424+09:00  INFO 56265 --- [pool-2-thread-6] d.d.s.comment.impl.DefaultCommentWriter  : Writing new root comment for JOB 1
+2025-11-11T15:10:35.426+09:00  INFO 56265 --- [pool-2-thread-6] d.d.s.comment.impl.DefaultCommentWriter  : Root comment created: commentId=3, commentOrder=3
+2025-11-11T15:10:35.429+09:00  INFO 56265 --- [pool-2-thread-6] d.d.s.comment.impl.DefaultCommentWriter  : User 1 commentCount incremented
+2025-11-11T15:10:35.430+09:00  INFO 56265 --- [pool-2-thread-6] .i.i.DefaultCommentWriterConcurrencyTest : Comment order done 5
+2025-11-11T15:10:35.430+09:00  INFO 56265 --- [pool-2-thread-7] d.d.s.comment.impl.DefaultCommentWriter  : Job 1 comment_count incremented (row locked)
+2025-11-11T15:10:35.430+09:00  INFO 56265 --- [pool-2-thread-7] d.d.s.comment.impl.DefaultCommentWriter  : Writing new root comment for JOB 1
+2025-11-11T15:10:35.432+09:00  INFO 56265 --- [pool-2-thread-7] d.d.s.comment.impl.DefaultCommentWriter  : Root comment created: commentId=4, commentOrder=4
+2025-11-11T15:10:35.435+09:00  INFO 56265 --- [pool-2-thread-7] d.d.s.comment.impl.DefaultCommentWriter  : User 1 commentCount incremented
+2025-11-11T15:10:35.435+09:00  INFO 56265 --- [pool-2-thread-7] .i.i.DefaultCommentWriterConcurrencyTest : Comment order done 6
+2025-11-11T15:10:35.436+09:00  INFO 56265 --- [pool-2-thread-8] d.d.s.comment.impl.DefaultCommentWriter  : Job 1 comment_count incremented (row locked)
+2025-11-11T15:10:35.436+09:00  INFO 56265 --- [pool-2-thread-8] d.d.s.comment.impl.DefaultCommentWriter  : Writing new root comment for JOB 1
+2025-11-11T15:10:35.438+09:00  INFO 56265 --- [pool-2-thread-8] d.d.s.comment.impl.DefaultCommentWriter  : Root comment created: commentId=5, commentOrder=5
+2025-11-11T15:10:35.441+09:00  INFO 56265 --- [pool-2-thread-8] d.d.s.comment.impl.DefaultCommentWriter  : User 1 commentCount incremented
+2025-11-11T15:10:35.441+09:00  INFO 56265 --- [pool-2-thread-8] .i.i.DefaultCommentWriterConcurrencyTest : Comment order done 7
+2025-11-11T15:10:35.441+09:00  INFO 56265 --- [pool-2-thread-1] d.d.s.comment.impl.DefaultCommentWriter  : Job 1 comment_count incremented (row locked)
+2025-11-11T15:10:35.441+09:00  INFO 56265 --- [pool-2-thread-1] d.d.s.comment.impl.DefaultCommentWriter  : Writing new root comment for JOB 1
+2025-11-11T15:10:35.443+09:00  INFO 56265 --- [pool-2-thread-1] d.d.s.comment.impl.DefaultCommentWriter  : Root comment created: commentId=6, commentOrder=6
+2025-11-11T15:10:35.447+09:00  INFO 56265 --- [pool-2-thread-1] d.d.s.comment.impl.DefaultCommentWriter  : User 1 commentCount incremented
+2025-11-11T15:10:35.447+09:00  INFO 56265 --- [pool-2-thread-1] .i.i.DefaultCommentWriterConcurrencyTest : Comment order done 0
+2025-11-11T15:10:35.447+09:00  INFO 56265 --- [pool-2-thread-9] d.d.s.comment.impl.DefaultCommentWriter  : Job 1 comment_count incremented (row locked)
+2025-11-11T15:10:35.447+09:00  INFO 56265 --- [pool-2-thread-9] d.d.s.comment.impl.DefaultCommentWriter  : Writing new root comment for JOB 1
+2025-11-11T15:10:35.449+09:00  INFO 56265 --- [pool-2-thread-9] d.d.s.comment.impl.DefaultCommentWriter  : Root comment created: commentId=7, commentOrder=7
+2025-11-11T15:10:35.452+09:00  INFO 56265 --- [pool-2-thread-9] d.d.s.comment.impl.DefaultCommentWriter  : User 1 commentCount incremented
+2025-11-11T15:10:35.452+09:00  INFO 56265 --- [pool-2-thread-9] .i.i.DefaultCommentWriterConcurrencyTest : Comment order done 8
+2025-11-11T15:10:35.452+09:00  INFO 56265 --- [ool-2-thread-10] d.d.s.comment.impl.DefaultCommentWriter  : Job 1 comment_count incremented (row locked)
+2025-11-11T15:10:35.452+09:00  INFO 56265 --- [ool-2-thread-10] d.d.s.comment.impl.DefaultCommentWriter  : Writing new root comment for JOB 1
+2025-11-11T15:10:35.454+09:00  INFO 56265 --- [ool-2-thread-10] d.d.s.comment.impl.DefaultCommentWriter  : Root comment created: commentId=8, commentOrder=8
+2025-11-11T15:10:35.457+09:00  INFO 56265 --- [ool-2-thread-10] d.d.s.comment.impl.DefaultCommentWriter  : User 1 commentCount incremented
+2025-11-11T15:10:35.458+09:00  INFO 56265 --- [ool-2-thread-10] .i.i.DefaultCommentWriterConcurrencyTest : Comment order done 9
+2025-11-11T15:10:35.458+09:00  INFO 56265 --- [pool-2-thread-3] d.d.s.comment.impl.DefaultCommentWriter  : Job 1 comment_count incremented (row locked)
+2025-11-11T15:10:35.458+09:00  INFO 56265 --- [pool-2-thread-3] d.d.s.comment.impl.DefaultCommentWriter  : Writing new root comment for JOB 1
+2025-11-11T15:10:35.459+09:00  INFO 56265 --- [pool-2-thread-3] d.d.s.comment.impl.DefaultCommentWriter  : Root comment created: commentId=9, commentOrder=9
+2025-11-11T15:10:35.463+09:00  INFO 56265 --- [pool-2-thread-3] d.d.s.comment.impl.DefaultCommentWriter  : User 1 commentCount incremented
+2025-11-11T15:10:35.463+09:00  INFO 56265 --- [pool-2-thread-3] .i.i.DefaultCommentWriterConcurrencyTest : Comment order done 2
+2025-11-11T15:10:35.463+09:00  INFO 56265 --- [pool-2-thread-4] d.d.s.comment.impl.DefaultCommentWriter  : Job 1 comment_count incremented (row locked)
+2025-11-11T15:10:35.463+09:00  INFO 56265 --- [pool-2-thread-4] d.d.s.comment.impl.DefaultCommentWriter  : Writing new root comment for JOB 1
+2025-11-11T15:10:35.465+09:00  INFO 56265 --- [pool-2-thread-4] d.d.s.comment.impl.DefaultCommentWriter  : Root comment created: commentId=10, commentOrder=10
+2025-11-11T15:10:35.468+09:00  INFO 56265 --- [pool-2-thread-4] d.d.s.comment.impl.DefaultCommentWriter  : User 1 commentCount incremented
+2025-11-11T15:10:35.469+09:00  INFO 56265 --- [pool-2-thread-4] .i.i.DefaultCommentWriterConcurrencyTest : Comment order done 3
+2025-11-11T15:10:35.513+09:00  INFO 56265 --- [    Test worker] d.d.s.comment.impl.DefaultCommentWriter  : Job 2 comment_count incremented (row locked)
+2025-11-11T15:10:35.513+09:00  INFO 56265 --- [    Test worker] d.d.s.comment.impl.DefaultCommentWriter  : Writing new root comment for JOB 2
+2025-11-11T15:10:35.514+09:00  INFO 56265 --- [    Test worker] d.d.s.comment.impl.DefaultCommentWriter  : Root comment created: commentId=11, commentOrder=1
+2025-11-11T15:10:35.518+09:00  INFO 56265 --- [    Test worker] d.d.s.comment.impl.DefaultCommentWriter  : User 2 commentCount incremented
+2025-11-11T15:10:35.520+09:00  INFO 56265 --- [pool-3-thread-1] d.d.s.comment.impl.DefaultCommentWriter  : Job 2 comment_count incremented (row locked)
+2025-11-11T15:10:35.520+09:00  INFO 56265 --- [pool-3-thread-1] d.d.s.comment.impl.DefaultCommentWriter  : Writing reply to comment 11 for JOB 2
+2025-11-11T15:10:35.525+09:00  INFO 56265 --- [pool-3-thread-1] d.d.s.comment.impl.DefaultCommentWriter  : Reply created: commentId=12, parentId=11, level=1, sortNumber=1
+2025-11-11T15:10:35.528+09:00  INFO 56265 --- [pool-3-thread-1] d.d.s.comment.impl.DefaultCommentWriter  : User 2 commentCount incremented
+2025-11-11T15:10:35.528+09:00  INFO 56265 --- [pool-3-thread-2] d.d.s.comment.impl.DefaultCommentWriter  : Job 2 comment_count incremented (row locked)
+2025-11-11T15:10:35.528+09:00  INFO 56265 --- [pool-3-thread-2] d.d.s.comment.impl.DefaultCommentWriter  : Writing reply to comment 11 for JOB 2
+2025-11-11T15:10:35.531+09:00  INFO 56265 --- [pool-3-thread-2] d.d.s.comment.impl.DefaultCommentWriter  : Reply created: commentId=13, parentId=11, level=1, sortNumber=2
+2025-11-11T15:10:35.534+09:00  INFO 56265 --- [pool-3-thread-2] d.d.s.comment.impl.DefaultCommentWriter  : User 2 commentCount incremented
+2025-11-11T15:10:35.535+09:00  INFO 56265 --- [pool-3-thread-9] d.d.s.comment.impl.DefaultCommentWriter  : Job 2 comment_count incremented (row locked)
+2025-11-11T15:10:35.536+09:00  INFO 56265 --- [pool-3-thread-9] d.d.s.comment.impl.DefaultCommentWriter  : Writing reply to comment 11 for JOB 2
+2025-11-11T15:10:35.539+09:00  INFO 56265 --- [pool-3-thread-9] d.d.s.comment.impl.DefaultCommentWriter  : Reply created: commentId=14, parentId=11, level=1, sortNumber=3
+2025-11-11T15:10:35.542+09:00  INFO 56265 --- [pool-3-thread-9] d.d.s.comment.impl.DefaultCommentWriter  : User 2 commentCount incremented
+2025-11-11T15:10:35.542+09:00  INFO 56265 --- [ool-3-thread-10] d.d.s.comment.impl.DefaultCommentWriter  : Job 2 comment_count incremented (row locked)
+2025-11-11T15:10:35.542+09:00  INFO 56265 --- [ool-3-thread-10] d.d.s.comment.impl.DefaultCommentWriter  : Writing reply to comment 11 for JOB 2
+2025-11-11T15:10:35.548+09:00  INFO 56265 --- [ool-3-thread-10] d.d.s.comment.impl.DefaultCommentWriter  : Reply created: commentId=15, parentId=11, level=1, sortNumber=4
+2025-11-11T15:10:35.552+09:00  INFO 56265 --- [ool-3-thread-10] d.d.s.comment.impl.DefaultCommentWriter  : User 2 commentCount incremented
+2025-11-11T15:10:35.552+09:00  INFO 56265 --- [pool-3-thread-8] d.d.s.comment.impl.DefaultCommentWriter  : Job 2 comment_count incremented (row locked)
+2025-11-11T15:10:35.552+09:00  INFO 56265 --- [pool-3-thread-8] d.d.s.comment.impl.DefaultCommentWriter  : Writing reply to comment 11 for JOB 2
+2025-11-11T15:10:35.555+09:00  INFO 56265 --- [pool-3-thread-8] d.d.s.comment.impl.DefaultCommentWriter  : Reply created: commentId=16, parentId=11, level=1, sortNumber=5
+2025-11-11T15:10:35.558+09:00  INFO 56265 --- [pool-3-thread-8] d.d.s.comment.impl.DefaultCommentWriter  : User 2 commentCount incremented
+2025-11-11T15:10:35.558+09:00  INFO 56265 --- [pool-3-thread-6] d.d.s.comment.impl.DefaultCommentWriter  : Job 2 comment_count incremented (row locked)
+2025-11-11T15:10:35.558+09:00  INFO 56265 --- [pool-3-thread-6] d.d.s.comment.impl.DefaultCommentWriter  : Writing reply to comment 11 for JOB 2
+2025-11-11T15:10:35.561+09:00  INFO 56265 --- [pool-3-thread-6] d.d.s.comment.impl.DefaultCommentWriter  : Reply created: commentId=17, parentId=11, level=1, sortNumber=6
+2025-11-11T15:10:35.563+09:00  INFO 56265 --- [pool-3-thread-6] d.d.s.comment.impl.DefaultCommentWriter  : User 2 commentCount incremented
+2025-11-11T15:10:35.564+09:00  INFO 56265 --- [pool-3-thread-5] d.d.s.comment.impl.DefaultCommentWriter  : Job 2 comment_count incremented (row locked)
+2025-11-11T15:10:35.564+09:00  INFO 56265 --- [pool-3-thread-5] d.d.s.comment.impl.DefaultCommentWriter  : Writing reply to comment 11 for JOB 2
+2025-11-11T15:10:35.566+09:00  INFO 56265 --- [pool-3-thread-5] d.d.s.comment.impl.DefaultCommentWriter  : Reply created: commentId=18, parentId=11, level=1, sortNumber=7
+2025-11-11T15:10:35.570+09:00  INFO 56265 --- [pool-3-thread-5] d.d.s.comment.impl.DefaultCommentWriter  : User 2 commentCount incremented
+2025-11-11T15:10:35.571+09:00  INFO 56265 --- [pool-3-thread-4] d.d.s.comment.impl.DefaultCommentWriter  : Job 2 comment_count incremented (row locked)
+2025-11-11T15:10:35.571+09:00  INFO 56265 --- [pool-3-thread-4] d.d.s.comment.impl.DefaultCommentWriter  : Writing reply to comment 11 for JOB 2
+2025-11-11T15:10:35.576+09:00  INFO 56265 --- [pool-3-thread-4] d.d.s.comment.impl.DefaultCommentWriter  : Reply created: commentId=19, parentId=11, level=1, sortNumber=8
+2025-11-11T15:10:35.579+09:00  INFO 56265 --- [pool-3-thread-4] d.d.s.comment.impl.DefaultCommentWriter  : User 2 commentCount incremented
+2025-11-11T15:10:35.580+09:00  INFO 56265 --- [pool-3-thread-7] d.d.s.comment.impl.DefaultCommentWriter  : Job 2 comment_count incremented (row locked)
+2025-11-11T15:10:35.580+09:00  INFO 56265 --- [pool-3-thread-7] d.d.s.comment.impl.DefaultCommentWriter  : Writing reply to comment 11 for JOB 2
+2025-11-11T15:10:35.584+09:00  INFO 56265 --- [pool-3-thread-7] d.d.s.comment.impl.DefaultCommentWriter  : Reply created: commentId=20, parentId=11, level=1, sortNumber=9
+2025-11-11T15:10:35.587+09:00  INFO 56265 --- [pool-3-thread-7] d.d.s.comment.impl.DefaultCommentWriter  : User 2 commentCount incremented
+2025-11-11T15:10:35.588+09:00  INFO 56265 --- [pool-3-thread-3] d.d.s.comment.impl.DefaultCommentWriter  : Job 2 comment_count incremented (row locked)
+2025-11-11T15:10:35.588+09:00  INFO 56265 --- [pool-3-thread-3] d.d.s.comment.impl.DefaultCommentWriter  : Writing reply to comment 11 for JOB 2
+2025-11-11T15:10:35.590+09:00  INFO 56265 --- [pool-3-thread-3] d.d.s.comment.impl.DefaultCommentWriter  : Reply created: commentId=21, parentId=11, level=1, sortNumber=10
+2025-11-11T15:10:35.594+09:00  INFO 56265 --- [pool-3-thread-3] d.d.s.comment.impl.DefaultCommentWriter  : User 2 commentCount incremented
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

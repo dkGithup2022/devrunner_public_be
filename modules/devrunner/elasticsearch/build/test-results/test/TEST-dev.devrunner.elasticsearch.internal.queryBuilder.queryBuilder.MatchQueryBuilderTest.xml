@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MatchQueryBuilder 테스트" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:24" hostname="dankim0124ui-MacBookPro.local" time="0.008">
+  <properties/>
+  <testcase name="한글+영문 혼합 텍스트로 match 쿼리 생성" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.MatchQueryBuilderTest" time="0.001"/>
+  <testcase name="SHOULD BoolType 반환 확인" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.MatchQueryBuilderTest" time="0.002"/>
+  <testcase name="특수문자 포함 텍스트로 match 쿼리 생성" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.MatchQueryBuilderTest" time="0.0"/>
+  <testcase name="영문 텍스트로 match 쿼리 생성" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.MatchQueryBuilderTest" time="0.0"/>
+  <testcase name="한글 텍스트로 match 쿼리 생성" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.MatchQueryBuilderTest" time="0.0"/>
+  <testcase name="MUST BoolType 반환 확인" classname="dev.devrunner.elasticsearch.internal.queryBuilder.queryBuilder.MatchQueryBuilderTest" time="0.001"/>
+  <system-out><![CDATA[
+======================================================================
+Test: build_withMixedText_createsMatchQuery
+======================================================================
+{
+  "match" : {
+    "title" : {
+      "query" : "Senior Backend Developer 시니어"
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"match":{"title":{"query":"Senior Backend Developer 시니어"}}}
+======================================================================
+
+
+======================================================================
+Test: build_withSpecialCharacters_createsMatchQuery
+======================================================================
+{
+  "match" : {
+    "full_description" : {
+      "query" : "C++ / Python (Django)"
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"match":{"full_description":{"query":"C++ / Python (Django)"}}}
+======================================================================
+
+
+======================================================================
+Test: build_withEnglishText_createsMatchQuery
+======================================================================
+{
+  "match" : {
+    "full_description" : {
+      "query" : "Spring Boot Java"
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"match":{"full_description":{"query":"Spring Boot Java"}}}
+======================================================================
+
+
+======================================================================
+Test: build_withKoreanText_createsMatchQuery
+======================================================================
+{
+  "match" : {
+    "title" : {
+      "query" : "백엔드 개발자"
+    }
+  }
+}
+======================================================================
+Compact (for copy-paste):
+{"match":{"title":{"query":"백엔드 개발자"}}}
+======================================================================
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

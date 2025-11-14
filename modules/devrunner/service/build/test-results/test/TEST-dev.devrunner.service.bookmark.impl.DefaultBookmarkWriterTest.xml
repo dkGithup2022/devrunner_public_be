@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.service.bookmark.impl.DefaultBookmarkWriterTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:33" hostname="dankim0124ui-MacBookPro.local" time="0.047">
+  <properties/>
+  <testcase name="removeBookmark_existingBookmark_deletesBookmarkAndDecrementsBookmarkCount()" classname="dev.devrunner.service.bookmark.impl.DefaultBookmarkWriterTest" time="0.036"/>
+  <testcase name="addBookmark_existingBookmark_throwsDuplicateBookmarkException()" classname="dev.devrunner.service.bookmark.impl.DefaultBookmarkWriterTest" time="0.003"/>
+  <testcase name="removeBookmark_noExistingBookmark_throwsBookmarkNotFoundException()" classname="dev.devrunner.service.bookmark.impl.DefaultBookmarkWriterTest" time="0.003"/>
+  <testcase name="addBookmark_noExistingBookmark_createsNewBookmarkAndIncrementsBookmarkCount()" classname="dev.devrunner.service.bookmark.impl.DefaultBookmarkWriterTest" time="0.004"/>
+  <system-out><![CDATA[15:10:33.667 [Test worker] INFO dev.devrunner.service.bookmark.impl.DefaultBookmarkWriter -- User 1 removing bookmark from JOB 100
+15:10:33.669 [Test worker] INFO dev.devrunner.service.bookmark.impl.DefaultBookmarkWriter -- User 1 removed bookmark from JOB 100
+15:10:33.669 [Test worker] INFO dev.devrunner.service.bookmark.impl.DefaultBookmarkWriter -- User 1 bookmarkCount decremented
+15:10:33.672 [Test worker] INFO dev.devrunner.service.bookmark.impl.DefaultBookmarkWriter -- User 1 adding bookmark to JOB 100
+15:10:33.672 [Test worker] WARN dev.devrunner.service.bookmark.impl.DefaultBookmarkWriter -- User 1 already bookmarked JOB 100
+15:10:33.675 [Test worker] INFO dev.devrunner.service.bookmark.impl.DefaultBookmarkWriter -- User 1 removing bookmark from JOB 100
+15:10:33.675 [Test worker] WARN dev.devrunner.service.bookmark.impl.DefaultBookmarkWriter -- No bookmark found for user 1 on JOB 100
+15:10:33.679 [Test worker] INFO dev.devrunner.service.bookmark.impl.DefaultBookmarkWriter -- User 1 adding bookmark to JOB 100
+15:10:33.679 [Test worker] INFO dev.devrunner.service.bookmark.impl.DefaultBookmarkWriter -- User 1 created new bookmark on JOB 100
+15:10:33.680 [Test worker] INFO dev.devrunner.service.bookmark.impl.DefaultBookmarkWriter -- User 1 bookmarkCount incremented
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.devrunner.api.techblog.TechBlogApiControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:05" hostname="dankim0124ui-MacBookPro.local" time="0.025">
+  <properties/>
+  <testcase name="getTechBlog_existingId_returnsOkWithTechBlog()" classname="dev.devrunner.api.techblog.TechBlogApiControllerTest" time="0.022"/>
+  <testcase name="getTechBlog_nonExistingId_throwsException()" classname="dev.devrunner.api.techblog.TechBlogApiControllerTest" time="0.002"/>
+  <system-out><![CDATA[15:10:05.179 [Test worker] INFO dev.devrunner.api.techblog.TechBlogApiController -- GET /api/tech-blogs/1
+15:10:05.180 [Test worker] INFO dev.devrunner.api.techblog.TechBlogApiController -- Retrieved tech blog - techBlogId: 1
+15:10:05.182 [Test worker] INFO dev.devrunner.api.techblog.TechBlogApiController -- GET /api/tech-blogs/999
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

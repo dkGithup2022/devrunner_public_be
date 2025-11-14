@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="calculatePaginationInfo 테스트" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-11-11T06:10:24" hostname="dankim0124ui-MacBookPro.local" time="0.006">
+  <properties/>
+  <testcase name="from이 0인 경우, 첫 페이지 조회" classname="dev.devrunner.elasticsearch.internal.utils.PaginationUtilsTest$CalculatePaginationInfoTest" time="0.003"/>
+  <testcase name="큰 페이지 번호에서도 정확히 계산" classname="dev.devrunner.elasticsearch.internal.utils.PaginationUtilsTest$CalculatePaginationInfoTest" time="0.001"/>
+  <testcase name="from만 제공되고 to가 null인 경우, defaultPageSize를 사용" classname="dev.devrunner.elasticsearch.internal.utils.PaginationUtilsTest$CalculatePaginationInfoTest" time="0.0"/>
+  <testcase name="from과 to가 모두 null인 경우, 0부터 defaultPageSize" classname="dev.devrunner.elasticsearch.internal.utils.PaginationUtilsTest$CalculatePaginationInfoTest" time="0.001"/>
+  <testcase name="from과 to가 모두 제공된 경우" classname="dev.devrunner.elasticsearch.internal.utils.PaginationUtilsTest$CalculatePaginationInfoTest" time="0.0"/>
+  <testcase name="from과 to가 동일한 경우, requestedSize는 0" classname="dev.devrunner.elasticsearch.internal.utils.PaginationUtilsTest$CalculatePaginationInfoTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

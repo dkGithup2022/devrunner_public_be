@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - UserApiControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>UserApiControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/dev.devrunner.api.user.html">dev.devrunner.api.user</a> &gt; UserApiControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">9</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.111s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">getBookmarkActivityLogs_existingUser_returnsOkWithLogs()</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getCommentActivityLogs_existingUser_returnsOkWithLogs()</td>
+<td class="success">0.011s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getCommentActivityLogs_nonExistingUser_throwsException()</td>
+<td class="success">0.075s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getLikeActivityLogs_existingUser_returnsOkWithLogs()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getPostActivityLogs_existingUser_returnsOkWithLogs()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getUserMetrics_existingUser_returnsOkWithMetrics()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getUserMetrics_nonExistingUser_throwsException()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">withdrawUser_nullSessionUser_throwsException()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">withdrawUser_validSession_returnsNoContent()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>15:10:05.259 [Test worker] INFO dev.devrunner.api.user.UserApiController -- GET /api/users/999/activity-logs/comments - page: 0, size: 20
+15:10:05.268 [Test worker] INFO dev.devrunner.api.user.UserApiController -- GET /api/users/1/activity-logs/comments - page: 0, size: 20
+15:10:05.269 [Test worker] INFO dev.devrunner.api.user.UserApiController -- Retrieved 1 comment activity logs for userId: 1
+15:10:05.273 [Test worker] INFO dev.devrunner.api.user.UserApiController -- GET /api/users/1/activity-logs/posts - page: 0, size: 20
+15:10:05.274 [Test worker] INFO dev.devrunner.api.user.UserApiController -- Retrieved 1 post activity logs for userId: 1
+15:10:05.277 [Test worker] INFO dev.devrunner.api.user.UserApiController -- DELETE /api/users/me - Withdraw request by userId=1
+15:10:05.277 [Test worker] INFO dev.devrunner.api.user.UserApiController -- User withdrawn successfully: userId=1
+15:10:05.280 [Test worker] INFO dev.devrunner.api.user.UserApiController -- GET /api/users/999/metrics
+15:10:05.285 [Test worker] INFO dev.devrunner.api.user.UserApiController -- GET /api/users/1/metrics
+15:10:05.285 [Test worker] INFO dev.devrunner.api.user.UserApiController -- User metrics retrieved - userId: 1, postCount: 15, commentCount: 48, likeGivenCount: 120, bookmarkCount: 32
+15:10:05.291 [Test worker] INFO dev.devrunner.api.user.UserApiController -- GET /api/users/1/activity-logs/likes - page: 0, size: 20
+15:10:05.292 [Test worker] INFO dev.devrunner.api.user.UserApiController -- Retrieved 1 like activity logs for userId: 1
+15:10:05.296 [Test worker] INFO dev.devrunner.api.user.UserApiController -- GET /api/users/1/activity-logs/bookmarks - page: 0, size: 20
+15:10:05.298 [Test worker] INFO dev.devrunner.api.user.UserApiController -- Retrieved 1 bookmark activity logs for userId: 1
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.12</a> at 2025. 11. 11. 오후 3:10:05</p>
+</div>
+</div>
+</body>
+</html>
